@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)http://localhost:8000/2018/10/21/setting-up-an-https-site-using-nodejs-aws-ec2-nginx-lets-encrypt-and-namecheap/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="alternate" type="application/rss+xml" href="http://localhost:8000/rss.xml"><link href="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/css" rel="stylesheet"><link rel="sitemap" type="application/xml" href="http://localhost:8000/sitemap.xml"><title>Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo | shaneoneill.io</title><script src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/socket.io.js"></script><link type="text/css" rel="stylesheet" href="blob:http://localhost:8000/ec33cf24-83e9-42bc-975c-050e933b0ec3"><link type="text/css" rel="stylesheet" href="blob:http://localhost:8000/8dbe8d2b-f73c-449e-ad2c-a7785ee3f044"><link type="text/css" rel="stylesheet" href="blob:http://localhost:8000/0a167b85-3cc8-4b1f-bf5a-641670a32f7d"><link type="text/css" rel="stylesheet" href="blob:http://localhost:8000/08b5fe47-c321-4c7f-8874-9a09d2ad32b1"><link type="text/css" rel="stylesheet" href="blob:http://localhost:8000/cce683b3-6f29-4090-b4b4-fe6f86e141b6"><link type="text/css" rel="stylesheet" href="blob:http://localhost:8000/89575117-4eed-48ee-ad8a-35b7e0dff4ba"><link type="text/css" rel="stylesheet" href="blob:http://localhost:8000/aa7bc4b5-6e98-4515-88ac-7b1a656bbc03"><script async="" type="text/javascript" src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/embed.js"></script><meta name="description" content="Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap" data-react-helmet="true"><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.c46a5b3df6acec9d5cde6bf8b61aaf6e.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.57d935b03ca64a8fc2ae95b8d550f132.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.f70f445d7ac0ff2c79eeb2d0e8586ac6.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"></head><body><div id="___gatsby"><div tabindex="-1" role="group" style="outline: none;"><div class="layout"><div><div><div><a class="post-single__home-button" href="http://localhost:8000/">All Articles</a></div><div class="post-single"><div class="post-single__inner"><h1 class="post-single__title">Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap</h1><div class="post-single__body"><h2>Create an AWS EC2 instance</h2>
+<p>Log into AWS and create an account if you don’t have one already. Log in and you should see your dashboard, or a list of services</p>
+<p>
+  <a class="gatsby-resp-image-link" href="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/https-aws-a-094fcb6d5bdd04713a60bae244051f12-5163f.png" style="display: block" target="_blank" rel="noopener">
+  
+  <span class="gatsby-resp-image-wrapper" style="position: relative; display: block;  max-width: 745px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 81.0738255033557%; position: relative; bottom: 0; left: 0; background-image: url(&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAACBUlEQVQ4y5VU2W4aQRDks5KHRJEcyUkUHrBkW3mIFPmzkWLAsCzsPbvsfVS6BmY9BKLILZWA6WOqq3uYfPr2iOnjE/h5O/uJ6cMTvt//ws30Bz5+fcCHL/d4dzPD+893gtl/cIeJynJEcYIgjAWRfFc4HAocchulheIqcvGlUmvS9ZACGcIwRBRF+jttGIar+JcNQ4++HzCp6hZd16EoSpRlKTcVyLIMdV2jaZoLdMKA8Wfoe+2rmxaTuunkRw1ns8FutxeGB41egt5qrVymC2YZi+TIhaFtqTBNxZcXhfZVVaXPGZvJpTyjjyx1wbYzDFvEcTwyM1q1bStDiuE4DpJEWYnH8+12i8IioQtSQ9p+v8d6vYFSCipNdRItCAIsFguRY3d2me/7mM/n2n8ay3lBJjCIg7En6vseXPG9TvPo00M4De6CoQkoRA/CLkgpXNfVLZpBKZUilBULBMU1DTkUtlmeRP+74EakcJztmEgjAXZDGHnOGKZS0F4VU5CDohRJkoyJhmEkZ3oTJIY+7uioIZM8z5PFzsfCuX5WuWZO2O8kTZWeMonQmDPuYVlWesdIn0LbT42XrFYrLJfLMdkQ+P38rFfKdXeoJE8zbKRvLqknASrLLlrmOnFt2Do1NOccxnHCg7W3nd2yh5eXtWZoF+QfBlmwfWPmpVA7DpM6NicN/wCHlrW0J019BgAAAABJRU5ErkJggg==&#39;); background-size: cover; display: block;">
+      <img class="gatsby-resp-image-image" style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;" alt="https-aws-a" title="" src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/https-aws-a-094fcb6d5bdd04713a60bae244051f12-5163f.png" srcset="/static/https-aws-a-094fcb6d5bdd04713a60bae244051f12-c4881.png 240w,
+/static/https-aws-a-094fcb6d5bdd04713a60bae244051f12-604fd.png 480w,
+/static/https-aws-a-094fcb6d5bdd04713a60bae244051f12-5163f.png 745w" sizes="(max-width: 745px) 100vw, 745px">
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Select EC2. Then select Launch Instance.</p>
+<p>
+  <a class="gatsby-resp-image-link" href="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/https-aws-b-4461aa307437019191bd547dd2e7d77a-2d6dd.png" style="display: block" target="_blank" rel="noopener">
+  
+  <span class="gatsby-resp-image-wrapper" style="position: relative; display: block;  max-width: 601px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 19.30116472545757%; position: relative; bottom: 0; left: 0; background-image: url(&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAApElEQVQY052PvQrCQBCE772trGysxMewEASLWPgONlYqBhNiJO79RO4n3o2X9Q2yMHzMsCyzoqobNM8Wj6rGqyMkTJ+UEsTQvzF8CKHvAK8wuB5SKUgiqEylNIzRkFJyrrWGzjTGcDbujJ5IIoQAMd9esdzfWbPNBcWpBb4B1jo451nBj8w+07MckzPn2FtrEWOEWOxuWBUl1oeSDx7P9K8/8e0fGTYxsZ9bKvYAAAAASUVORK5CYII=&#39;); background-size: cover; display: block;">
+      <img class="gatsby-resp-image-image" style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;" alt="create-instance" title="" src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/https-aws-b-4461aa307437019191bd547dd2e7d77a-2d6dd.png" srcset="/static/https-aws-b-4461aa307437019191bd547dd2e7d77a-760f6.png 240w,
+/static/https-aws-b-4461aa307437019191bd547dd2e7d77a-c71ca.png 480w,
+/static/https-aws-b-4461aa307437019191bd547dd2e7d77a-2d6dd.png 601w" sizes="(max-width: 601px) 100vw, 601px">
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>If you are just prototyping a simple website then choosing the latest Ubuntu Server image is fine. Make sure to save your private key somewhere safe.</p>
+<h2>Connecting to your EC2 instance</h2>
+<p>Test your new EC2 instance by connecting to it.</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">ssh -i keyname.pem user@your-ec2-address</code></pre></div>
+<p>Or press the Connect button while on your EC2 console for exact instructions.</p>
+<p>Your ec2 address looks something like ec2-55-55-555-55.xx-yyyy-5.compute.amazonaws.com</p>
+<p>Success? Great good to go!</p>
+<h2>Setup your Security Groups</h2>
+<p>Let’s open up some ports so requests can make it to our VM. At the AWS Dashboard, find the link to “Security Groups” on the left.</p>
+<p>
+  <a class="gatsby-resp-image-link" href="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/https-aws-c-0fb875b0ae6fef85a312ab2175cdced0-f227e.png" style="display: block" target="_blank" rel="noopener">
+  
+  <span class="gatsby-resp-image-wrapper" style="position: relative; display: block;  max-width: 195px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 83.58974358974359%; position: relative; bottom: 0; left: 0; background-image: url(&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAAB30lEQVQ4y61UiVbbMBDk/7+oPwAEGt9HHMdp6it2QvAVx7c9XQuHlkcJ8EDvyZJW69HszkpXwzDgK62qKiRJgq7r2Ppq/ERRRMYYh/0OwTZAGIbwfB+u42C/f0AcPWK3C+H7WzwcDggC8qEexzHK8j+AcZIiSVOMbFnvB/R9x5zOjj2N7TSv64qASrb3iiELOJyxxcpcQhBELE0LC02DKEmMqchxsCwLxkKHJCt4jJPLIfebH+MXW9+FTCCGuYJpmljoGn47LkwCsh0bIs/hnhNwiC4AMoZ9i8+Kc/Z/DThtDJQzVRLAiSLuZzdQdQMb08DdnEdEOR7b+FPf98+5fhtwcqjrGnl+REYC5fkJbdOgadtn5w+VDTvtKQbkxyMKUq9tG+Y49qIomKJFccKJ5tWk8Mj0cshkMHQFc0GALPLgJQWaKkEUeKzWGxg0lxUdP+ccFFUhoOZtlXFmeUGAp4MHNJSGtu0+JorvOdgGO3Zr1tYarue9qLnhsyp7rg1FUeCHAVzbhkCKO57/9wYNw/sqvwzpGx6HfxkuFyqur28g0W3hxuRrBrxfFm5nd+BFGZIwZ6wVVaNqqN4BpLGk0oiiGFmWIp1qsa5KejwSsh2ZPaacplnGhLkY8ne9h38A32AfrBTzcMQAAAAASUVORK5CYII=&#39;); background-size: cover; display: block;">
+      <img class="gatsby-resp-image-image" style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;" alt="Security Groups" title="" src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/https-aws-c-0fb875b0ae6fef85a312ab2175cdced0-f227e.png" srcset="/static/https-aws-c-0fb875b0ae6fef85a312ab2175cdced0-f227e.png 195w" sizes="(max-width: 195px) 100vw, 195px">
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Then click “Create”</p>
+<p>Make the following rules</p>
+<p>Click the “Create” button in the bottom right. Next, go back to “Instances” and under “Actions” select “Networking”-&gt;”Change Security Groups” and select your newly created security group. Mine was called something like launch-wizard-1. Remember to click “Assign Security Groups” after you check the box.</p>
+<h2>Create your Elastic IP</h2>
+<p>This allows for better DNS.</p>
+<p>Click the blue “Allocate new address” button, then select “Allocate”. Next, select the created Elastic IP and select “Actions”-&gt;”Associate”. Then select your EC2 Instance. It’s that easy.</p>
+<h2>Create and configure a Hosted Zone</h2>
+<p>We will use the Route 53 service for this. Select it from the Services menu.</p>
+<p>Select “Create Hosted Zone”</p>
+<p>Hit “Create”. Back at the Route 53 Dashboard, select the created Hosted Zone and click “Go to Record Sets”.Click “Create Record Set”, leave the Name field blank, and place your Elastic IP into the Value field. Then, hit Create.</p>
+<p>Hit “Create Record Set” again. Put “www” in the Name field, and place your Elastic IP into the Value field. Then, hit Create.</p>
+<p>Next, click the Go to Record Sets button. Take the dns servers in the Values column of your NS record…</p>
+<p>And set your Namecheap DNS servers to them (without the period at the end). Yours may be different than mine. These may take up to a few hours to propogate.</p>
+<h2>Set up Nginx</h2>
+<p>Right. Now lets ssh into our EC2 instance and setup the Nginx webserver.</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">sudo apt-get install nginx</code></pre></div>
+<p>Navigating to your Elastic IP, you will see the default Nginx page.</p>
+<p>Next, let’s setup Let’s Encrypt using Certbot.</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">cd /etc/nginx/sites-available
+sudo nano default</code></pre></div>
+<p>Edit the lines near the top specifying the server name</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">server {
+listen 80 default_server;
+listen [::]:80 default_server;</code></pre></div>
+<p>Replace both the two “listen” lines with the following. Ues your domain instead of “example.com”</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">listen 80 example.com www.example.com</code></pre></div>
+<p>Let’s install certbot and build our certificate.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-nginx</code></pre></div>
+<p>And make it!</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">sudo certbot --nginx -d example.com -d www.example.com</code></pre></div>
+<p>It may prompt you for some things. Follow the instructions. Now lets configure Nginx to be a reverse proxy to our application.</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">cd /etc/nginx/sites-available
+cp default default.bak
+sudo nano default</code></pre></div>
+<p>Here is a popular reverse proxy https config that you can replace the server block with. Remember to replace example.com with your domain.</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">server {
+listen 80;
+listen [::]:80;
+server_name example.com www.example.com;
+return 301 https://$server_name$request_uri;
+}
+server {
+listen 443 ssl http2 default_server;
+listen [::]:443 ssl http2 default_server;
+server_name example.com www.example.com;
+location / {
+proxy_pass http://localhost:3000;
+}
+ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+ssl_ciphers EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
+ssl_session_cache shared:SSL:5m;
+ssl_session_timeout 1h;
+add_header Strict-Transport-Security “max-age=15768000” always;
+}</code></pre></div>
+<p>And now just restart Nginx</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">sudo service nginx restart</code></pre></div>
+<h2>Run your App!</h2>
+<p>The reverse proxy is set to forward everything to port 3000 which is the default Express port!</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">cd ~/yourapp
+npm start</code></pre></div>
+<p>Visit your domain name to see all the https goodness!</p></div><div class="post-single__date"><em>Published 21 Oct 2018</em></div></div><div class="post-single__footer"><div class="post-single__tags"><ul class="post-single__tags-list"><li class="post-single__tags-list-item"><a class="post-single__tags-list-item-link" href="http://localhost:8000/tags/aws/">AWS</a></li><li class="post-single__tags-list-item"><a class="post-single__tags-list-item-link" href="http://localhost:8000/tags/web-development/">Web Development</a></li></ul></div><hr><p class="post-single__footer-text">Hack the planet.<a href="https://twitter.com/zeevosec" target="_blank" rel="noopener noreferrer"><br> <strong>Shane [Zeevo] O'Neill</strong> on Twitter</a></p><div><div><div id="disqus_thread"><iframe id="dsq-app8422" name="dsq-app8422" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 75px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div></div></div></div></div></div></div></div></div></div><script src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/commons.js"></script><iframe style="display: none;" src="./Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap - Zeevo _ shaneoneill.io_files/saved_resource(1).html"></iframe></body></html>
