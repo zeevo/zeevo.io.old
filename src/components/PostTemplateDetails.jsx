@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import moment from 'moment';
-import Disqus from './Disqus';
 import './style/posttemplatedetails.scss';
 
 class PostTemplateDetails extends React.Component {
@@ -33,12 +32,6 @@ class PostTemplateDetails extends React.Component {
       </div>
     );
 
-    const commentsBlock = (
-      <div>
-        <Disqus postNode={post} siteMetadata={this.props.data.site.siteMetadata} />
-      </div>
-    );
-
     return (
       <div>
         {homeBlock}
@@ -60,10 +53,9 @@ class PostTemplateDetails extends React.Component {
             <p className="post-single__footer-text">
               {subtitle}
               <a href={author.twitter} target="_blank" rel="noopener noreferrer">
-                <br /> <strong>{author.name}</strong> on Twitter
+                <br /> <strong>{author.twitter.split('/').pop()}</strong> on Twitter
               </a>
             </p>
-            {commentsBlock}
           </div>
         </div>
       </div>

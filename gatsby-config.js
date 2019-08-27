@@ -1,7 +1,7 @@
 const lost = require('lost');
 const pxtorem = require('postcss-pxtorem');
 
-const url = 'https://lumen.netlify.com';
+const url = 'https://shaneoneill.io';
 
 module.exports = {
   siteMetadata: {
@@ -103,6 +103,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
+            title: 'shaneoneill.io RSS Feed',
           },
         ],
       },
@@ -143,6 +144,7 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
