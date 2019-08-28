@@ -8,7 +8,7 @@ category: 'Web Development'
 tags:
   - 'AWS'
   - 'Web Development'
-description: 'How to deploy your Node project to AWS EC2 easily'
+description: 'Easy Proof of Concept for deploying Node.js apps from your own machine.'
 ---
 
 ### Create an AWS EC2 instance

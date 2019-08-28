@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Post from './Post';
 import './style/feed.scss';
 
-const RECENT = 5;
-
 const FilterButton = props => (
   <button onClick={props.onClick} className="post-single__tags-list-item-link filterbtn">
     {props.tag}
@@ -16,17 +14,8 @@ export default class Feed extends Component {
     this.state = {
       filtered: this.props.posts,
     };
-    if (this.props.posts.length > RECENT) {
-      this.state.filtered = this.props.posts.slice(0, RECENT);
-    }
     const category = this.props.posts.map(post => post.node.frontmatter.category);
     this.state.category = category.filter((v, i) => category.indexOf(v) === i);
-  }
-
-  filterRecent() {
-    if (this.props.posts.length > RECENT) {
-      this.setState({ filtered: this.props.posts.slice(0, RECENT) });
-    }
   }
 
   filterByCategory(category) {

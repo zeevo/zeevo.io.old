@@ -8,7 +8,7 @@ category: 'Web Development'
 tags:
   - 'AWS'
   - 'Web Development'
-description: 'Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, and Namecheap'
+description: "Learn how to setup your own Node.js app on EC2 with well configured HTTPS using Let's Encrypt"
 ---
 
 ## Create an AWS EC2 instance
@@ -39,7 +39,7 @@ Success? Great good to go!
 
 ## Setup your Security Groups
 
-Let’s open up some ports so requests can make it to our VM. At the AWS Dashboard, find the link to “Security Groups” on the left.
+Let’s open up some ports so requests can make it to our instance. At the AWS Dashboard, find the link to “Security Groups” on the left.
 
 ![Security Groups](./https-aws-c.png)
 
