@@ -3,7 +3,7 @@ title: Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let’s Encrypt, a
 date: '2018-10-21T16:52:00.000Z'
 layout: post
 draft: false
-path: '/2018/10/21/setting-up-an-https-site-using-nodejs-aws-ec2-nginx-lets-encrypt-and-namecheap//'
+path: '/2018/10/21/setting-up-an-https-site-using-nodejs-aws-ec2-nginx-lets-encrypt-and-namecheap/'
 category: 'Web Development'
 tags:
   - 'AWS'
