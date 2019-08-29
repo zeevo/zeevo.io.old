@@ -28,13 +28,13 @@
       }
     }
     &-subtitle {
-      color: $color-gray;
+      color: $color-base;
       @include line-height(1);
       @include margin-bottom(1);
     }
   }
   &__copyright {
-    color: lighten($color-gray, 18%);
+    color: $color-base;
     font-size: $typographic-small-font-size;
   }
 }
@@ -45,13 +45,7 @@
     &__inner {
       padding: 30px 20px 0;
       &:after {
-        background: $color-gray-border;
-        background: linear-gradient(
-          to bottom,
-          $color-gray-border 0%,
-          $color-gray-border 48%,
-          $color-white 100%
-        );
+        background: #424242;
         position: absolute;
         content: '';
         width: 1px;

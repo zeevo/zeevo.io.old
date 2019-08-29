@@ -78,7 +78,7 @@
         display: inline-block;
         margin: 10px 5px;
         &-link {
-          background: $color-gray-bg;
+          background: $color-accent;
           text-decoration: none;
           border: 0;
           border-radius: 3px;
@@ -87,8 +87,8 @@
           padding: 8px 16px;
           &:hover,
           &:focus {
-            color: $color-base;
-            background: darken($color-gray-bg, 5%);
+            color: $color-accent;
+            background: darken($color-gray-bg, 20%);
             border: 0;
           }
         }
@@ -106,14 +106,14 @@
     line-height: 35px;
     text-align: center;
     color: lighten($color-base, 20%);
-    background: $color-gray-bg;
+    background: $color-accent;
     font-weight: 400;
     border-radius: 3px;
     @include margin-top(1);
     &:hover,
     &:focus {
-      color: $color-base;
-      background: darken($color-gray-bg, 5%);
+      color: $color-accent;
+      background: darken($color-gray-bg, 20%);
       border: 0;
     }
   }

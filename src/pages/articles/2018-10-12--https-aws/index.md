@@ -8,7 +8,7 @@ category: 'Web Development'
 tags:
   - 'AWS'
   - 'Web Development'
-description: "Learn how to setup your own Node.js app on EC2 with well configured HTTPS using Let's Encrypt"
+description: 'Learn how to setup your own Node.js app on EC2 with well configured HTTPS using Lets Encrypt'
 ---
 
 ## Create an AWS EC2 instance

@@ -5781,7 +5781,7 @@ gatsby-remark-images@^2.0.4:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.0.1"
 
-gatsby-remark-prismjs@^3.0.2:
+gatsby-remark-prismjs@^3.3.9:
   version "3.3.9"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.9.tgz#20eb5fdf1d5481672517058216e8e817fc43c986"
   integrity sha512-23IoJjj6/opxHAW6QfLGQaO8enA+JK6fYJXwcJ3F+++AcN0EIHM3Sc3sRz9GxuSni2PW9MlWHKo5noqrlabUjA==
@@ -10608,11 +10608,6 @@ react-dev-utils@^4.2.3:
     sockjs-client "1.1.4"
     strip-ansi "3.0.1"
     text-table "0.2.0"
-
-react-disqus-comments@^1.2.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/react-disqus-comments/-/react-disqus-comments-1.4.0.tgz#bf56ff319a35d086f3070d31a4f70ed21ce3a958"
-  integrity sha512-NkCNsnBSujliii5N2HbA6Wy5z2s6GtCtPaJ0D6GWNMSKnP8wmEtQ3u2qAeG9+xHJE2cMRFmfqMpDeJtBay38RA==
 
 react-dom@^16.5.2:
   version "16.9.0"

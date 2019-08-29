@@ -8,7 +8,7 @@ category: 'Hacking'
 tags:
   - 'Hacking'
   - 'Security'
-description: 'Reason's Stickyfingers Damn Vunerable Pi. Warning This contains spoilers.'
+description: 'Reasons Stickyfingers Damn Vunerable Pi. Warning This contains spoilers.'
 ---
 
 I wanted to do something like for a while now – I am going to show you how to create your own pen testing lab where you can practice your skills in a controlled environment.
