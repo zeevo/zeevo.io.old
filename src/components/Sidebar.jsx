@@ -3,6 +3,7 @@ import get from 'lodash/get';
 import { Link } from 'gatsby';
 import Menu from './Menu';
 import './style/sidebar.scss';
+import profilePic from '../pages/photo.png';
 
 class Sidebar extends React.Component {
   render() {
@@ -17,8 +18,7 @@ class Sidebar extends React.Component {
       <div>
         <Link to="/">
           <img
-            src="https://cdn.discordapp.com/avatars/109673245225025536/f4c92e1248011bd25812344e8ad53a97.png?size=256"
-            // src={profilePic}
+            src={profilePic}
             className="sidebar__author-photo"
             width="140"
             height="140"

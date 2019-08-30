@@ -10,6 +10,7 @@ module.exports = {
     title: 'Zeevo | shaneoneill.io',
     subtitle: 'Hack the planet.',
     copyright: '© All rights reserved.',
+    profilePic: './src/pages/photo.jpg',
     menu: [
       {
         label: 'Posts',
