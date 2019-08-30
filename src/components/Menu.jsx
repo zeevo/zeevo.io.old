@@ -10,7 +10,10 @@ class Menu extends React.Component {
       <ul className="menu__list">
         {menu.map(item => {
           let link;
-          if (item.path.startsWith('http')) {
+          console.log(item);
+          if (item.label === 'Projects') {
+            link = 'Projects (Soon)';
+          } else if (item.path.startsWith('http')) {
             link = (
               <a
                 href={item.path}
