@@ -38,7 +38,7 @@ module.exports = {
       },
     ],
     author: {
-      name: "Shane [Zeevo] O'Neill",
+      name: "Shane O'Neill",
       twitter: 'https://twitter.com/zeevosec',
       github: 'https://github.com/zeevosec',
       rss: '/rss.xml',
