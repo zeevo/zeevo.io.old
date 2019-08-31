@@ -12,6 +12,6 @@ description: 'Did someone say CI/CD?'
 
 Tada!
 
-_This is just a demonstration for myself and may or may not be removed in the future. Thanks [Travis CIS](https://travis-ci.org)_
+_This is just a demonstration for myself and may or may not be removed in the future. Thanks [Travis CI](https://travis-ci.org)_
 
 ![Travis CI](https://dwglogo.com/wp-content/uploads/2017/12/1200px-travis_ci_vector_logo.png)
