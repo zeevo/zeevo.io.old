@@ -9,7 +9,7 @@ Heyo. I'm Shane. Or Zeevo if you met me online _(IGNs am I right?)_. I like to m
 
 ![Rock Climbing](https://scontent-iad3-1.cdninstagram.com/vp/e4d5178d8c9f3db59d5492d81d540401/5E127FC4/t51.2885-15/sh0.08/e35/s750x750/67390580_507221233377188_3964135464389981601_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com)
 
-_"But how do I interact with you?"_ You might ask -- You can [tweet at me (I don't bite)](twitter.com/zeevosec) or follow me on [Instagram](instagram.com/zeevosec) for pictures of food and lizards. I also am around on Discord _zeevo#0572_.
+_"But how do I interact with you?"_ You might ask -- You can [Tweet at me (I don't bite)](https://twitter.com/zeevosec) or follow me on [Instagram](https://instagram.com/zeevosec) for pictures of food and lizards. I also am around on Discord _zeevo#0572_.
 
 Here's a picture of Kalameet the bearded dragon.
 
