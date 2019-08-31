@@ -2,6 +2,7 @@
 title: 'About'
 layout: page
 path: '/about'
+description: 'I am a Software Engineer making things and breaking things. I also like lizards and rock climbing.'
 ---
 
 Heyo. I'm Shane. Or Zeevo if you met me online _(IGNs am I right?)_. I like to make things using computer code, and I like to break things using the limitations of the human brain. I also like coffee, beer, rock climbing, lizards, and dark themes.

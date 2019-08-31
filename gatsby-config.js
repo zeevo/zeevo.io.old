@@ -160,6 +160,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
+    'gatsby-plugin-favicon',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
