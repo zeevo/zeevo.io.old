@@ -5,7 +5,7 @@ path: '/about'
 description: 'I am a Software Engineer making things and breaking things. I also like lizards and rock climbing.'
 ---
 
-Heyo. I'm Shane. Or Zeevo if you met me online _(IGNs am I right?)_. I like to make things using computer code, and I like to break things using the limitations of the human brain. I also like coffee, beer, rock climbing, lizards, and dark themes.
+Heyo. I'm Shane. I like to make things using computer code, and I like to break things using the limitations of the human brain. I also like coffee, beer, rock climbing, lizards, and dark themes.
 
 ![Rock Climbing](https://scontent-iad3-1.cdninstagram.com/vp/e4d5178d8c9f3db59d5492d81d540401/5E127FC4/t51.2885-15/sh0.08/e35/s750x750/67390580_507221233377188_3964135464389981601_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com)
 
