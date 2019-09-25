@@ -190,3 +190,110 @@ figcaption {
     }
   }
 }
+
+.bg-blue {
+  background-color: rgb(204, 230, 255) !important;
+  text-decoration: none;
+}
+
+.bg-yellow {
+  background-color: rgb(248, 248, 171) !important;
+  text-decoration: none;
+}
+
+.bg-green {
+  background-color: rgb(153, 255, 153) !important;
+  text-decoration: none;
+}
+
+.no-underline {
+  text-decoration: none !important;
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow 0.25s;
+  transition: -webkit-box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+  border-radius: 2px;
+}
+
+.card {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.white-text {
+  color: #fff;
+}
+
+.black-text {
+  color: #333333 !important;
+}
+
+.card .card-title {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.card .card-content .card-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.card .card-content {
+  padding: 24px;
+  border-radius: 0 0 2px 2px;
+}
+
+.card .card-action:last-child {
+  border-radius: 0 0 2px 2px;
+}
+
+.card .card-action {
+  background-color: inherit;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  position: relative;
+  padding: 16px 24px;
+}
+
+.darken-1 {
+  background-color: #546e7a !important;
+}
+
+.purple-1 {
+  background-color: #6f4185 !important;
+}
+
+.card
+  .card-action
+  a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: #fff;
+  margin-right: 24px;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.sepia {
+  background-color: #c8cb77 !important;
+}
+
+.redish {
+  background-color: #7a545b !important;
+}
+
+.purple {
+  background-color: #7a546e !important;
+}
+
+.tealish {
+  background-color: #547a73 !important;
+}
