@@ -5,6 +5,8 @@ import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
 
+import '../assets/css/font-awesome.min.css';
+
 class IndexRoute extends React.Component {
   render() {
     const { title, subtitle } = this.props.data.site.siteMetadata;
