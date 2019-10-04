@@ -17,7 +17,7 @@ _"How do I interact with you?"_
 
 - [Tweet at me @zeevosec.](https://twitter.com/zeevosec)
 - [Follow me on Instagram for pictures of food and lizards.](https://instagram.com/zeevosec)
-- [I am also around on Discord _zeevo#0572_.](https://discordapp.com)
+- [I am also around on Discord at _zeevo#0572_.](https://discordapp.com)
 
 I like to climb rocks.
 
