@@ -5,9 +5,7 @@ import './style/post.scss';
 
 class Post extends React.Component {
   render() {
-    const {
-      title, date, category, description,
-    } = this.props.data.node.frontmatter;
+    const { title, date, category, description } = this.props.data.node.frontmatter;
     const { slug, categorySlug } = this.props.data.node.fields;
     const { timeToRead } = this.props.data.node;
 

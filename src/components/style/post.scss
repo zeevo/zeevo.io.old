@@ -23,7 +23,7 @@
   &__description {
     font-size: $typographic-base-font-size;
     @include line-height(1);
-    @include margin-bottom(0.75);
+    @include margin-bottom(0.1);
   }
   &__meta {
     &-time {

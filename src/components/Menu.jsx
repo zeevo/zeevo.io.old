@@ -14,12 +14,7 @@ class Menu extends React.Component {
           let link;
           if (isExternal(item.path)) {
             link = (
-              <a
-                className="menu__list-item-link"
-                rel="noopener norefferer"
-                target="_blank"
-                href={item.path}
-              >
+              <a className="menu__list-item-link" rel="noopener norefferer" target="_blank" href={item.path}>
                 {item.label}
               </a>
             );
