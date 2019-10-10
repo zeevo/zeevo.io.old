@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import Post from './Post';
 import './style/feed.scss';
 
-const FilterButton = props => (
-  <button onClick={props.onClick} className="post-single__tags-list-item-link filterbtn">
-    {props.tag}
-  </button>
-);
+const FilterButton = props => {
+  const className = 'post-single__tags-list-item-link filterbtn' + (props.first ? ' ml-0' : '');
+  return (
+    <button onClick={props.onClick} className={className}>
+      {props.tag}
+    </button>
+  );
+};
 
 export default class Feed extends Component {
   constructor(props) {
@@ -28,8 +31,8 @@ export default class Feed extends Component {
     return (
       <div className="content__inner">
         <ul className="post-single__tags-list">
-          <li className="post-single__tags-list-item">
-            <FilterButton tag="All" onClick={() => this.setState({ filtered: this.props.posts })} />
+          <li className="post-single__tags-list">
+            <FilterButton tag="All" onClick={() => this.setState({ filtered: this.props.posts })} first />
             {this.state.category.map(category => (
               <FilterButton onClick={() => this.filterByCategory(category)} tag={category} />
             ))}
