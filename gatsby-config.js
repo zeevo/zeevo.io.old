@@ -164,7 +164,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: '' }, // TODO
+      options: { trackingId: 'UA-104714715-3' },
     },
     {
       resolve: 'gatsby-plugin-google-fonts',
