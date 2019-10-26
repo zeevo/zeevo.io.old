@@ -8,11 +8,12 @@ category: 'Web Development'
 tags:
   - 'Web Development'
   - 'AWS'
-description: "Want a better, faster, site with Gatsby? Want to finally get off Wordpress with a sustainable solution? Here's how. With Gatsby!"
+description: "Want a better, faster, site with Gatsby? Want to finally get off Wordpress with a sustainable solution? Here's how - completely end to end."
 ---
 
-So what seems like eons ago I wrote a post on how to deploy a NodeJS app to AWS. I have recently gotten off that setup and with the power of
-[Gatsby](https://www.gatsbyjs.org) we can create a much faster wesbite that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them in to Git!
+So what seems like eons ago I wrote a post on how to deploy a NodeJS app to AWS. I have recently
+gotten off that setup and with the power of [Gatsby](https://www.gatsbyjs.org) we can create a
+much faster wesbite that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them in to Git!
 
 This post will be using the following stack of technologies and services:
 
@@ -24,11 +25,15 @@ This post will be using the following stack of technologies and services:
   - Certificate Manager
 - Namecheap
 
-Thats it! I believe this to be the best setup for small sites, blogs, and general use. It doesn't involve a lot of manual heavy lifting and can get you the most bang for your buck. Onwards!
+Thats it! I believe this to be the best setup for small sites, blogs, and general use.
+It doesn't involve a lot of manual heavy lifting and can get you the most bang for your buck. Onwards!
 
-## Create your Gatsby Site
+## Part 1 -- Create your Gatsby Site
 
-Now I won't be going through how to write your own website (Thats for you to decide!). If you already have a Gatsby site ready to go then skip this part! There are tons of Gatsby tutorials springing up, and a lot of [starters](https://www.gatsbyjs.org/starters/?v=2). Let's just got with a common starter.
+Now I won't be going through how to write your own website (Thats for you to decide!).
+If you already have a Gatsby site ready to go then skip this part! There are tons of
+Gatsby tutorials springing up, and a lot of [starters](https://www.gatsbyjs.org/starters/?v=2).
+Let's just got with a common starter.
 
 ```sh
 npm install -g gatsby-cli
@@ -44,19 +49,32 @@ You should see this!
 
 ![Gastby Starter](./gastby-starter.png)
 
-## Create your S3 Bucket
+## Part 2 -- Create your S3 Bucket
 
 ![Bucket 1](./bucket-1.png)
 
-Log in to your AWS Console and navigate to S3. Press "Create bucket" and type in your domain name. Keep selecting next until it is created.
+Log in to your AWS Console and navigate to S3. Press "Create bucket" and type in your domain name.
+Keep selecting next until it is created.
 
-Select your newly created bucket and go to Properties.
+### Enable static website hosting
 
-In "Block public access
+Select your newly created bucket and go to Properties on the right. Then select "Static website hosting" and enable it with the root as "index.html".
 
-![Bucket 1](./bucket-2.png)
+![static-website-hosting.png](./static-website-hosting.png)
 
-Copy and paste the following for your bucket policy. Changing the bucket name for yours. This will make it a public website.
+### Allow public access
+
+In the "Permissions" tab. Turn off the highest checkbox titled "Block all public access".
+We want people to be able to access
+
+### Set a Bucket policy
+
+Next we need to set a good bucket policy where visitors can read everything from our bucket,
+but not do anything else. This may sound weird to allow everyone access to read our Bucket,
+but this is exactly how websites work. We _want_ web browsers to be able to request files from
+our Bucket. To the right of the Properties tag, select Permissions. Then select "Bucket Policy".
+You can then type or copy and paste the following in the Bucket policy editor. Replace
+where appropriate below with your own bucket name.
 
 ```sh
 {
@@ -73,3 +91,104 @@ Copy and paste the following for your bucket policy. Changing the bucket name fo
     ]
 }
 ```
+
+![Bucket 1](./bucket-2.png)
+
+## Part 3 -- AWS CLI and Deploying to S3
+
+First, install the [AWS CLI](https://aws.amazon.com/cli/) AWS CLI if you have not already done so. If you are on a Mac and have `brew`,
+then you can just run `brew install awscli`.
+
+Next, we need some secrets. In AWS, select the "My Security Credentials" drop down by your name.
+
+![Security Creds](./sec-creds.png)
+
+Select the big blue "Create New Access Key" to create a pair. Store this securely.
+
+Now let's configure our AWS profile on our machine. In a terminal, run...
+
+```sh
+$ aws configure
+```
+
+Follow the instructures and enter in your AWS Access Key ID and AWS Secret Access Key.
+Your region should be the region that your S3 bucket is. Output format JSON.
+
+Back within your Gatsby site, open up a terminal and install `gatsby-plugin-s3`
+
+```sh
+$ npm i gatsby-plugin-s3 --save
+```
+
+Back in your Gatsby site, open up the `gatsby-config.js` file. Add the following entry to your `plugins` array.
+
+```js
+{
+  resolve: 'gatsby-plugin-s3',
+  options: {
+    bucketName: 'YOUR BUCKET NAME',
+  },
+},
+```
+
+Replace where appropriate with your bucket name. In `package.json`, add a deployment script.
+
+```js
+"scripts": {
+   ...
+   "deploy": "gatsby-plugin-s3 deploy"
+}
+```
+
+Now, in a terminal, let's try to deploy our site.
+
+```sh
+$ npm run build && npm run deploy
+```
+
+Navigating to your bucket in your browser should display your site. If you do not know your bucket URL, go back to S3 and click your bucket and go to properties. Then click Static Website Hosting. Your URL should be at the top of the small box that opens (like in Part 1). Remember this URL.
+
+So, success right? You should be able to view your site through HTTP. Next, we need to configure HTTPS with our domain name.
+
+## Part 4 -- DNS and HTTPS
+
+We do not want to have to use a URL like `http://some-bucket-name.s3-website.us-east-2.amazonaws.com/` forever.
+That's just bad branding. Buy your desired domain name off of [Namecheap](https://www.namecheap.com), or some other domain registrar. Personally, I like namecheap. We'll be using three more Amazon services to get this working: Cloudfront, Amazon Certificate Manager, and Route 53.
+
+### Route 53
+
+Navigate to your AWS Console and search for the service named "Route 53". Route 52 allows us to route end users to applications by translating names like www.example.com to IP Addresses or Buckets. It will also allow us to setup HTTPS.
+
+In Route 53, select create hosted zone. Create just a base Hosted Zone for now. The key component here are getting your "Name Servers".
+
+![Route 53](./route53.png)
+
+To the right you will see your nameservers. Now you will have to do little research by yourself now. What we need to do it configure our domain to use these Name Servers as "Custom DNS". In Namecheap, this is very easy to do and there is tons of resources online on how to do it within your Namecheap dashboard. So give it a google.
+
+### Cloudfront
+
+![Cloudfront](./cloudfront.png)
+
+Navigate to the Cloudfront console by searching for it in your AWS Management Console. Choose "Create distribution" and under Web, select Get Started. Now you will be prompted for a variety of settings. Fill these out with the following:
+
+**Origin Domain Name**
+
+- This should be your bucket URL. Aka `http://some-bucket-name.s3-website.us-east-2.amazonaws.com/` for us-east-2.
+  If you do not know your bucket URL see Part 1.
+
+**Origin ID**
+
+- This should be `S3-your-bucket-name`.
+
+**Viewer Protocol Policy**
+
+- Select "Redirect HTTP to HTTPS" or whatever you like for this.
+
+**Alternate Domain Names**
+
+- Type in the URLs for your site. i.e. if your site is example.com, you would type "example.com" and "www.example.com" (seperated by a newline).
+
+**SSL Certificate**
+
+- For this, I prefer importing a certificate with ACM. Selecting "Request of Import a certificate with ACM" will open ACM and ask
+  for your domain names. Like with Alternate Domain Names, add your-domain.com and www.your-domain.com.
