@@ -1,19 +1,20 @@
 ---
 title: Deploying a Gatsby website to AWS S3 with HTTPS
-date: '2019-10-30T16:51:00.000Z'
+date: '2019-12-9T12:00:00.000Z'
 layout: post
-draft: true
-path: '/2019/08/31/deplying-a-gatsby-site-aws-with-https/'
+draft: false
+path: '/2019/12/9/deplying-a-gatsby-site-aws-with-https/'
 category: 'Web Development'
 tags:
   - 'Web Development'
   - 'AWS'
+  - 'Gatsby'
 description: "Want a better, faster, site with Gatsby? Want to finally get off Wordpress with a sustainable solution? Here's how - completely end to end."
 ---
 
 So what seems like eons ago I wrote a post on how to deploy a NodeJS app to AWS. I have recently
 gotten off that setup and with the power of [Gatsby](https://www.gatsbyjs.org) we can create a
-much faster wesbite that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them in to Git!
+much faster wesbite that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them in to Git.
 
 This post will be using the following stack of technologies and services:
 
@@ -25,8 +26,10 @@ This post will be using the following stack of technologies and services:
   - Certificate Manager
 - Namecheap
 
-Thats it! I believe this to be the best setup for small sites, blogs, and general use.
-It doesn't involve a lot of manual heavy lifting and can get you the most bang for your buck. Onwards!
+Thats it. I believe this to be the best setup for small sites, blogs, and general use.
+It doesn't involve a lot of manual heavy lifting and can get you the most bang for your buck.
+This post assumes very little knowledge of both Gatsby and AWS and tries to be a thorough as possible.
+Let me know how it goes on [Twitter](https://twitter.com/zeevosec).
 
 ## Part 1 -- Create your Gatsby Site
 
@@ -163,7 +166,39 @@ In Route 53, select create hosted zone. Create just a base Hosted Zone for now. 
 
 ![Route 53](./route53.png)
 
-To the right you will see your nameservers. Now you will have to do little research by yourself now. What we need to do it configure our domain to use these Name Servers as "Custom DNS". In Namecheap, this is very easy to do and there is tons of resources online on how to do it within your Namecheap dashboard. So give it a google.
+To the right you will see your nameservers. Now you will have to do little research
+by yourself now. What we need to do it configure our domain to use these Name Servers
+as "Custom DNS". In Namecheap, this is very easy to do and there is tons of resources
+online on how to do it within your Namecheap dashboard. So give it a google.
+
+### Certificate Manager
+
+Before we can put our domain name behind https, we will need an SSL certificate.
+Luckily, AWS has a manager for this.
+It's called [Certificate Manager](https://aws.amazon.com/certificate-manager/). Let's make one.
+
+In your AWS Console, search for Certifcate Manager and navigate to it. Select "Request a certificate".
+Select "Request a public certificate", and keep going.
+
+![certificate manager](./certificate.png)
+
+Next, add your domain names. If your domain is "example.com", I would add...
+
+- example.com
+- www.example.com
+
+Keep going and make sure you select **DNS validation**. Now, you will see your CNAMEs you have to do to your DNS record. This is how Amazon knows you are the owner of this certificate.
+
+![dns validation](./dns-validation.png)
+
+Navigate back to Route 53 and both the name and value under type CNAME to your site's hosted zone.
+If you added both "example.com" and "www.example.com". You should have 6 Record Sets: two A records,
+NS record, SOA, and two CNAME records. It can take a few minutes to validate.
+
+### Namecheap or other domain name registrar
+
+If you are using Namecheap or other service, make sure you are using your Route 53 Name servers for
+your domain.
 
 ### Cloudfront
 
@@ -190,5 +225,14 @@ Navigate to the Cloudfront console by searching for it in your AWS Management Co
 
 **SSL Certificate**
 
-- For this, I prefer importing a certificate with ACM. Selecting "Request of Import a certificate with ACM" will open ACM and ask
-  for your domain names. Like with Alternate Domain Names, add your-domain.com and www.your-domain.com.
+- Importing the certificate you made earlier with Certificate Manager.
+
+## Try it out!
+
+Of you deployed your site into your bucket earlier, navigating to your domain name should produce it!
+Try it out.
+
+### Feedback
+
+If anything in this post is not clear, or if there is a better way (with AWS, I'm sure there is),
+let me know on [Twitter](https://twitter.com/zeevosec)!
