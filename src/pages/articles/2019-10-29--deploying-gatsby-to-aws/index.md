@@ -13,8 +13,8 @@ description: "Want a better, faster, site with Gatsby? Want to finally get off W
 ---
 
 So what seems like eons ago I wrote a post on how to deploy a NodeJS app to AWS. I have recently
-gotten off that setup and with the power of [Gatsby](https://www.gatsbyjs.org) we can create a
-much faster wesbite that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them in to Git.
+gotten off that setup and with the power of [Gatsby](https://www.gatsbyjs.org), we can create a
+much faster wesbite that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them into Git.
 
 This post will be using the following stack of technologies and services:
 
@@ -35,8 +35,8 @@ Let me know how it goes on [Twitter](https://twitter.com/zeevosec).
 
 Now I won't be going through how to write your own website (Thats for you to decide!).
 If you already have a Gatsby site ready to go then skip this part! There are tons of
-Gatsby tutorials springing up, and a lot of [starters](https://www.gatsbyjs.org/starters/?v=2).
-Let's just got with a common starter.
+Gatsby tutorials out there, and a lot of [starters](https://www.gatsbyjs.org/starters/?v=2).
+Let's just got with a default starter.
 
 ```sh
 npm install -g gatsby-cli
@@ -99,8 +99,8 @@ where appropriate below with your own bucket name.
 
 ## Part 3 -- AWS CLI and Deploying to S3
 
-First, install the [AWS CLI](https://aws.amazon.com/cli/) AWS CLI if you have not already done so. If you are on a Mac and have `brew`,
-then you can just run `brew install awscli`.
+First, install the [AWS CLI](https://aws.amazon.com/cli/) AWS CLI if you have not already done so.
+If you are on a Mac and have `brew`, then you can just run `brew install awscli`.
 
 Next, we need some secrets. In AWS, select the "My Security Credentials" drop down by your name.
 
@@ -151,22 +151,27 @@ $ npm run build && npm run deploy
 
 Navigating to your bucket in your browser should display your site. If you do not know your bucket URL, go back to S3 and click your bucket and go to properties. Then click Static Website Hosting. Your URL should be at the top of the small box that opens (like in Part 1). Remember this URL.
 
-So, success right? You should be able to view your site through HTTP. Next, we need to configure HTTPS with our domain name.
+So, success right? Next, we need to configure HTTPS with our domain name.
 
 ## Part 4 -- DNS and HTTPS
 
 We do not want to have to use a URL like `http://some-bucket-name.s3-website.us-east-2.amazonaws.com/` forever.
-That's just bad branding. Buy your desired domain name off of [Namecheap](https://www.namecheap.com), or some other domain registrar. Personally, I like namecheap. We'll be using three more Amazon services to get this working: Cloudfront, Amazon Certificate Manager, and Route 53.
+That's just bad branding. Buy your desired domain name off of [Namecheap](https://www.namecheap.com),
+or some other domain registrar. Personally, I like namecheap. We'll be using three more Amazon services
+to get this working: Cloudfront, Certificate Manager, and Route 53.
 
 ### Route 53
 
-Navigate to your AWS Console and search for the service named "Route 53". Route 52 allows us to route end users to applications by translating names like www.example.com to IP Addresses or Buckets. It will also allow us to setup HTTPS.
+Navigate to your AWS Console and search for the service named "Route 53". Route 53 allows us to
+route end users to applications by translating names like www.example.com to IP Addresses or Buckets.
+It will also allow us to setup HTTPS.
 
-In Route 53, select create hosted zone. Create just a base Hosted Zone for now. The key component here are getting your "Name Servers".
+In Route 53, select create hosted zone. Create just a base Hosted Zone for now. The key component here
+is getting your Name Servers.
 
 ![Route 53](./route53.png)
 
-To the right you will see your nameservers. Now you will have to do little research
+To the right you will see your Name Servers. Now you will have to do little research
 by yourself now. What we need to do it configure our domain to use these Name Servers
 as "Custom DNS". In Namecheap, this is very easy to do and there is tons of resources
 online on how to do it within your Namecheap dashboard. So give it a google.
@@ -225,12 +230,18 @@ Navigate to the Cloudfront console by searching for it in your AWS Management Co
 
 **SSL Certificate**
 
-- Importing the certificate you made earlier with Certificate Manager.
+- Import the certificate you made earlier with Certificate Manager.
 
 ## Try it out!
 
 Of you deployed your site into your bucket earlier, navigating to your domain name should produce it!
 Try it out.
+
+### Common issues
+
+- Make sure your domain name registrar is using Route 53's Name Servers
+- Update Route 53 with Certificate Manager's CNAMEs
+- Double check your bucket policy
 
 ### Feedback
 
