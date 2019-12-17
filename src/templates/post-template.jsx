@@ -21,7 +21,7 @@ class PostTemplate extends React.Component {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@zeevosec" />
             <meta name="twitter:creator" content="@zeevosec" />
-            <meta name="twitter:title" content={title} />
+            <meta name="twitter:title" content={postTitle} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={banner} />
           </Helmet>
