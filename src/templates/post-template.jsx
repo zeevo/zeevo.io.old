@@ -1,8 +1,9 @@
-import React from 'react';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import PostTemplateDetails from '../components/PostTemplateDetails';
+import React from 'react';
+import banner from '../assets/images/banner.jpeg';
+import { graphql } from 'gatsby';
 
 class PostTemplate extends React.Component {
   render() {
@@ -17,6 +18,12 @@ class PostTemplate extends React.Component {
           <Helmet>
             <title>{`${postTitle} - ${title}`}</title>
             <meta name="description" content={description} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@zeevosec" />
+            <meta name="twitter:creator" content="@zeevosec" />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
+            <meta name="twitter:image" content={banner} />
           </Helmet>
           <PostTemplateDetails {...this.props} />
         </div>
