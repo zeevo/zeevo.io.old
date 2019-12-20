@@ -234,7 +234,7 @@ Navigate to the Cloudfront console by searching for it in your AWS Management Co
 
 ## Try it out!
 
-Of you deployed your site into your bucket earlier, navigating to your domain name should produce it!
+If you deployed your site into your bucket earlier, navigating to your domain name should produce it!
 Try it out.
 
 ### Common issues
