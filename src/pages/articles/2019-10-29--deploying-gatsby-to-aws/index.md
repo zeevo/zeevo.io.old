@@ -1,9 +1,9 @@
 ---
 title: Deploying a Gatsby website to AWS S3 with HTTPS
-date: '2019-12-11T12:00:00.000Z'
+date: '2019-12-20T12:00:00.000Z'
 layout: post
 draft: false
-path: '/2019/12/11/deplying-a-gatsby-site-aws-with-https/'
+path: '/2019/12/20/deplying-a-gatsby-site-aws-with-https/'
 category: 'Web Development'
 tags:
   - 'Web Development'
