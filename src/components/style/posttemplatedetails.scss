@@ -84,7 +84,7 @@
           border: 0;
           border-radius: 3px;
           color: lighten($color-base, 20%);
-          line-height: $typographic-base-line-height;
+          line-height: 0.75;
           padding: 8px 16px;
           &:hover,
           &:focus {

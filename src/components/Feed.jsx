@@ -11,7 +11,7 @@ const FilterButton = props => {
   );
 };
 
-export default class Feed extends Component {
+class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,3 +45,5 @@ export default class Feed extends Component {
     );
   }
 }
+
+export default Feed;
