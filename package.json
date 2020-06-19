@@ -23,7 +23,7 @@
     "theme",
     "starter"
   ],
-  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
+  "author": "Shane O'Neill",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",
