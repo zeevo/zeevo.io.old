@@ -14,7 +14,7 @@ description: "Want a better, faster, site with Gatsby? Want to finally get off W
 
 So what seems like eons ago I wrote a post on how to deploy a NodeJS app to AWS. I have recently
 gotten off that setup and with the power of [Gatsby](https://www.gatsbyjs.org), we can create a
-much faster wesbite that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them into Git.
+much faster website that leverages modern technology patterns -- With a much better developer experience too as you can write posts in Markdown and check them into Git.
 
 This post will be using the following stack of technologies and services:
 
