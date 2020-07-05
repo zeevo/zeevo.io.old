@@ -10,7 +10,6 @@ class Menu extends React.Component {
     const menuBlock = (
       <ul className="menu__list">
         {menu.map(item => {
-          console.log(item);
           let link;
           if (isExternal(item.path)) {
             link = (
