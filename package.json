@@ -26,7 +26,6 @@
   "author": "Shane O'Neill",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.5.1",
     "gatsby": "^2.23.6",
     "gatsby-link": "^2.3.2",
     "gatsby-plugin-catch-links": "^2.2.1",
