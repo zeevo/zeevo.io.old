@@ -1,9 +1,9 @@
 import Helmet from 'react-helmet';
+import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import PostTemplateDetails from '../components/PostTemplateDetails';
-import React from 'react';
 import banner from '../assets/images/banner.jpeg';
-import { graphql } from 'gatsby';
 
 class PostTemplate extends React.Component {
   render() {

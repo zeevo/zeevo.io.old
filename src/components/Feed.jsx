@@ -3,9 +3,9 @@ import Post from './Post';
 import './style/feed.scss';
 
 const FilterButton = props => {
-  const className = 'post-single__tags-list-item-link filterbtn' + (props.first ? ' ml-0' : '');
+  const className = `post-single__tags-list-item-link filterbtn${props.first ? ' ml-0' : ''}`;
   return (
-    <button onClick={props.onClick} className={className}>
+    <button type="button" onClick={props.onClick} className={className}>
       {props.tag}
     </button>
   );
