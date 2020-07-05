@@ -1,54 +1,23 @@
 const lost = require('lost');
 const pxtorem = require('postcss-pxtorem');
-
-const url = 'https://shaneoneill.io';
+const siteConfig = require('./config');
 
 module.exports = {
   siteMetadata: {
-    url,
-    siteUrl: url,
-    title: 'Zeevo | shaneoneill.io',
-    subtitle: 'Hack the planet.',
-    copyright: '© All rights reserved.',
-    profilePic: './src/pages/photo.jpg',
-    menu: [
-      {
-        label: 'Posts',
-        path: '/',
-      },
-      {
-        label: 'About',
-        path: '/about/',
-      },
-      {
-        label: 'Projects',
-        path: '/projects/',
-      },
-      {
-        label: 'Github',
-        path: 'https://github.com/zeevosec',
-      },
-      {
-        label: 'Instagram',
-        path: 'https://instagram.com/zeevosec',
-      },
-      {
-        label: 'Twitter',
-        path: 'https://twitter.com/zeevosec',
-      },
-    ],
-    author: {
-      name: "Shane O'Neill",
-      twitter: 'https://twitter.com/zeevosec',
-      github: 'https://github.com/zeevosec',
-      rss: '/rss.xml',
-    },
+    url: siteConfig.url,
+    siteUrl: siteConfig.url,
+    title: siteConfig.title,
+    subtitle: siteConfig.subtitle,
+    copyright: siteConfig.copyright,
+    profilePic: './content/pages/photo.jpg',
+    menu: siteConfig.menu,
+    author: siteConfig.author,
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/content/`,
         name: 'pages',
       },
     },
@@ -104,7 +73,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'shaneoneill.io RSS Feed',
+            title: siteConfig.title,
           },
         ],
       },
@@ -160,23 +129,32 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
-    'gatsby-plugin-favicon',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: siteConfig.title,
+        short_name: siteConfig.title,
+        start_url: '/',
+        background_color: '#FFF',
+        theme_color: '#F7A046',
+        display: 'standalone',
+        icon: 'static/photo.png',
+      },
+    },
     'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: 'UA-104714715-3' },
-    },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        fonts: ['roboto:400,400i,500,700'],
+        trackingIds: [siteConfig.googleAnalyticsId],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
