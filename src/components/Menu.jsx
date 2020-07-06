@@ -5,11 +5,11 @@ import './style/menu.scss';
 const isExternal = path => path.startsWith('http');
 
 const Menu = props => {
-  const { menu } = props;
+  const { data } = props;
 
   const menuBlock = (
     <ul className="menu__list">
-      {menu.map(item => {
+      {data.map(item => {
         let link;
         if (isExternal(item.path)) {
           link = (

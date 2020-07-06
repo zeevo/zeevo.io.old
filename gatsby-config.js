@@ -38,13 +38,16 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge =>
-                {return { ...edge.node.frontmatter, description: edge.node.frontmatter.description,
+              allMarkdownRemark.edges.map(edge => {
+                return {
+                  ...edge.node.frontmatter,
+                  description: edge.node.frontmatter.description,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.url + edge.node.fields.slug,
                   guid: site.siteMetadata.url + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }]}},
-              ),
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                };
+              }),
             query: `
               {
                 allMarkdownRemark(
@@ -122,7 +125,6 @@ module.exports = {
             },
           },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
         ],
       },
     },
