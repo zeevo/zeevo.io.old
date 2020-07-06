@@ -142,18 +142,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-google-gtag',
-      options: {
-        trackingIds: [siteConfig.googleAnalyticsId],
-        pluginConfig: {
-          head: true,
-        },
-      },
-    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: { trackingId: siteConfig.googleAnalytics },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sass',
