@@ -21,20 +21,25 @@ the web has just gotten better and better. The [JAMstack](https://jamstack.org/)
 is here and it is awesome. JAMstack is a combination of **J**avaScript,
 **A**PIs, and **M**arkdown to build static sites from dynamic content. It has a
 fantastic Developer Experience, increased security, cheap hosting, and extreme
-performance.
+performance. This guide will show you how to setup a production-ready setup, but
+feel free to skip to the sections that are relevant to your specific needs.
 
-Today we will be building one of these application using [Gatsby](https://gatsby.org) and [Wordpress](https://wordpress.org/) + [WPGraphQL](https://www.wpgraphql.com/).
+Today we will be building one of these application using
+[Gatsby](https://gatsby.org) and [Wordpress](https://wordpress.org/) +
+[WPGraphQL](https://www.wpgraphql.com/).
 
-## Full Stack we are going to use
+## Stack
 
 The following stack may seem intimidating, but each piece is very easy to use
 with amazing GUIs. This setup is extremely cheap--Only the Wordpress component
 is not free--And it has the flexibility to be a reliable production deployment.
 
-- **Gatsby App [gatsby-starter-zeevo-wordpress](https://github.com/zeevosec/gatsby-starter-zeevo-wordpress)**
+- **Gatsby App
+  [gatsby-starter-zeevo-wordpress](https://github.com/zeevosec/gatsby-starter-zeevo-wordpress)**
   - A super simple Gatsby app powered by Wordpress. Open source!
 - **AWS Lightsail for Wordpress**
-  - An easy to use Wordpress as a service. Use whatever your favorite Wordpress hosting service is!
+  - An easy to use Wordpress as a service. Use whatever your favorite Wordpress
+    hosting service is!
 - **Netlify for hosting**
   - Netlify is the leader in JAMStack hosting. Free!
 - **Cloudflare for DNS and HTTPS**
@@ -46,6 +51,9 @@ AWS Lightsail is a great service that allows you to spin up Wordpress
 installations in seconds, and removes all of the hassel of server
 administration. You simply checkout your Wordpress image and size, and receive
 an IP of the running server.
+
+If you have not already, create an [AWS account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+Navigate to [AWS Lightsail](https://aws.amazon.com/lightsail/)
 
 ![Lightsail](./lightsail.png)
 
@@ -72,31 +80,61 @@ cat bitnami_credentials
 Login to your Wordpress admin dashboard that is located at
 `<your-lightsail-ip-address>/wp-admin`
 
-You should now have a terminal logged in to your server and the admin dashboard ready to go in your browser.
+You should now have a terminal logged in to your server and the admin dashboard
+ready to go in your browser.
 
 ![Wordpress Admin](./wordpress-admin.png)
 
 ### Install plugins
 
-- wpgraphql
-- Advanced Custom Fields
-- acf for wpgraphql
+We will need to install a few essential plugins, but I will also be installing
+some **luxury** plugins.
 
+#### Essentials
+
+- WPGraphQL
+- WPGraphiQL
+- WPGatsby
+
+Install:
+
+```
+# Inside your Wordpress server
+cd ~/apps/wordpress/htdocs/wp-content/plugins
+git clone https://github.com/wp-graphql/wp-graphql
+git clone https://github.com/wp-graphql/wp-graphiql
+git clone https://github.com/gatsbyjs/wp-gatsby
+```
+
+#### If you need them
+
+Next, you can totally consider also installing the following plugins for more
+features
+
+- Advanced Custom Fields
+- ACF For WPGraphQL
 - Custom Post Types
-  - https://docs.wpgraphql.com/getting-started/custom-post-types/
-    - Custom Post Types GraphQL
-      - https://github.com/wp-graphql/wp-graphql-custom-post-type-ui
+- Custom Post Types GraphQL
+
+Installing all of the above will give you a beefy, production-ready setup.
 
 ### Themes
 
 You can use any theme you want on Wordpress -- But remember, this is not going
 to be reflected to your users. Your users are going to see your Gatsby site, not
 your Wordpress site. Because of this, I recommend using a headless theme, or
-even not giving any thought to themes at all.
+even not giving any thought to your Wordpress theme at all.
 
-You can install a headless them by n
+You can install my headless theme with the following:
 
-- wordpress-headless
+```
+cd ~/apps/wordpress/htdocs/wp-content/themes
+git clone https://github.com/zeevosec/wordpress-headless
+
+# IMPORTANT: Change the href in this theme to reflect where your Gatsby app lives.
+
+vim wordpress-headless/index.php
+```
 
 ## DNS
 
@@ -104,13 +142,17 @@ DNS is the protocol in which browsers and other application can find the actual
 IP Address of the server which we want to visit. Think of it as though you are
 translating people (domains) to phone numbers (ip addresses) in a big phonebook.
 
-I recommend using the following stack of services for DNS/Domain Name-related things:
+I recommend using the following stack of services for DNS/Domain Name-related
+things:
 
 - **Namecheap** to buy your domain name
 - **Cloudflare** for domain record configuration
 - **Netlify** for site hosting
 
-We are going to achieve the DNS setup recommended by Netlify, only using Cloudflare's Nameservers instead of Netlify's. There is nothing wrong with using Netlify's, but Cloudflare is free as well and is extremely powerful and flexible.
+We are going to achieve the DNS setup recommended by Netlify, only using
+Cloudflare's Nameservers instead of Netlify's. There is nothing wrong with using
+Netlify's, but Cloudflare is free as well and is extremely powerful and
+flexible.
 
 Essentially we want to use `www.yourdomain.com` as our **primary** domain and
 `yourdomain.com` seconday. You can think of `www.yourdomain` as where your
@@ -132,12 +174,82 @@ concisely:
 >
 > -- <cite>Jen Kagan</cite>
 
+Steps you will need to do:
+
 1. Purchase your Domain from [Namecheap](https://www.namecheap.com/)
 
 2. Sign up with [Cloudflare](https://www.cloudflare.com/)
 
 3. Sign up with [Netlify](https://link)
 
-## Setup CloudFlare for easy DNS routing
+With your accounts setup, you are ready to move on.
 
-### Subdomain to netlify
+## Setup Cloudflare for easy DNS routing
+
+Cloudflare is the leading DNS platform and I recommend using it over your domain
+registrar's DNS. It is completely free for personal sites. To do this we will
+need to configure Namecheap to use Cloudflare's Name Servers. At the time of
+writing this, they are publicly listed as the following:
+
+- blakely.ns.cloudflare.com
+- seth.ns.cloudflare.com
+
+If you are using Namecheap, log into your dashboard, select "Manage" on your
+domain. In the DNS tab, you should be able to select Custom DNS and supply
+Cloudflare's nameservers.
+
+![Namecheap DNS](./namecheap-dns.png)
+
+Save and you are done.
+
+### Netlify
+
+Netlify is a fantastic company that is changing the web as we know it. I highly
+recommend using them to host your Gatsby site. First, we need a site to begin with:
+
+```
+gatsby new gatsby-starter-default https://github.com/gatsbyjs/gatsby-starter-default
+```
+
+Create a Github repository for your new app and push your starter to it.
+
+```
+cd gatsby-starter-default
+git remote add origin https://github.com/yourusername/yoursite.git
+git add .
+git push -u origin master
+```
+
+Log in to [Netlify](https://www.netlify.com/), and select "New site from Git", then select Github, and then your site. After it builds you should get a Netlify URL.
+
+Netlify offers some DNS solutions, but I suggest keep it simple with just your Netlify URL. Mine looks like this:
+
+![Netlify App](./netlifyapp.png)
+
+### Cloudflare
+
+Log in to [Cloudflare](https://www.cloudflare.com/).
+
+We need to divert traffic to
+their loadbalancers when people navigate to our domain. We can do this by adding two DNS records in Cloudflare:
+
+- **CNAME record**: for "www" to our Netlify URL
+- [**A record**: for our "base" domain to Netlify's load balancer](https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/#configure-an-apex-domain)
+
+Netlify's load balancer is public, and at the time of writing this. It is `104.198.14.52`
+
+While you are here, you should also subdomain your Wordpress IP. My Cloudflare looks like this:
+
+![Cloudflare](./cloudflare-dns.png)
+
+This was we have our wordpress site on `wp.yourdomain.com`, and our website is on `www.yourdomain.com`, aswell as just `yourdomain.com` (no "www")
+
+## Using Gatsby with Wordpress
+
+You can almost think of the relationship between these two technologies as our
+"frontend" being Gatsby and our "backend" being Wordpress. But our frontend will
+be completely static. How is this possible? Well, Gatsby will query our
+Wordpress app for content using GraphQL, and generate a blazing-fast static site
+that we can host cheaply. When content changes in Wordpress (new Post, new
+Comment), we will rebuild our site-- Giving the illusion that we're truly
+dynamic, but reaping all the rewards of static hosting.
