@@ -17,7 +17,13 @@ description: 'Want to use Wordpress as a backend CMS for your Gatsby site? Here 
 
 We have come a long way in terms of how we build websites in the modern age.
 From homebrewed HTML files, to PHP servers, to full JavaScript Web Applications,
-the web has gotten better and better
+the web has just gotten better and better. The [JAMstack](https://jamstack.org/)
+is here and it is awesome. JAMstack is a combination of **J**avaScript,
+**A**PIs, and **M**arkdown to build static sites from dynamic content. It has a
+fantastic Developer Experience, increased security, cheap hosting, and extreme
+performance.
+
+Today we will be building one of these application using [Gatsby](https://gatsby.org) and [Wordpress](https://wordpress.org/) + [WPGraphQL](https://www.wpgraphql.com/).
 
 ## Full Stack we are going to use
 
@@ -66,7 +72,9 @@ cat bitnami_credentials
 Login to your Wordpress admin dashboard that is located at
 `<your-lightsail-ip-address>/wp-admin`
 
-You should now have a terminal logged in to your server and the admin dashboard ready to go in your browser
+You should now have a terminal logged in to your server and the admin dashboard ready to go in your browser.
+
+![Wordpress Admin](./wordpress-admin.png)
 
 ### Install plugins
 
@@ -121,6 +129,8 @@ concisely:
 > for Google’s webmaster tools? Or perhaps you’d like to use the SPF system to
 > help verify your email sending hosts? You’d need to add a TXT record to the
 > apex domain, but you wouldn’t be allowed to because you already have a CNAME.
+>
+> -- <cite>Jen Kagan</cite>
 
 1. Purchase your Domain from [Namecheap](https://www.namecheap.com/)
 
