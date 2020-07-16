@@ -248,23 +248,27 @@ Update your Netlify environment with the location of your Wordpress app. Lots of
 
 ### Cloudflare
 
-Log in to [Cloudflare](https://www.cloudflare.com/).
+Log in to [Cloudflare](https://www.cloudflare.com/), and navigate to the DNS tab
+on your dashboard.
 
-We need to divert traffic to
-their loadbalancers when people navigate to our domain. We can do this by adding two DNS records in Cloudflare:
+We need to divert traffic to their loadbalancers when people navigate to our
+domain. We can do this by adding two DNS records in Cloudflare:
 
 - **CNAME record**: for "www" to our Netlify URL
 - [**A record**: for our "base" domain to Netlify's load balancer](https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/#configure-an-apex-domain)
 
-Netlify's load balancer is public, and at the time of writing this. It is `104.198.14.52`
+Netlify's load balancer is public, and at the time of writing this. It is
+`104.198.14.52`
 
-While you are here, you should also subdomain your Wordpress IP. My Cloudflare looks like this:
+While you are here, you should also subdomain your Wordpress IP. My Cloudflare
+looks like this:
 
 ![Cloudflare](./cloudflare-dns.png)
 
-This was we have our wordpress site on `wp.yourdomain.com`, and our website is on `www.yourdomain.com`, aswell as just `yourdomain.com` (no "www")
+This was we have our wordpress site on `wp.yourdomain.com`, and our website is
+on `www.yourdomain.com`, aswell as just `yourdomain.com` (no "www")
 
-## Using Gatsby with Wordpress
+## Putting it all together
 
 You can almost think of the relationship between these two technologies as our
 "frontend" being Gatsby and our "backend" being Wordpress. But our frontend will
@@ -281,14 +285,14 @@ gatsby new my-site https://github.com/TylerBarnes/using-gatsby-source-wordpress-
 cd my-site
 ```
 
-This project uses `env` files to configure the Wordpress GraphQL endpoint. Let's create them.
+This project uses `env` files to configure the Wordpress GraphQL endpoint. Let's create one for development.
 
 ```
 echo "WPGRAPHQL_URL=https://wp.yourdomain.com/graphql" > .env.development
 ```
 
 Now we can build it and see the content from our Wordpress app being rendered using
-Gatsby and React. GraphQL API requests are being sent at _build time_, and a static site (HTML, CSS, JS) is being generated.
+Gatsby and React. GraphQL API requests are being sent at _build time_, and a static site (HTML, CSS, JS) will be generated.
 
 ```
 gatsby develop
