@@ -1,7 +1,7 @@
 module.exports = {
   url: 'https://shaneoneill.io',
   title: 'Zeevo | shaneoneill.io',
-  subtitle: 'Hack the planet.',
+  subtitle: 'aka Zeevo.',
   copyright: '© All rights reserved.',
   profilePic: './content/pages/photo.png',
   googleAnalytics: 'UA-104714715-3',

@@ -15,8 +15,6 @@ description: 'Want to use Wordpress as a backend CMS for your Gatsby site? Here 
 # This code block gets replaced with the TOC
 ```
 
-# Run this entire post through a spell-checker
-
 ## Introduction
 
 We have come a long way in terms of how we build websites in the modern age.
@@ -188,7 +186,7 @@ Steps you will need to do:
 
 With your accounts setup, you are ready to move on.
 
-## Setup Cloudflare for easy DNS routing
+### Cloudflare
 
 Cloudflare is the leading DNS platform and I recommend using it over your domain
 registrar's DNS. It is completely free for personal sites. To do this we will
@@ -200,7 +198,7 @@ writing this, they are publicly listed as the following:
 
 If you are using Namecheap, log into your dashboard, select "Manage" on your
 domain. In the DNS tab, you should be able to select Custom DNS and supply
-Cloudflare's nameservers.
+Netlify with Cloudflare's nameservers.
 
 ![Namecheap DNS](./namecheap-dns.png)
 
@@ -290,7 +288,7 @@ echo "WPGRAPHQL_URL=https://wp.yourdomain.com/graphql" > .env.development
 ```
 
 Now we can build it and see the content from our Wordpress app being rendered using
-Gatsby and React.
+Gatsby and React. GraphQL API requests are being sent at _build time_, and a static site (HTML, CSS, JS) is being generated.
 
 ```
 gatsby develop
@@ -302,4 +300,4 @@ The stock bitnami Wordpress app comes with a sample page. Try navigating to `htt
 
 ![Starter](./starter.png)
 
-This starter Gatsby app is a template. Build something great with it!
+The starter Gatsby app is a template. Build something great with it!

@@ -89,7 +89,7 @@ module.exports = {
               exclude: 'Table of Contents',
               tight: true,
               fromHeading: 2,
-              toHeading: 2,
+              toHeading: 3,
             },
           },
           {
