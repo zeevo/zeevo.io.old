@@ -2,7 +2,7 @@
 title: How to Use Wordpress to Power Your Gatsby Site
 date: '2020-07-14T12:00:00.000Z'
 layout: post
-draft: true
+draft: false
 path: '/2020/07/14/how-to-use-wordpress-to-power-your-gatsby-site/'
 category: 'Web Development'
 tags:
@@ -226,6 +226,24 @@ Netlify offers some DNS solutions, but I suggest keep it simple with just your N
 
 ![Netlify App](./netlifyapp.png)
 
+#### Netlify Build Hook
+
+Netlify offers the ability to trigger builds through what is called a Build Hook. We can supply Wordpress with our Build Hook, so that it can trigger new builds when content changes.
+
+![Netlify Build Hook](./netlify-build-hook.png)
+
+Create yours and then copy it over to Wordpress. In your Wordpress dashboard,
+under Settings, there should be a GatsbyJS option that brings you to a place
+where you can save your Netlify Build Hook.
+
+![Wordpress Build Hook](./wordpress-build-hook.png)
+
+#### Netlify Environment
+
+![Netlify Environment](./netlify-environment.png)
+
+Update your Netlify environment with the location of your Wordpress app. Lots of starters use the key `WPGRAPHQL_URL` to track their source endpoint.
+
 ### Cloudflare
 
 Log in to [Cloudflare](https://www.cloudflare.com/).
@@ -251,5 +269,33 @@ You can almost think of the relationship between these two technologies as our
 be completely static. How is this possible? Well, Gatsby will query our
 Wordpress app for content using GraphQL, and generate a blazing-fast static site
 that we can host cheaply. When content changes in Wordpress (new Post, new
-Comment), we will rebuild our site-- Giving the illusion that we're truly
+Comment), we will simply rebuild our site-- Giving the illusion that we're truly
 dynamic, but reaping all the rewards of static hosting.
+
+Let's use a Gatsby starter.
+
+```
+gatsby new my-site https://github.com/TylerBarnes/using-gatsby-source-wordpress-experimental
+cd my-site
+```
+
+This project uses `env` files to configure the Wordpress GraphQL endpoint. Let's create them.
+
+```
+echo "WPGRAPHQL_URL=https://wp.yourdomain.com/graphql" > .env.development
+```
+
+Now we can build it and see the content from our Wordpress app being rendered using
+Gatsby and React.
+
+```
+gatsby develop
+```
+
+![Building](./building.png)
+
+The stock bitnami Wordpress app comes with a sample page. Try navigating to `http://localhost:8000/sample-page/`
+
+![Starter](./starter.png)
+
+This starter Gatsby app is a template. Build something great with it!
