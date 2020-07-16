@@ -2,7 +2,7 @@
 title: How to Use Wordpress to Power Your Gatsby Site
 date: '2020-07-14T12:00:00.000Z'
 layout: post
-draft: false
+draft: true
 path: '/2020/07/14/how-to-use-wordpress-to-power-your-gatsby-site/'
 category: 'Web Development'
 tags:
