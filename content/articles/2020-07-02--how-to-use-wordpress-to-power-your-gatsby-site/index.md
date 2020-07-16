@@ -11,6 +11,10 @@ tags:
 description: 'Want to use Wordpress as a backend CMS for your Gatsby site? Here is how: The Definitive Guide.'
 ---
 
+```toc
+# This code block gets replaced with the TOC
+```
+
 # Run this entire post through a spell-checker
 
 ## Introduction
