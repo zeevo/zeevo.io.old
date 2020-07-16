@@ -186,7 +186,7 @@ Steps you will need to do:
 
 With your accounts setup, you are ready to move on.
 
-### Cloudflare
+### Namecheap
 
 Cloudflare is the leading DNS platform and I recommend using it over your domain
 registrar's DNS. It is completely free for personal sites. To do this we will
