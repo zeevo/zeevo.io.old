@@ -301,3 +301,5 @@ The stock bitnami Wordpress app comes with a sample page. Try navigating to `htt
 ![Starter](./starter.png)
 
 The starter Gatsby app is a template. Build something great with it!
+
+##### If you have had success with using Wordpress as your CMS for Gatsby, or if you want to improve this article in any way. let me know on [Twitter](https://twitter.com/zeevosec)!
