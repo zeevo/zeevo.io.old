@@ -1,5 +1,5 @@
 module.exports = {
-  url: 'https://shaneoneill.io',
+  url: 'https://wwww.shaneoneill.io',
   title: 'Zeevo | shaneoneill.io',
   subtitle: 'aka Zeevo.',
   copyright: '© All rights reserved.',
