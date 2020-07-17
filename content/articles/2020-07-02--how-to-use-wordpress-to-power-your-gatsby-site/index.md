@@ -1,9 +1,9 @@
 ---
 title: How to Use Wordpress to Power Your Gatsby Site
-date: '2020-07-14T12:00:00.000Z'
+date: '2020-07-17T12:00:00.000Z'
 layout: post
-draft: true
-path: '/2020/07/14/how-to-use-wordpress-to-power-your-gatsby-site/'
+draft: false
+path: '/2020/07/17/how-to-use-wordpress-to-power-your-gatsby-site/'
 category: 'Web Development'
 tags:
   - 'Web Development'
@@ -12,7 +12,7 @@ description: 'Want to use Wordpress as a backend CMS for your Gatsby site? Here 
 ---
 
 We have come a long way in terms of how we build websites in the modern age.
-From homebrewed HTML files, to PHP servers, to full JavaScript Web Applications,
+From coding raw HTML files, to PHP servers, to full JavaScript Web Applications,
 the web has just gotten better and better. The [JAMstack](https://jamstack.org/)
 is here and it is awesome. JAMstack is a combination of **J**avaScript,
 **A**PIs, and **M**arkdown to build static sites from dynamic content. It has a
