@@ -11,12 +11,6 @@ tags:
 description: 'Want to use Wordpress as a backend CMS for your Gatsby site? Here is how: The Definitive Guide.'
 ---
 
-```toc
-# This code block gets replaced with the TOC
-```
-
-## Introduction
-
 We have come a long way in terms of how we build websites in the modern age.
 From homebrewed HTML files, to PHP servers, to full JavaScript Web Applications,
 the web has just gotten better and better. The [JAMstack](https://jamstack.org/)
@@ -29,6 +23,12 @@ feel free to skip to the sections that are relevant to your specific needs.
 Today we will be building one of these application using
 [Gatsby](https://gatsby.org) and [Wordpress](https://wordpress.org/) +
 [WPGraphQL](https://www.wpgraphql.com/).
+
+## Table of Contents
+
+```toc
+# This code block gets replaced with the TOC
+```
 
 ## Stack
 
