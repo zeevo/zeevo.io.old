@@ -47,6 +47,7 @@ export const pageQuery = graphql`
   query TagsQuery {
     site {
       siteMetadata {
+        url
         title
         subtitle
         copyright

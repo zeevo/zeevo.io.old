@@ -13,6 +13,7 @@ class IndexRoute extends React.Component {
     const { title, subtitle, url } = this.props.data.site.siteMetadata;
     const posts = this.props.data.allMarkdownRemark.edges;
 
+    console.log('url', url);
     return (
       <Layout>
         <div>
@@ -44,6 +45,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     site {
       siteMetadata {
+        url
         title
         subtitle
         copyright

@@ -50,6 +50,7 @@ export const pageQuery = graphql`
   query CategoryesQuery {
     site {
       siteMetadata {
+        url
         title
         subtitle
         copyright

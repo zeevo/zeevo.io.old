@@ -31,6 +31,7 @@ export const pageQuery = graphql`
   query NotFoundQuery {
     site {
       siteMetadata {
+        url
         title
         subtitle
         copyright

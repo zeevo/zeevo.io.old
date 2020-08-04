@@ -36,6 +36,7 @@ export const pageQuery = graphql`
   query TagPage($tag: String) {
     site {
       siteMetadata {
+        url
         title
         subtitle
         copyright

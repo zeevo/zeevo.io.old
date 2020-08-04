@@ -39,6 +39,7 @@ export const pageQuery = graphql`
   query PostBySlug($slug: String!) {
     site {
       siteMetadata {
+        url
         title
         subtitle
         copyright
