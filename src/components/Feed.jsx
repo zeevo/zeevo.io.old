@@ -34,7 +34,7 @@ class Feed extends Component {
           <li className="post-single__tags-list">
             <FilterButton tag="All" onClick={() => this.setState({ filtered: this.props.posts })} first />
             {this.state.category.map(category => (
-              <FilterButton onClick={() => this.filterByCategory(category)} tag={category} />
+              <FilterButton onClick={() => this.filterByCategory(category)} tag={category} key={category} />
             ))}
           </li>
         </ul>
