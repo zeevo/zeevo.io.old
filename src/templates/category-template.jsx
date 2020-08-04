@@ -39,6 +39,7 @@ export const pageQuery = graphql`
   query CategoryPage($category: String) {
     site {
       siteMetadata {
+        url
         title
         subtitle
         copyright
