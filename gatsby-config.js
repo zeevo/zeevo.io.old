@@ -159,7 +159,6 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-google-analytics',

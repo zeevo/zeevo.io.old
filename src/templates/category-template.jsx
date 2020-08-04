@@ -4,16 +4,26 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import CategoryTemplateDetails from '../components/CategoryTemplateDetails';
+import banner from '../assets/images/banner.jpeg';
 
 class CategoryTemplate extends React.Component {
   render() {
-    const { title } = this.props.data.site.siteMetadata;
+    const { title, subtitle, url } = this.props.data.site.siteMetadata;
     const { category } = this.props.pageContext;
 
     return (
       <Layout>
         <div>
-          <Helmet title={`${category} - ${title}`} />
+          <Helmet>
+            <title>{`${category} - ${title}`}</title>
+            <meta name="description" content={`All posts in category ${category}`} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@zeevosec" />
+            <meta name="twitter:creator" content="@zeevosec" />
+            <meta name="twitter:title" content={`${category} - ${title}`} />
+            <meta name="twitter:description" content={subtitle} />
+            <meta name="twitter:image" content={url + banner} />
+          </Helmet>
           <Sidebar {...this.props} />
           <CategoryTemplateDetails {...this.props} />
         </div>

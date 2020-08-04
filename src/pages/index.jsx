@@ -4,12 +4,13 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
+import banner from '../assets/images/banner.jpeg';
 
 import '../assets/css/font-awesome.min.css';
 
 class IndexRoute extends React.Component {
   render() {
-    const { title, subtitle } = this.props.data.site.siteMetadata;
+    const { title, subtitle, url } = this.props.data.site.siteMetadata;
     const posts = this.props.data.allMarkdownRemark.edges;
 
     return (
@@ -18,6 +19,12 @@ class IndexRoute extends React.Component {
           <Helmet>
             <title>{title}</title>
             <meta name="description" content={subtitle} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@zeevosec" />
+            <meta name="twitter:creator" content="@zeevosec" />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={subtitle} />
+            <meta name="twitter:image" content={url + banner} />
           </Helmet>
           <div />
           <Sidebar {...this.props} />
