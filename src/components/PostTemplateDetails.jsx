@@ -38,6 +38,8 @@ class PostTemplateDetails extends React.Component {
         <div className="post-single">
           <div className="post-single__inner">
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
+            <span className="post-single__author">By: {author.name}</span>
+            <span className="post-single__author">Date: {moment(post.frontmatter.date).format('D MMM YYYY')}</span>
             <div
               className="post-single__body"
               /* eslint-disable-next-line react/no-danger */
