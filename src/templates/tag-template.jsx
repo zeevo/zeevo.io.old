@@ -4,15 +4,25 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import TagTemplateDetails from '../components/TagTemplateDetails';
+import banner from '../assets/images/banner.jpeg';
 
 const TagTemplate = props => {
-  const { title } = props.data.site.siteMetadata;
+  const { title, url } = props.data.site.siteMetadata;
   const { tag } = props.pageContext;
 
   return (
     <Layout>
       <div>
-        <Helmet title={`All Posts tagged as "${tag}" - ${title}`} />
+        <Helmet>
+          <title>{`${tag} - ${title}`}</title>
+          <meta name="description" content={`All posts tagged as ${tag}`} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@zeevosec" />
+          <meta name="twitter:creator" content="@zeevosec" />
+          <meta name="twitter:title" content={`${tag} - ${title}`} />
+          <meta name="twitter:description" content={`All posts tagged as ${tag}`} />
+          <meta name="twitter:image" content={url + banner} />
+        </Helmet>
         <Sidebar {...props} />
         <TagTemplateDetails {...props} />
       </div>

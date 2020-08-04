@@ -25,6 +25,7 @@ class IndexRoute extends React.Component {
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={subtitle} />
             <meta name="twitter:image" content={url + banner} />
+            <html lang="en" />
           </Helmet>
           <div />
           <Sidebar {...this.props} />

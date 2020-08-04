@@ -8,20 +8,21 @@ import banner from '../assets/images/banner.jpeg';
 
 class CategoryTemplate extends React.Component {
   render() {
-    const { title, subtitle, url } = this.props.data.site.siteMetadata;
+    const { title, url } = this.props.data.site.siteMetadata;
     const { category } = this.props.pageContext;
 
     return (
       <Layout>
         <div>
           <Helmet>
+            <html lang="en" />
             <title>{`${category} - ${title}`}</title>
             <meta name="description" content={`All posts in category ${category}`} />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@zeevosec" />
             <meta name="twitter:creator" content="@zeevosec" />
             <meta name="twitter:title" content={`${category} - ${title}`} />
-            <meta name="twitter:description" content={subtitle} />
+            <meta name="twitter:description" content={`All posts in category ${category}`} />
             <meta name="twitter:image" content={url + banner} />
           </Helmet>
           <Sidebar {...this.props} />
