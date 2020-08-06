@@ -38,8 +38,31 @@ class PostTemplateDetails extends React.Component {
         <div className="post-single">
           <div className="post-single__inner">
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
-            <span className="post-single__author">By: {author.name}</span>
-            <span className="post-single__author">Date: {moment(post.frontmatter.date).format('D MMM YYYY')}</span>
+            <div className="post-single__author" style={{ display: 'flex', alignItems: 'center' }}>
+              <div className="post-single__avatar">
+                <a href={author.twitter}>
+                  <img
+                    style={{ border: '1px solid #FFFF' }}
+                    src="/photo.png"
+                    className="sidebar__author-photo"
+                    width="70"
+                    height="70"
+                    alt={author.name}
+                  />
+                </a>
+              </div>
+              <div style={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column' }}>
+                <div>
+                  By:{' '}
+                  <a href={author.twiter}>
+                    <strong>{author.name}</strong>
+                  </a>
+                </div>
+                <div>
+                  Date: <strong>{moment(post.frontmatter.date).format('D MMM YYYY')}</strong>
+                </div>
+              </div>
+            </div>
             <div
               className="post-single__body"
               /* eslint-disable-next-line react/no-danger */
