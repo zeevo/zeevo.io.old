@@ -200,7 +200,7 @@ writing this, they are publicly listed as the following:
 
 If you are using Namecheap, log into your dashboard, select "Manage" on your
 domain. In the DNS tab, you should be able to select Custom DNS and supply
-Netlify with Cloudflare's nameservers.
+Namecheap with Cloudflare's nameservers.
 
 ![Namecheap DNS](./namecheap-dns.png)
 
