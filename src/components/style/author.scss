@@ -1,0 +1,31 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.author {
+  display: flex;
+  align-items: center;
+  font-size: $typographic-base-font-size;
+  max-width: $layout-post-single-width;
+  margin-left: auto;
+  margin-right: auto;
+  @include margin-bottom(2);
+}
+
+.avatar {
+  flex: 0 1 auto;
+  margin-right: 0.7rem;
+}
+
+.avatar-img {
+  border: 1px solid #eeeeee;
+  display: inline-block;
+  margin-bottom: 0;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+
+.author-information {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
