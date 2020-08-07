@@ -267,7 +267,7 @@ looks like this:
 
 ![Cloudflare](./cloudflare-dns.png)
 
-This was we have our wordpress site on `wp.yourdomain.com`, and our website is
+We have our wordpress site on `wp.yourdomain.com`, and our website is
 on `www.yourdomain.com`, aswell as just `yourdomain.com` (no "www")
 
 ## Putting it all together
