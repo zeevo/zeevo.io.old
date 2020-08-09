@@ -32,7 +32,6 @@ class Sidebar extends React.Component {
         <p className="sidebar__author-subtitle">{subtitle}</p>
       </div>
     );
-    /* eslint-enable jsx-a11y/img-redundant-alt */
 
     return (
       <div className="sidebar">
@@ -40,8 +39,6 @@ class Sidebar extends React.Component {
           <div className="sidebar__author">{authorBlock}</div>
           <div>
             <Menu data={menu} />
-            {/* <Links data={author} /> */}
-            <p className="sidebar__copyright">{copyright}</p>
           </div>
         </div>
       </div>

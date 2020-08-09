@@ -160,9 +160,17 @@ figcaption {
   lost-center: $layout-width;
 }
 
+.footer {
+  lost-center: $layout-width;
+  margin: 1rem;
+}
+
 .content {
   &__inner {
     padding: 25px 20px;
+    @media screen and (max-width: 685px) {
+      padding-top: 10px;
+    }
   }
 }
 

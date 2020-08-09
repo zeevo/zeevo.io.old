@@ -10,10 +10,13 @@ class Layout extends React.Component {
     const { children } = this.props;
 
     return (
-      <div className="layout">
-        <Helmet defaultTitle="zeevo | shaneoneill.io" />
-        {children}
-      </div>
+      <>
+        <div className="layout">
+          <Helmet defaultTitle="zeevo | shaneoneill.io" />
+          {children}
+        </div>
+        <footer className="footer">test</footer>
+      </>
     );
   }
 }
