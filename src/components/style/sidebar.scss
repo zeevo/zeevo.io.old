@@ -9,13 +9,21 @@
   }
   &__author {
     @media screen and (max-width: 685px) {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     &-photo {
       display: inline-block;
       margin-bottom: 0;
       border-radius: 50%;
+      width: 140px;
+      height: 140px;
       background-clip: padding-box;
+      @media screen and (max-width: 685px) {
+        width: 100px;
+        height: 100px;
+      }
     }
     &-title {
       font-size: $typographic-base-font-size * 1.125;
@@ -29,11 +37,18 @@
           color: $color-base;
         }
       }
+      @media screen and (max-width: 685px) {
+        @include margin(0, 0, 0, 0);
+      }
     }
     &-subtitle {
       color: $color-base;
+      font-style: italic;
       @include line-height(1);
       @include margin-bottom(1);
+      @media screen and (max-width: 685px) {
+        @include margin(0, 0, 0, 0);
+      }
     }
   }
   &__copyright {

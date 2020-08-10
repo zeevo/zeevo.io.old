@@ -6,30 +6,22 @@ import './style/sidebar.scss';
 
 class Sidebar extends React.Component {
   render() {
-    const { location } = this.props;
     const { author, subtitle, menu } = this.props.data.site.siteMetadata;
-    const isHomePage = get(location, 'pathname', '/') === '/';
 
     const authorBlock = (
-      <div>
-        <Link to="/">
-          <img src="/photo.png" className="sidebar__author-photo" width="140" height="140" alt={author.name} />
+      <>
+        <Link to="/" style={{}}>
+          <img src="/photo.png" className="sidebar__author-photo" alt={author.name} />
         </Link>
-        {isHomePage ? (
+        <div>
           <h1 className="sidebar__author-title">
             <Link className="sidebar__author-title-link" to="/">
               {author.name}
             </Link>
           </h1>
-        ) : (
-          <h2 className="sidebar__author-title">
-            <Link className="sidebar__author-title-link" to="/">
-              {author.name}
-            </Link>
-          </h2>
-        )}
-        <p className="sidebar__author-subtitle">{subtitle}</p>
-      </div>
+          <p className="sidebar__author-subtitle">{subtitle}</p>
+        </div>
+      </>
     );
 
     return (
