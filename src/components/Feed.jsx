@@ -30,14 +30,6 @@ class Feed extends Component {
   render() {
     return (
       <div className="content__inner">
-        <ul className="post-single__tags-list">
-          <li className="post-single__tags-list">
-            <FilterButton tag="All" onClick={() => this.setState({ filtered: this.props.posts })} first />
-            {this.state.category.map(category => (
-              <FilterButton onClick={() => this.filterByCategory(category)} tag={category} key={category} />
-            ))}
-          </li>
-        </ul>
         {this.state.filtered.map(post => (
           <Post data={post} key={post.node.fields.slug} />
         ))}
