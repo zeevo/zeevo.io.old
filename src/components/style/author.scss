@@ -9,6 +9,10 @@
   margin-left: auto;
   margin-right: auto;
   @include margin-bottom(2);
+
+  @media screen and (max-width: 960px) {
+    @include margin-top(1);
+  }
 }
 
 .avatar {
