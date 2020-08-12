@@ -13,14 +13,13 @@ function Author({ author, date }) {
       </div>
       <div className="author-information">
         <div>
-          By:{' '}
           <a className="author-link" href={author.twitter}>
             <strong>{author.name}</strong>
           </a>
         </div>
         {date ? (
           <div>
-            Date: <strong>{moment(date).format('D MMM YYYY')}</strong>
+            <strong>{moment(date).format('D MMM YYYY')}</strong>
           </div>
         ) : null}
       </div>

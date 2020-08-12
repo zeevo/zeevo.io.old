@@ -10,7 +10,7 @@ import '../assets/css/font-awesome.min.css';
 
 class IndexRoute extends React.Component {
   render() {
-    const { title, subtitle, url } = this.props.data.site.siteMetadata;
+    const { title, subtitle, url, author } = this.props.data.site.siteMetadata;
     const posts = this.props.data.allMarkdownRemark.edges;
 
     return (
@@ -30,7 +30,7 @@ class IndexRoute extends React.Component {
           <div />
           <Sidebar {...this.props} />
           <div className="content">
-            <Feed posts={posts} />
+            <Feed posts={posts} author={author} subtitle={subtitle} />
           </div>
         </div>
       </Layout>
