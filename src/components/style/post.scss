@@ -7,8 +7,8 @@
     @include margin-bottom(0.5);
   }
   &__title {
-    font-size: $typographic-base-font-size * 1.6875;
-    @include line-height(1.5);
+    font-size: $typographic-base-font-size * 1.2;
+    line-height: normal;
     @include margin-top(0.1);
     @include margin-bottom(0.1);
     &-link {
@@ -28,7 +28,7 @@
   }
   &__meta {
     &-time {
-      font-size: $typographic-small-font-size;
+      font-size: $typographic-small-font-size * 0.8;
       color: $color-base;
       font-weight: 500;
       text-transform: uppercase;
