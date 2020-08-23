@@ -9,8 +9,6 @@ description: 'I am a Software Engineer making things and breaking things. I also
 
 ### I currently live in <i class="fa fa-arrow-right"></i> Maryland
 
-### I write software at <i class="fa fa-arrow-right"></i> [Asymmetrik](https://asymmetrik.com)
-
 <br>
 
 _"How do I interact with you?"_
