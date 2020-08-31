@@ -39,7 +39,7 @@ with amazing GUIs. This setup is extremely cheap--Only the Wordpress component
 is not free--And it has the flexibility to be a reliable production deployment.
 
 - **Gatsby App
-  [gatsby-starter-zeevo-wordpress](https://github.com/zeevosec/gatsby-starter-zeevo-wordpress)**
+  [using-gatsby-source-wordpress-experimental](https://github.com/TylerBarnes/using-gatsby-source-wordpress-experimental)**
   - A super simple Gatsby app powered by Wordpress. Open source!
 - **AWS Lightsail for Wordpress**
   - An easy to use Wordpress as a service. Use whatever your favorite Wordpress
