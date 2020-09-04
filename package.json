@@ -57,7 +57,8 @@
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "s": "^1.0.0",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

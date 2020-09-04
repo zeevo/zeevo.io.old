@@ -12,11 +12,8 @@
     @include margin-top(0.1);
     @include margin-bottom(0.1);
     &-link {
-      color: $color-base;
       &:hover,
       &:focus {
-        color: $color-base;
-        border-bottom: 1px solid $color-base;
       }
     }
   }
@@ -29,7 +26,6 @@
   &__meta {
     &-time {
       font-size: $typographic-small-font-size * 0.8;
-      color: $color-base;
       font-weight: 500;
       text-transform: uppercase;
     }
@@ -39,23 +35,18 @@
     &-category {
       &-link {
         font-size: $typographic-small-font-size;
-        color: $color-secondary;
         font-weight: 500;
         text-transform: uppercase;
         &:hover,
         &:focus {
-          color: $color-primary;
         }
       }
     }
   }
   &__readmore {
     font-size: $typographic-base-font-size;
-    color: $color-primary;
     &:hover,
     &:focus {
-      color: $color-primary;
-      border-bottom: 1px solid $color-primary;
     }
   }
 }

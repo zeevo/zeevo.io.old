@@ -35,17 +35,13 @@
 
       &-link {
         font-size: $typographic-base-font-size;
-        color: $typographic-base-font-color;
         font-weight: 400;
         border: 0;
         &:hover,
         &:focus {
-          color: $color-primary;
-          border-bottom: 1px solid $color-primary;
+          border-bottom: 1px solid #000000;
         }
         &--active {
-          color: $color-base;
-          border-bottom: 1px solid $color-base;
         }
       }
     }
