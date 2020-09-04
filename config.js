@@ -1,7 +1,7 @@
 module.exports = {
   url: 'https://www.shaneoneill.io',
   title: 'Zeevo | shaneoneill.io',
-  subtitle: 'aka Zeevo',
+  subtitle: 'also known as Zeevo in some circles.',
   copyright: '© All rights reserved.',
   profilePic: './content/pages/photo.png',
   googleAnalytics: 'UA-104714715-3',
