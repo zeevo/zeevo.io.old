@@ -2,7 +2,7 @@
 
 <div align="center">
     <a href="https://shaneoneill.io">
-        <img src="https://shaneoneill.io/static/photo-35979084eb460cfcffbe0d3fa5d43026.png" width="175">
+        <img src="https://shaneoneill.io/photo.png" width="175">
     </a>
 </div>
 
