@@ -13,27 +13,6 @@ class PostTemplateDetails extends React.Component {
     const post = this.props.data.markdownRemark;
     const tags = post.fields.tagSlugs;
 
-    const homeBlock = (
-      <Link className="post-single__home-button" to="/" sx={{ background: 'primary' }}>
-        All Articles
-      </Link>
-    );
-
-    const tagsBlock = (
-      <div className="post-single__tags">
-        <ul className="post-single__tags-list">
-          {tags &&
-            tags.map((tag, i) => (
-              <li className="post-single__tags-list-item" key={tag}>
-                <Link to={tag} className="post-single__tags-list-item-link">
-                  {post.frontmatter.tags[i]}
-                </Link>
-              </li>
-            ))}
-        </ul>
-      </div>
-    );
-
     return (
       <div>
         <Link
@@ -49,6 +28,11 @@ class PostTemplateDetails extends React.Component {
             <Author author={author} date={post.frontmatter.date} />
             <div
               className="post-single__body"
+              sx={{
+                '& a': {
+                  color: 'primary',
+                },
+              }}
               /* eslint-disable-next-line react/no-danger */
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
@@ -57,7 +41,18 @@ class PostTemplateDetails extends React.Component {
             </div>
           </div>
           <div className="post-single__footer">
-            {tagsBlock}
+            <div className="post-single__tags">
+              <ul className="post-single__tags-list">
+                {tags &&
+                  tags.map((tag, i) => (
+                    <li className="post-single__tags-list-item" key={tag}>
+                      <Link to={tag} className="post-single__tags-list-item-link">
+                        {post.frontmatter.tags[i]}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </div>
             <hr />
             <Author author={author} date={post.frontmatter.date} />
           </div>

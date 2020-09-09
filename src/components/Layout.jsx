@@ -2,6 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import ColorModeToggle from './ColorModeToggle';
+
 import '../assets/scss/init.scss';
 import './style/links.scss';
 import './style/feed.scss';
@@ -24,6 +26,7 @@ function Layout(props) {
     <>
       <div className="layout">
         <Helmet defaultTitle="zeevo | shaneoneill.io" />
+        <ColorModeToggle />
         {children}
       </div>
       <footer className="footer">{site.siteMetadata.copyright}</footer>
