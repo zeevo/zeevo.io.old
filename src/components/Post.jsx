@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+
 import React from 'react';
 import { Link } from 'gatsby';
 import moment from 'moment';
@@ -12,7 +15,7 @@ class Post extends React.Component {
     return (
       <div className="post">
         <h2 className="post__title">
-          <Link className="post__title-link" to={slug}>
+          <Link className="post__title-link" to={slug} sx={{ color: 'text' }}>
             {title}
           </Link>
         </h2>
@@ -22,7 +25,7 @@ class Post extends React.Component {
           </time>
           <span className="post__meta-divider" />
           <span className="post__meta-category" key={categorySlug}>
-            <Link to={categorySlug} className="post__meta-category-link">
+            <Link to={categorySlug} className="post__meta-category-link" sx={{ color: 'primary' }}>
               {category}
             </Link>
           </span>

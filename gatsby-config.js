@@ -201,6 +201,7 @@ module.exports = {
         precision: 8,
       },
     },
+    'gatsby-plugin-theme-ui',
     {
       resolve: 'gatsby-plugin-s3',
       options: {

@@ -1,4 +1,6 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+
 import { Link } from 'gatsby';
 import './style/menu.scss';
 
@@ -13,7 +15,13 @@ const Menu = props => {
         let link;
         if (isExternal(item.path)) {
           link = (
-            <a className="menu__list-item-link" rel="noopener noreferrer" target="_blank" href={item.path}>
+            <a
+              className="menu__list-item-link"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={item.path}
+              sx={{ color: 'text' }}
+            >
               {item.label}
             </a>
           );
@@ -22,7 +30,13 @@ const Menu = props => {
             <Link
               to={item.path}
               className="menu__list-item-link"
-              activeClassName="menu__list-item-link menu__list-item-link--active"
+              activeClassName="active"
+              sx={{
+                color: 'text',
+                '&.active': {
+                  borderBottom: '1px solid',
+                },
+              }}
             >
               {item.label}
             </Link>
