@@ -36,6 +36,10 @@ const Menu = props => {
                 '&.active': {
                   borderBottom: '1px solid',
                 },
+                '&:hover': {
+                  borderBottom: '1px solid',
+                  borderColor: 'text',
+                },
               }}
             >
               {item.label}

@@ -19,6 +19,7 @@ This is my personal site.
 - [ ] Update Projects with latest projects (including this site and how it was built)
 - [ ] Move all the scss to sx styling
 - [ ] Blog post about moving to Theme UI
+  - Gatsby plugin or to not gatsby plugin?
   - Finnicky config in gatsby-config.js -- You have to shadow the gatsby-plugin-theme-ui directory, inline theme seems to not work?
   - Using theme-ui with remarkjs (i.e. & > p)
   - Importing @jsx everywhere

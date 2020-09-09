@@ -37,10 +37,6 @@
         font-size: $typographic-base-font-size;
         font-weight: 400;
         border: 0;
-        &:hover,
-        &:focus {
-          border-bottom: 1px solid #000000;
-        }
       }
     }
   }
