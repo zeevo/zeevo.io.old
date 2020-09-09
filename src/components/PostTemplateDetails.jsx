@@ -18,7 +18,7 @@ class PostTemplateDetails extends React.Component {
         <Link
           className="post-single__home-button"
           to="/"
-          sx={{ color: 'background', backgroundColor: 'primary' }}
+          sx={{ color: 'background', backgroundColor: 'primary', fontWeight: '700' }}
         >
           All Articles
         </Link>
@@ -46,7 +46,13 @@ class PostTemplateDetails extends React.Component {
                 {tags &&
                   tags.map((tag, i) => (
                     <li className="post-single__tags-list-item" key={tag}>
-                      <Link to={tag} className="post-single__tags-list-item-link">
+                      <Link
+                        to={tag}
+                        className="post-single__tags-list-item-link"
+                        sx={{
+                          color: 'primary',
+                        }}
+                      >
                         {post.frontmatter.tags[i]}
                       </Link>
                     </li>

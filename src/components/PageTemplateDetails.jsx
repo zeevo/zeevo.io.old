@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+
 import React from 'react';
 import Sidebar from './Sidebar';
 import './style/pagetemplatedetails.scss';
@@ -15,6 +18,11 @@ class PageTemplateDetails extends React.Component {
               <h1 className="page__title">{page.frontmatter.title}</h1>
               <div
                 className="page__body"
+                sx={{
+                  '& a': {
+                    color: 'primary',
+                  },
+                }}
                 /* eslint-disable-next-line react/no-danger */
                 dangerouslySetInnerHTML={{ __html: page.html }}
               />
