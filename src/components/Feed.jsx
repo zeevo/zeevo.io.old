@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import Post from './Post';
 import './style/feed.scss';
-import Author from './Author';
-import Avatar from './Avatar';
-
-const FilterButton = props => {
-  const className = `post-single__tags-list-item-link filterbtn${props.first ? ' ml-0' : ''}`;
-  return (
-    <button type="button" onClick={props.onClick} className={className}>
-      {props.tag}
-    </button>
-  );
-};
 
 class Feed extends Component {
   constructor(props) {
@@ -30,7 +19,6 @@ class Feed extends Component {
   }
 
   render() {
-    const { author, subtitle } = this.props;
     return (
       <div className="content__inner">
         {this.state.filtered.map(post => (

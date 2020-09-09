@@ -2,7 +2,7 @@
 
 <div align="center">
     <a href="https://shaneoneill.io">
-        <img src="https://shaneoneill.io/static/photo-35979084eb460cfcffbe0d3fa5d43026.png" width="175">
+        <img src="https://shaneoneill.io/photo.png" width="175">
     </a>
 </div>
 
@@ -13,3 +13,14 @@
 </div>
 
 This is my personal site.
+
+## TODO
+
+- [ ] Update Projects with latest projects (including this site and how it was built)
+- [ ] Move all the scss to sx styling
+- [ ] Blog post about moving to Theme UI
+  - Gatsby plugin or to not gatsby plugin?
+  - Finnicky config in gatsby-config.js -- You have to shadow the gatsby-plugin-theme-ui directory, inline theme seems to not work?
+  - Using theme-ui with remarkjs (i.e. & > p)
+  - Importing @jsx everywhere
+- [ ] Add "Next Article", "Previous Article" to the bottom of a post

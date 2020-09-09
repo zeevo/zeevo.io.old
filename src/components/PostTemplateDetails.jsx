@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+
 import React from 'react';
 import { Link } from 'gatsby';
 import moment from 'moment';
@@ -10,38 +13,26 @@ class PostTemplateDetails extends React.Component {
     const post = this.props.data.markdownRemark;
     const tags = post.fields.tagSlugs;
 
-    const homeBlock = (
-      <div>
-        <Link className="post-single__home-button" to="/">
-          All Articles
-        </Link>
-      </div>
-    );
-
-    const tagsBlock = (
-      <div className="post-single__tags">
-        <ul className="post-single__tags-list">
-          {tags &&
-            tags.map((tag, i) => (
-              <li className="post-single__tags-list-item" key={tag}>
-                <Link to={tag} className="post-single__tags-list-item-link">
-                  {post.frontmatter.tags[i]}
-                </Link>
-              </li>
-            ))}
-        </ul>
-      </div>
-    );
-
     return (
       <div>
-        {homeBlock}
+        <Link
+          className="post-single__home-button"
+          to="/"
+          sx={{ color: 'background', backgroundColor: 'primary', fontWeight: '700' }}
+        >
+          All Articles
+        </Link>
         <div className="post-single">
           <div className="post-single__inner">
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
             <Author author={author} date={post.frontmatter.date} />
             <div
               className="post-single__body"
+              sx={{
+                '& a': {
+                  color: 'primary',
+                },
+              }}
               /* eslint-disable-next-line react/no-danger */
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
@@ -50,7 +41,24 @@ class PostTemplateDetails extends React.Component {
             </div>
           </div>
           <div className="post-single__footer">
-            {tagsBlock}
+            <div className="post-single__tags">
+              <ul className="post-single__tags-list">
+                {tags &&
+                  tags.map((tag, i) => (
+                    <li className="post-single__tags-list-item" key={tag}>
+                      <Link
+                        to={tag}
+                        className="post-single__tags-list-item-link"
+                        sx={{
+                          color: 'primary',
+                        }}
+                      >
+                        {post.frontmatter.tags[i]}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </div>
             <hr />
             <Author author={author} date={post.frontmatter.date} />
           </div>

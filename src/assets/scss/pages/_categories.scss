@@ -3,16 +3,14 @@
  */
 
 .categories {
-    &__list {
-        &-item {
-            &-link {
-                color: $color-base;
-                &:hover,
-                &:focus {
-                    color: $color-primary;
-                    border-bottom: 1px solid $color-primary;
-                }
-            }
+  &__list {
+    &-item {
+      &-link {
+        &:hover,
+        &:focus {
+          border-bottom: 1px solid #000000;
         }
+      }
     }
+  }
 }
