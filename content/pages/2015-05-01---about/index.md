@@ -5,11 +5,9 @@ path: '/about'
 description: 'I am a Software Engineer making things and breaking things. I also like lizards and rock climbing.'
 ---
 
-### I am from <i class="fa fa-arrow-right"></i> Delaware
+### I like to build things with computer code
 
-### I currently live in <i class="fa fa-arrow-right"></i> Maryland
-
-### I write software at <i class="fa fa-arrow-right"></i> [Asymmetrik](https://asymmetrik.com)
+### I am originally from <i class="fa fa-arrow-right"></i> Delaware
 
 <br>
 
