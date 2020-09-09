@@ -24,11 +24,6 @@ export default {
     secondary: '#30c',
     muted: '#f6f6f6',
     modes: {
-      // dark: {
-      //   text: '#fff',
-      //   background: '#151a22',
-      //   primary: '#b260e9',
-      // },
       dark: {
         text: '#fff',
         background: '#151a22',
