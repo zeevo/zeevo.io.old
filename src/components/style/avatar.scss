@@ -13,13 +13,14 @@
 }
 
 .avatar-badge-avatar {
-  flex: 0 1 auto;
+  flex: 1 0 auto;
   margin-right: 0.7rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .avatar-badge-img {
   border: 1px solid #eeeeee;
-  display: inline-block;
   margin-bottom: 0;
   border-radius: 50%;
   background-clip: padding-box;
@@ -27,5 +28,6 @@
 
 .avatar-badge-information {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
 }
