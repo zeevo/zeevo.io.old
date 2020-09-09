@@ -28,13 +28,17 @@ function Author({ author, date }) {
       </div>
       <div className="author-information">
         <div>
-          <a className="author-link" href={author.twitter} sx={{ color: 'primary' }}>
-            <strong>{author.name}</strong>
+          <a
+            className="author-link"
+            href={author.twitter}
+            sx={{ color: 'primary', fontWeight: 'heading' }}
+          >
+            {author.name}
           </a>
         </div>
         {date ? (
-          <div>
-            <strong>{moment(date).format('D MMM YYYY')}</strong>
+          <div sx={{ fontWeight: 'heading' }}>
+            Published on {moment(date).format('MMMM DD, YYYY')}
           </div>
         ) : null}
       </div>

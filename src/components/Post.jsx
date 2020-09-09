@@ -15,7 +15,11 @@ class Post extends React.Component {
     return (
       <div className="post">
         <h2 className="post__title">
-          <Link className="post__title-link" to={slug} sx={{ color: 'text' }}>
+          <Link
+            className="post__title-link"
+            to={slug}
+            sx={{ color: 'text', fontWeight: 'heading' }}
+          >
             {title}
           </Link>
         </h2>

@@ -23,3 +23,4 @@ This is my personal site.
   - Finnicky config in gatsby-config.js -- You have to shadow the gatsby-plugin-theme-ui directory, inline theme seems to not work?
   - Using theme-ui with remarkjs (i.e. & > p)
   - Importing @jsx everywhere
+- [ ] Add "Next Article", "Previous Article" to the bottom of a post
