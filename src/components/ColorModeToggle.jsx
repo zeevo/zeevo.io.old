@@ -6,7 +6,7 @@ function ColorModeToggle() {
 
   return (
     <IconButton
-      sx={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px' }}
+      sx={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px', zIndex: 1 }}
       aria-label="Toggle dark mode"
       onClick={() => {
         setColorMode(colorMode === 'default' ? 'dark' : 'default');

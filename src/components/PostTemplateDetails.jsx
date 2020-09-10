@@ -36,13 +36,11 @@ class PostTemplateDetails extends React.Component {
               /* eslint-disable-next-line react/no-danger */
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
-            <div className="post-single__date">
-              <em>Published {moment(post.frontmatter.date).format('D MMM YYYY')}</em>
-            </div>
           </div>
           <div className="post-single__footer">
             <div className="post-single__tags">
               <ul className="post-single__tags-list">
+                Read more:
                 {tags &&
                   tags.map((tag, i) => (
                     <li className="post-single__tags-list-item" key={tag}>
@@ -59,8 +57,28 @@ class PostTemplateDetails extends React.Component {
                   ))}
               </ul>
             </div>
-            <hr />
             <Author author={author} date={post.frontmatter.date} />
+            <Link
+              to="/"
+              sx={{
+                color: 'background',
+                backgroundColor: 'primary',
+                display: 'block',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                maxWidth: '7.5rem',
+                fontSize: '1rem',
+                padding: '0 1rem',
+                height: '35px',
+                lineHeight: '2.1875rem',
+                textAlign: 'center',
+                fontWeight: 'heading',
+                borderRadius: '0.1875rem',
+                marginTop: '1.625rem',
+              }}
+            >
+              Home
+            </Link>
           </div>
         </div>
       </div>
