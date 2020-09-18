@@ -24,3 +24,5 @@ This is my personal site.
   - Using theme-ui with remarkjs (i.e. & > p)
   - Importing @jsx everywhere
 - [ ] Add "Next Article", "Previous Article" to the bottom of a post
+- [ ] Add breadcrumbs Home -> Posts -> Title to the top of posts
+- [ ] Reformat to have the navbar at the top
