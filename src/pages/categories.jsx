@@ -3,7 +3,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
 
 class CategoriesRoute extends React.Component {
   render() {
@@ -14,7 +13,6 @@ class CategoriesRoute extends React.Component {
       <Layout>
         <div>
           <Helmet title={`All Categories - ${title}`} />
-          <Sidebar {...this.props} />
           <div className="content">
             <div className="content__inner">
               <div className="page">
@@ -66,7 +64,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(limit: 2000, filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }) {
+    allMarkdownRemark(
+      limit: 2000
+      filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
+    ) {
       group(field: frontmatter___category) {
         fieldValue
         totalCount

@@ -2,7 +2,6 @@
 import { jsx } from 'theme-ui';
 
 import React from 'react';
-import Sidebar from './Sidebar';
 import './style/pagetemplatedetails.scss';
 
 class PageTemplateDetails extends React.Component {
@@ -11,24 +10,16 @@ class PageTemplateDetails extends React.Component {
 
     return (
       <div>
-        <Sidebar {...this.props} />
-        <div className="content">
-          <div className="content__inner">
-            <div className="page">
-              <h1 className="page__title">{page.frontmatter.title}</h1>
-              <div
-                className="page__body"
-                sx={{
-                  '& a': {
-                    color: 'primary',
-                  },
-                }}
-                /* eslint-disable-next-line react/no-danger */
-                dangerouslySetInnerHTML={{ __html: page.html }}
-              />
-            </div>
-          </div>
-        </div>
+        <h1 className="page__title">{page.frontmatter.title}</h1>
+        <div
+          sx={{
+            '& a': {
+              color: 'primary',
+            },
+          }}
+          /* eslint-disable-next-line react/no-danger */
+          dangerouslySetInnerHTML={{ __html: page.html }}
+        />
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Post from './Post';
-import './style/feed.scss';
 
 class Feed extends Component {
   constructor(props) {
@@ -19,13 +18,7 @@ class Feed extends Component {
   }
 
   render() {
-    return (
-      <div className="content__inner">
-        {this.state.filtered.map(post => (
-          <Post data={post} key={post.node.fields.slug} />
-        ))}
-      </div>
-    );
+    return this.state.filtered.map(post => <Post data={post} key={post.node.fields.slug} />);
   }
 }
 

@@ -18,7 +18,13 @@ class Post extends React.Component {
           <Link
             className="post__title-link"
             to={slug}
-            sx={{ color: 'text', fontWeight: 'heading' }}
+            sx={{
+              color: 'text',
+              fontWeight: 'heading',
+              '&:hover': {
+                color: 'primary',
+              },
+            }}
           >
             {title}
           </Link>

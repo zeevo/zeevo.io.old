@@ -7,7 +7,7 @@ module.exports = {
   googleAnalytics: 'UA-104714715-3',
   menu: [
     {
-      label: 'Posts',
+      label: '@zeevosec',
       path: '/',
     },
     {
