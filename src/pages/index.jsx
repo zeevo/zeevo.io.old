@@ -5,9 +5,7 @@ import Layout from '../components/Layout';
 import Feed from '../components/Feed';
 import banner from '../assets/images/banner.jpeg';
 
-import '../assets/css/font-awesome.min.css';
-
-class IndexRoute extends React.Component {
+class Index extends React.Component {
   render() {
     const { title, subtitle, url, author } = this.props.data.site.siteMetadata;
     const posts = this.props.data.allMarkdownRemark.edges;
@@ -31,7 +29,7 @@ class IndexRoute extends React.Component {
   }
 }
 
-export default IndexRoute;
+export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery {

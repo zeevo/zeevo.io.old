@@ -5,12 +5,10 @@ import { NavLink, IconButton, jsx } from 'theme-ui';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import ColorModeToggle from './ColorModeToggle';
+import Curtain from './Curtain';
 
 import '../assets/scss/init.scss';
-import './style/links.scss';
-import './style/feed.scss';
 import '../assets/fonts/fontello-771c82e0/css/fontello.css';
-import Curtain from './Curtain';
 
 const isExternal = path => path.startsWith('http');
 
