@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
 import CategoryTemplateDetails from '../components/CategoryTemplateDetails';
 import banner from '../assets/images/banner.jpeg';
 
@@ -13,21 +12,18 @@ class CategoryTemplate extends React.Component {
 
     return (
       <Layout>
-        <div>
-          <Helmet>
-            <html lang="en" />
-            <title>{`${category} - ${title}`}</title>
-            <meta name="description" content={`All posts in category ${category}`} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@zeevosec" />
-            <meta name="twitter:creator" content="@zeevosec" />
-            <meta name="twitter:title" content={`${category} - ${title}`} />
-            <meta name="twitter:description" content={`All posts in category ${category}`} />
-            <meta name="twitter:image" content={url + banner} />
-          </Helmet>
-          <Sidebar {...this.props} />
-          <CategoryTemplateDetails {...this.props} />
-        </div>
+        <Helmet>
+          <html lang="en" />
+          <title>{`${category} - ${title}`}</title>
+          <meta name="description" content={`All posts in category ${category}`} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@zeevosec" />
+          <meta name="twitter:creator" content="@zeevosec" />
+          <meta name="twitter:title" content={`${category} - ${title}`} />
+          <meta name="twitter:description" content={`All posts in category ${category}`} />
+          <meta name="twitter:image" content={url + banner} />
+        </Helmet>
+        <CategoryTemplateDetails {...this.props} />
       </Layout>
     );
   }
@@ -57,7 +53,9 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 1000
-      filter: { frontmatter: { category: { eq: $category }, layout: { eq: "post" }, draft: { ne: true } } }
+      filter: {
+        frontmatter: { category: { eq: $category }, layout: { eq: "post" }, draft: { ne: true } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

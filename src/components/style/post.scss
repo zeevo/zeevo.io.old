@@ -11,11 +11,6 @@
     line-height: normal;
     @include margin-top(0.1);
     @include margin-bottom(0.1);
-    &-link {
-      &:hover,
-      &:focus {
-      }
-    }
   }
   &__description {
     font-size: $typographic-base-font-size;

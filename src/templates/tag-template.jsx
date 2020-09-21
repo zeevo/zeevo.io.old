@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
 import TagTemplateDetails from '../components/TagTemplateDetails';
 import banner from '../assets/images/banner.jpeg';
 
@@ -12,20 +11,17 @@ const TagTemplate = props => {
 
   return (
     <Layout>
-      <div>
-        <Helmet>
-          <title>{`${tag} - ${title}`}</title>
-          <meta name="description" content={`All posts tagged as ${tag}`} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@zeevosec" />
-          <meta name="twitter:creator" content="@zeevosec" />
-          <meta name="twitter:title" content={`${tag} - ${title}`} />
-          <meta name="twitter:description" content={`All posts tagged as ${tag}`} />
-          <meta name="twitter:image" content={url + banner} />
-        </Helmet>
-        <Sidebar {...props} />
-        <TagTemplateDetails {...props} />
-      </div>
+      <Helmet>
+        <title>{`${tag} - ${title}`}</title>
+        <meta name="description" content={`All posts tagged as ${tag}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@zeevosec" />
+        <meta name="twitter:creator" content="@zeevosec" />
+        <meta name="twitter:title" content={`${tag} - ${title}`} />
+        <meta name="twitter:description" content={`All posts tagged as ${tag}`} />
+        <meta name="twitter:image" content={url + banner} />
+      </Helmet>
+      <TagTemplateDetails {...props} />
     </Layout>
   );
 };
