@@ -1,8 +1,6 @@
-import React from 'react';
+/** @jsx jsx */
 import { slide as Menu } from 'react-burger-menu';
-import { useThemeUI } from 'theme-ui';
-
-import ColorModeToggle from './ColorModeToggle';
+import { useThemeUI, jsx } from 'theme-ui';
 
 function Curtain({ children, isOpen, onClose }) {
   const { theme } = useThemeUI();
@@ -43,13 +41,11 @@ function Curtain({ children, isOpen, onClose }) {
     bmItemList: {
       color: '#b8b7ad',
       padding: '0.8em',
-    },
-    bmItem: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'space-between',
     },
+    bmItem: {},
     bmOverlay: {
       background: 'rgba(0, 0, 0, 0.3)',
     },

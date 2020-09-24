@@ -1,16 +1,17 @@
 /** @jsx jsx */
 import { useState } from 'react';
 import Helmet from 'react-helmet';
-import { NavLink, IconButton, jsx } from 'theme-ui';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { jsx, Container, Flex } from 'theme-ui';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import ColorModeToggle from './ColorModeToggle';
 import Curtain from './Curtain';
+import CurtainLink from './CurtainLink';
+import MenuButton from './MenuButton';
+import HomeButton from './HomeButton';
 
 import '../assets/scss/init.scss';
 import '../assets/fonts/fontello-771c82e0/css/fontello.css';
-
-const isExternal = path => path.startsWith('http');
 
 function Layout(props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,54 +30,14 @@ function Layout(props) {
     }
   `);
 
-  const menu = site.siteMetadata.menu.map(item => {
-    if (isExternal(item.path)) {
-      return (
-        <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href={item.path}
-          sx={{
-            color: 'text',
-            '@media screen and (max-width: 724px)': {
-              display: 'none',
-            },
-          }}
-        >
-          <NavLink
-            sx={{
-              color: 'text',
-            }}
-          >
-            {item.label}
-          </NavLink>
-        </a>
-      );
-    }
-    return (
-      <Link
-        to={item.path}
-        sx={{
-          '@media screen and (max-width: 724px)': {
-            display: 'none',
-          },
-        }}
-      >
-        <NavLink
-          sx={{
-            color: 'text',
-          }}
-        >
-          {item.label}
-        </NavLink>
-      </Link>
-    );
-  });
+  const menu = site.siteMetadata.menu;
 
   return (
     <div sx={{ mx: 3 }}>
       <Curtain onClose={() => setMobileMenuOpen(false)} isOpen={mobileMenuOpen}>
-        {menu}
+        {menu.map(item => (
+          <CurtainLink label={item.label} href={item.path} />
+        ))}
       </Curtain>
       <div
         sx={{
@@ -91,52 +52,49 @@ function Layout(props) {
         <header
           sx={{
             width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
             variant: 'layout.header',
             py: 2,
           }}
         >
-          <Link to="/">
-            <NavLink
-              sx={{
-                color: 'text',
-              }}
-            >
-              @zeevosec
-            </NavLink>
-          </Link>
-
-          {menu}
-          <ColorModeToggle
+          {/** NavBar */}
+          <nav
             sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              variant: 'nav',
               '@media screen and (max-width: 724px)': {
                 display: 'none',
               },
             }}
-          />
-          <IconButton
-            onClick={() => setMobileMenuOpen(true)}
+          >
+            <HomeButton />
+            {menu.map(item => (
+              <CurtainLink label={item.label} href={item.path} />
+            ))}
+            <ColorModeToggle />
+          </nav>
+
+          {/** NavBar Menu */}
+          <nav
             sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              as: 'nav',
               '@media screen and (min-width: 724px)': {
                 display: 'none',
               },
             }}
           >
-            <svg
-              width="4em"
-              height="4em"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-              />
-            </svg>
-          </IconButton>
+            <Flex sx={{ flex: 1 }}>
+              <HomeButton />
+            </Flex>
+            <Flex sx={{ flex: 1, justifyContent: 'center' }}>
+              <ColorModeToggle />
+            </Flex>
+            <Flex sx={{ flex: 1, justifyContent: 'flex-end' }}>
+              <MenuButton onClick={() => setMobileMenuOpen(true)} />
+            </Flex>
+          </nav>
         </header>
         <main
           sx={{

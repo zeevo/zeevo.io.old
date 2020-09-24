@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, useColorMode, IconButton } from 'theme-ui';
 
-function ColorModeToggle() {
+function ColorModeToggle(props) {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
@@ -10,6 +10,7 @@ function ColorModeToggle() {
       onClick={() => {
         setColorMode(colorMode === 'default' ? 'dark' : 'default');
       }}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
