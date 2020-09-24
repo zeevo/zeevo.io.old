@@ -3,7 +3,7 @@ import { IconButton, jsx } from 'theme-ui';
 
 function MenuButton(props) {
   return (
-    <IconButton {...props}>
+    <IconButton sx={{ cursor: 'pointer' }} {...props}>
       <svg
         width="2em"
         height="2em"

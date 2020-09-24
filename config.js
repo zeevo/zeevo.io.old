@@ -19,12 +19,12 @@ module.exports = {
       path: 'https://github.com/zeevosec',
     },
     {
-      label: 'Instagram',
-      path: 'https://instagram.com/zeevosec',
+      label: '@zeevosec',
+      path: 'https://twitter.com/zeevosec',
     },
     {
-      label: 'Twitter',
-      path: 'https://twitter.com/zeevosec',
+      label: 'Instagram',
+      path: 'https://instagram.com/zeevosec',
     },
   ],
   author: {
