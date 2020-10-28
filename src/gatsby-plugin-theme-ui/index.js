@@ -26,7 +26,7 @@ export default {
     modes: {
       dark: {
         text: '#fff',
-        background: '#151a22',
+        background: '#000',
         primary: '#0cf',
       },
     },
