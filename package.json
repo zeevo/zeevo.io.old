@@ -14,7 +14,7 @@
     "format": "prettier --write './*.js' 'src/**/*.js' 'src/**/*.jsx'",
     "deploy-s3": "gatsby-plugin-s3 deploy -y",
     "deploy": "npm run build && npm run deploy-s3",
-    "prettier": "prettier --check '{,!(node_modules|assets)/**/}*.js*'"
+    "prettier": "prettier --check './*.js' 'src/**/*.js' 'src/**/*.jsx'"
   },
   "repository": "git+https://github.com/zeevosec/shaneoneill.io",
   "keywords": [
