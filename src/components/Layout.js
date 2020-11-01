@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useState } from 'react';
 import Helmet from 'react-helmet';
-import { jsx, Container, Flex } from 'theme-ui';
+import { jsx, Flex } from 'theme-ui';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import ColorModeToggle from './ColorModeToggle';

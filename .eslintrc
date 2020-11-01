@@ -7,7 +7,6 @@
   },
   "rules": {
     "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
-    "arrow-parens": ["error", "as-needed"],
     "comma-dangle": ["error", "always-multiline"],
     "function-paren-newline": "off",
     "no-console": "off",
@@ -19,6 +18,7 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
     "react/destructuring-assignment": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "arrow-parens": "off"
   }
 }
