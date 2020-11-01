@@ -38,7 +38,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge => {
+              allMarkdownRemark.edges.map((edge) => {
                 return {
                   ...edge.node.frontmatter,
                   description: edge.node.frontmatter.description,

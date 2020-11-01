@@ -11,10 +11,10 @@
     "clean": "npm run clean:public",
     "lint": "./node_modules/.bin/eslint --cache --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write './*.js' 'src/**/*.js' 'src/**/*.jsx'",
+    "format": "prettier --write './*.js' 'src/**/*.js'",
     "deploy-s3": "gatsby-plugin-s3 deploy -y",
     "deploy": "npm run build && npm run deploy-s3",
-    "prettier": "prettier --check './*.js' 'src/**/*.js' 'src/**/*.jsx'"
+    "prettier": "prettier --check './*.js' 'src/**/*.js'"
   },
   "repository": "git+https://github.com/zeevosec/shaneoneill.io",
   "keywords": [
@@ -75,6 +75,6 @@
     "gh-pages": "^1.1.0",
     "lost": "^8.2.0",
     "postcss-pxtorem": "^4.0.1",
-    "prettier": "^1.10.2"
+    "prettier": "^2.1.2"
   }
 }

@@ -35,7 +35,7 @@ function Layout(props) {
   return (
     <div sx={{ mx: 3 }}>
       <Curtain onClose={() => setMobileMenuOpen(false)} isOpen={mobileMenuOpen}>
-        {menu.map(item => (
+        {menu.map((item) => (
           <CurtainLink label={item.label} href={item.path} />
         ))}
       </Curtain>
@@ -68,7 +68,7 @@ function Layout(props) {
             }}
           >
             <HomeButton />
-            {menu.map(item => (
+            {menu.map((item) => (
               <CurtainLink label={item.label} href={item.path} />
             ))}
             <ColorModeToggle />

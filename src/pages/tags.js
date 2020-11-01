@@ -13,7 +13,7 @@ function Tags(props) {
       <Helmet title={`All Tags - ${title}`} />
       <h1 className="page__title">Tags</h1>
       <ul className="tags__list">
-        {tags.map(tag => (
+        {tags.map((tag) => (
           <li key={tag.fieldValue}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})

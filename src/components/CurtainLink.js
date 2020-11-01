@@ -2,7 +2,7 @@
 import { NavLink, jsx } from 'theme-ui';
 import { Link } from 'gatsby';
 
-const isExternal = path => path.startsWith('http');
+const isExternal = (path) => path.startsWith('http');
 
 function CurtainLink({ label, href }) {
   if (isExternal(href)) {

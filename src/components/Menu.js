@@ -4,14 +4,14 @@ import { jsx } from 'theme-ui';
 import { Link } from 'gatsby';
 import './style/menu.scss';
 
-const isExternal = path => path.startsWith('http');
+const isExternal = (path) => path.startsWith('http');
 
-const Menu = props => {
+const Menu = (props) => {
   const { data } = props;
 
   const menuBlock = (
     <ul className="menu__list">
-      {data.map(item => {
+      {data.map((item) => {
         let link;
         if (isExternal(item.path)) {
           link = (

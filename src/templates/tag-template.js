@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import TagTemplateDetails from '../components/TagTemplateDetails';
 import banner from '../assets/images/banner.jpeg';
 
-const TagTemplate = props => {
+const TagTemplate = (props) => {
   const { title, url } = props.data.site.siteMetadata;
   const { tag } = props.pageContext;
 
