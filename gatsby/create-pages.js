@@ -6,10 +6,10 @@ const createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('./src/templates/post-template.jsx');
-    const pageTemplate = path.resolve('./src/templates/page-template.jsx');
-    const tagTemplate = path.resolve('./src/templates/tag-template.jsx');
-    const categoryTemplate = path.resolve('./src/templates/category-template.jsx');
+    const postTemplate = path.resolve('./src/templates/post-template.js');
+    const pageTemplate = path.resolve('./src/templates/page-template.js');
+    const tagTemplate = path.resolve('./src/templates/tag-template.js');
+    const categoryTemplate = path.resolve('./src/templates/category-template.js');
 
     graphql(`
       {
@@ -28,12 +28,12 @@ const createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       if (result.errors) {
         console.log(result.errors);
         reject(result.errors);
       } else {
-        _.each(result.data.allMarkdownRemark.edges, edge => {
+        _.each(result.data.allMarkdownRemark.edges, (edge) => {
           if (_.get(edge, 'node.frontmatter.layout') === 'page') {
             createPage({
               path: edge.node.fields.slug,
@@ -53,7 +53,7 @@ const createPages = ({ graphql, actions }) => {
             }
 
             tags = _.uniq(tags);
-            _.each(tags, tag => {
+            _.each(tags, (tag) => {
               const tagPath = `/tags/${_.kebabCase(tag)}/`;
               createPage({
                 path: tagPath,
@@ -68,7 +68,7 @@ const createPages = ({ graphql, actions }) => {
             }
 
             categories = _.uniq(categories);
-            _.each(categories, category => {
+            _.each(categories, (category) => {
               const categoryPath = `/categories/${_.kebabCase(category)}/`;
               createPage({
                 path: categoryPath,

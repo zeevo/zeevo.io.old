@@ -7,7 +7,7 @@ const isExternal = (path) => path.startsWith('http');
 function CurtainLink({ label, href }) {
   if (isExternal(href)) {
     return (
-      <a
+      <NavLink
         rel="noopener noreferrer"
         target="_blank"
         href={href}
@@ -15,25 +15,22 @@ function CurtainLink({ label, href }) {
           color: 'text',
         }}
       >
-        <NavLink
-          sx={{
-            color: 'text',
-          }}
-        >
-          {label}
-        </NavLink>
-      </a>
+        {label}
+      </NavLink>
     );
   }
   return (
-    <Link to={href}>
-      <NavLink
-        sx={{
-          color: 'text',
-        }}
-      >
-        {label}
-      </NavLink>
+    <Link
+      to={href}
+      sx={{
+        color: 'text',
+        fontWeight: 700,
+        '&:hover': {
+          color: 'primary',
+        },
+      }}
+    >
+      {label}
     </Link>
   );
 }
