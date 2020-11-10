@@ -1,5 +1,5 @@
 ---
-title: 'My Projects and Other Ventures'
+title: 'Projects'
 layout: page
 path: '/projects'
 date: '2019-08-31T16:51:00.000Z'
