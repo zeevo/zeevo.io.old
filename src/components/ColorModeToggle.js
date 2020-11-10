@@ -1,14 +1,21 @@
 /** @jsx jsx */
-import { jsx, useColorMode, IconButton } from 'theme-ui';
+import { jsx, useColorMode, useThemeUI, IconButton } from 'theme-ui';
 
-function ColorModeToggle(props) {
+function ColorModeToggle() {
   const [colorMode, setColorMode] = useColorMode();
+  const context = useThemeUI();
+  const { theme } = context;
+  const { modes } = theme.colors;
+  const modeChoices = [...Object.keys(modes), 'default'];
 
   return (
     <IconButton
       aria-label="Toggle dark mode"
       onClick={() => {
-        setColorMode(colorMode === 'default' ? 'dark' : 'default');
+        const nextModeIndex = modeChoices.indexOf(colorMode) + 1;
+        console.log('module', nextModeIndex % modeChoices.length);
+
+        setColorMode(modeChoices[nextModeIndex % modeChoices.length]);
       }}
       sx={{ cursor: 'pointer' }}
     >

@@ -29,6 +29,11 @@ export default {
         background: '#000',
         primary: '#0cf',
       },
+      cyber: {
+        text: '#00ff2b',
+        background: '#000',
+        primary: '#FF00FF',
+      },
     },
   },
   style: {
