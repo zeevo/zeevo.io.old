@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useState } from 'react';
 import Helmet from 'react-helmet';
-import { jsx, Flex } from 'theme-ui';
+import { jsx, Flex, useThemeUI } from 'theme-ui';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import ColorModeToggle from './ColorModeToggle';
@@ -14,6 +14,8 @@ import '../assets/scss/init.scss';
 import '../assets/fonts/fontello-771c82e0/css/fontello.css';
 
 function Layout(props) {
+  const { colorMode } = useThemeUI();
+  console.log(colorMode);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { site } = useStaticQuery(graphql`
@@ -33,7 +35,12 @@ function Layout(props) {
   const menu = site.siteMetadata.menu;
 
   return (
-    <div sx={{ mx: 3 }}>
+    <div
+      sx={{
+        mx: 3,
+        ...(colorMode === 'cyber' && { fontFamily: "'Roboto Mono', monospace !important" }),
+      }}
+    >
       <Curtain onClose={() => setMobileMenuOpen(false)} isOpen={mobileMenuOpen}>
         {menu.map((item) => (
           <CurtainLink label={item.label} href={item.path} />

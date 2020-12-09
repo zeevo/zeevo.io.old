@@ -14,7 +14,7 @@ function HomeButton(props) {
           borderColor: 'text',
           '&:hover': {
             borderColor: 'text',
-            border: '3px solid',
+            border: '1px solid',
           },
           '&:active': {
             borderColor: 'text',
