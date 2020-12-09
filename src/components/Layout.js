@@ -15,7 +15,6 @@ import '../assets/fonts/fontello-771c82e0/css/fontello.css';
 
 function Layout(props) {
   const { colorMode } = useThemeUI();
-  console.log(colorMode);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { site } = useStaticQuery(graphql`
