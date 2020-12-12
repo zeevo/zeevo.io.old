@@ -24,6 +24,15 @@ description: 'Useful Art references for study and practice'
 - [Character Pose - Cross Legged](https://www.pinterest.com/characterdesigh/character-pose-cross-legged/)
 - [Character Pose - Back Poses](https://www.pinterest.com/characterdesigh/character-pose-back-poses/)
 - [Character Pose - Laying Down](https://www.pinterest.com/characterdesigh/character-pose-lay-down/)
+- [Character Pose - Dancing](https://www.pinterest.com/characterdesigh/character-pose-dancing/)
+- [Character Pose - Kissing](https://www.pinterest.com/characterdesigh/character-pose-kissing/)
+- [Character Pose - Flying](https://www.pinterest.com/characterdesigh/creature-pose-flying-cycle/)
+- [Character Pose - Shooting](https://www.pinterest.com/characterdesigh/character-pose-shooting-holding-guns/)
+- [Character Pose - Servers](https://www.pinterest.com/characterdesigh/character-pose-serving/)
+- [Character Pose - Skating](https://www.pinterest.com/characterdesigh/character-pose-skating-surfing/)
+- [Character Pose - Gesture](https://www.pinterest.com/characterdesigh/character-pose-gestures-females/)
+- [Character Pose - Boxing](https://www.pinterest.com/characterdesigh/character-pose-boxing/)
+- [Character Pose - Musicians](https://www.pinterest.com/characterdesigh/character-pose-musicians/)
 
 ## Character Faces
 
