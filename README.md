@@ -26,3 +26,5 @@ This is my personal site.
 - [ ] Add "Next Article", "Previous Article" to the bottom of a post
 - ~~[ ] Add breadcrumbs Home -> Posts -> Title to the top of posts~~
 - [ ] Reformat to have the navbar at the top
+- [ ] Blog post about Setting up a SMART on FHIR launch using Google OpenID Connect
+- [ ] Blog post and project starter about building a FHIR App with Gatsby
