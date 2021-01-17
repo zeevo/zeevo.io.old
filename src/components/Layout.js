@@ -42,7 +42,7 @@ function Layout(props) {
     >
       <Curtain onClose={() => setMobileMenuOpen(false)} isOpen={mobileMenuOpen}>
         {menu.map((item) => (
-          <CurtainLink label={item.label} href={item.path} />
+          <CurtainLink key={`${item.label}${item.path}`} label={item.label} href={item.path} />
         ))}
       </Curtain>
       <div
@@ -75,7 +75,7 @@ function Layout(props) {
           >
             <HomeButton />
             {menu.map((item) => (
-              <CurtainLink label={item.label} href={item.path} />
+              <CurtainLink key={`${item.label}${item.path}`} label={item.label} href={item.path} />
             ))}
             <ColorModeToggle />
           </nav>

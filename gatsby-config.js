@@ -19,6 +19,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-transformer-json',
+      options: {
+        path: `${__dirname}/content/goals`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `

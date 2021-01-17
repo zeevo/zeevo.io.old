@@ -1,0 +1,19 @@
+{
+  "key": "meditate",
+  "label": "Meditate",
+  "description": "Every day",
+  "days": [
+    {
+      "date": "01/14/2021",
+      "status": "Fail"
+    },
+    {
+      "date": "01/15/2021",
+      "status": "Fail"
+    },
+    {
+      "date": "01/16/2021",
+      "status": "Done"
+    }
+  ]
+}
