@@ -5,7 +5,6 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { getDayOfYear, getYear, sub, format, isWithinInterval } from 'date-fns';
 import Layout from '../components/Layout';
-import ClientOnly from '../components/ClientOnly';
 import StatCard from '../components/StatCard';
 import Goal from '../components/Goal';
 import banner from '../assets/images/banner.jpeg';
@@ -32,14 +31,15 @@ const calculate = (days) => {
       let colorDensity = 0;
       // verify that both today and yesterday were tracked to report in the overview
       const today = new Date();
-      const todayFormatted = format(today, 'yyyy-MM-dd');
+      const todayFormatted = format(today, 'MM/dd/yyyy');
       const yesterday = sub(new Date(), {
         days: 1,
       });
       const dayOneWeekAgo = sub(new Date(), {
         days: 7,
       });
-      const yesterdayFormatted = format(yesterday, 'yyyy-MM-dd');
+      const yesterdayFormatted = format(yesterday, 'MM/dd/yyyy');
+      console.log(todayFormatted);
       if (day.date === todayFormatted) trackedToday = true;
       if (day.date === yesterdayFormatted) trackedYesterday = true;
       if (
@@ -85,8 +85,6 @@ function Goals({ data }) {
 
   const habits = data.allHabitsJson.edges.map(({ node }) => node);
 
-  console.log('habits', habits);
-
   const habitsSummaries = habits.map((habit) => {
     return {
       ...habit,
@@ -112,37 +110,36 @@ function Goals({ data }) {
       </Helmet>
       <div>
         <h1 className="page__title">{pageTitle}</h1>
-        <div className="mb-7">
-          <h2>Today's Overview</h2>
-          <div className="">
-            <div className="w-max">
-              <StatCard title="Day of Year" number={dayOfYear} className="sm:p-7 p-6" />
-            </div>
-            <ClientOnly>
-              <ul
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-              >
-                {habitsSummaries.map((goalSummary) => (
-                  <li
-                    sx={{
-                      display: 'flex',
-                    }}
-                  >
-                    {goalSummary.trackedToday ? (
-                      <CheckCircle sx={{ height: '1.5rem' }} />
-                    ) : (
-                      <MinusCircle sx={{ height: '1.5rem' }} />
-                    )}
-                    {goalSummary.label} {!goalSummary.trackedToday && 'not'} reported
-                  </li>
-                ))}
-              </ul>
-            </ClientOnly>
-          </div>
-        </div>
+        <h2 sx={{ marginBottom: '2rem' }}>Today's Overview</h2>
+        <Flex>
+          <Flex
+            sx={{
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+            }}
+          >
+            <h2 sx={{ margin: '0 1rem 0 0' }}>Day of Year</h2>
+            <h6 sx={{ fontSize: '3rem', margin: '1rem' }}>{dayOfYear}</h6>
+          </Flex>
+          <Flex
+            sx={{
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            {habitsSummaries.map((habitSummary) => (
+              <Flex>
+                {habitSummary.trackedToday ? (
+                  <CheckCircle sx={{ height: '1.5rem' }} />
+                ) : (
+                  <MinusCircle sx={{ height: '1.5rem' }} />
+                )}
+                {habitSummary.label} {!habitSummary.trackedToday && 'not'} reported
+              </Flex>
+            ))}
+          </Flex>
+        </Flex>
       </div>
     </Layout>
   );
