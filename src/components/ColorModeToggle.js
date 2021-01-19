@@ -13,8 +13,6 @@ function ColorModeToggle() {
       aria-label="Toggle dark mode"
       onClick={() => {
         const nextModeIndex = modeChoices.indexOf(colorMode) + 1;
-        console.log('module', nextModeIndex % modeChoices.length);
-
         setColorMode(modeChoices[nextModeIndex % modeChoices.length]);
       }}
       sx={{ cursor: 'pointer' }}

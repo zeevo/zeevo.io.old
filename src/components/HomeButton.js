@@ -4,7 +4,7 @@ import { jsx, Image } from 'theme-ui';
 
 function HomeButton(props) {
   return (
-    <Link href="/" {...props}>
+    <Link to="/" {...props}>
       <Image
         sx={{
           width: '2rem',

@@ -1,26 +1,24 @@
-import * as React from 'react';
-import ClientOnly from './ClientOnly';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 
-const StatCard = ({ title, invert = false, addendum, number, ...props }) => {
-  return (
-    <div className={`${props.className} shadow-sm rounded-lg bg-white sm:p-6 p-3`}>
-      <h3 className="font-semibold text-sm text-blueGray-500">{title}</h3>
-      <ClientOnly>
-        {invert && (
-          <p className="font-bold text-3xl text-red-300">
-            {number > 100 ? `100` : number}
-            <span className="text-sm">{title.includes(`%`) && `%`}</span>
-          </p>
-        )}
-        {!invert && (
-          <p className="font-bold text-3xl text-lime-600">
-            {number > 100 ? `100` : number}
-            {addendum && <span className="text-sm">{addendum}</span>}
-          </p>
-        )}
-      </ClientOnly>
+const StatCard = ({ title, invert = false, addendum, number }) => (
+  <div>
+    <h3 sx={{ marginTop: '1rem' }}>{title}</h3>
+    <div>
+      {invert && (
+        <p>
+          {number > 100 ? `100` : number}
+          <span>{title.includes(`%`) && `%`}</span>
+        </p>
+      )}
+      {!invert && (
+        <p>
+          {number > 100 ? `100` : number}
+          {addendum && <span>{addendum}</span>}
+        </p>
+      )}
     </div>
-  );
-};
+  </div>
+);
 
 export default StatCard;

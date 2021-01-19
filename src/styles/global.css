@@ -1,1 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.react-calendar-heatmap .color-empty {
+  fill: #eee;
+}
+
+.react-calendar-heatmap .color-scale-1 {
+  fill: #44a340;
+}
+.react-calendar-heatmap .color-scale-2 {
+  fill: #8cc665;
+}
+.react-calendar-heatmap .color-scale-3 {
+  fill: #44a340;
+}
+.react-calendar-heatmap .color-scale-4 {
+  fill: #1e6823;
+}
+
+.color-empty {
+  fill: #ebecee !important;
+}
+.react-calendar-heatmap-week > rect {
+  rx: 2px;
+}
+.react-calendar-heatmap-week > rect:hover {
+  stroke: #a7b9d6;
+}
+
+.react-calendar-heatmap {
+  width: 720px;
+  font-family: Inter, sans-serif;
+}

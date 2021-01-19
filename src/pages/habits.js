@@ -3,6 +3,7 @@ import React from 'react';
 import { jsx, Flex, useThemeUI } from 'theme-ui';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import ReactTooltip from 'react-tooltip';
 import { getDayOfYear, getYear, sub, format, isWithinInterval } from 'date-fns';
 import Layout from '../components/Layout';
 import StatCard from '../components/StatCard';
@@ -31,15 +32,14 @@ const calculate = (days) => {
       let colorDensity = 0;
       // verify that both today and yesterday were tracked to report in the overview
       const today = new Date();
-      const todayFormatted = format(today, 'MM/dd/yyyy');
+      const todayFormatted = format(today, 'yyyy-MM-dd');
       const yesterday = sub(new Date(), {
         days: 1,
       });
       const dayOneWeekAgo = sub(new Date(), {
         days: 7,
       });
-      const yesterdayFormatted = format(yesterday, 'MM/dd/yyyy');
-      console.log(todayFormatted);
+      const yesterdayFormatted = format(yesterday, 'yyyy-MM-dd');
       if (day.date === todayFormatted) trackedToday = true;
       if (day.date === yesterdayFormatted) trackedYesterday = true;
       if (
@@ -94,7 +94,6 @@ function Goals({ data }) {
 
   const dayOfYear = getDayOfYear(new Date());
 
-  console.log(habitsSummaries);
   return (
     <Layout>
       <Helmet>
@@ -129,7 +128,7 @@ function Goals({ data }) {
             }}
           >
             {habitsSummaries.map((habitSummary) => (
-              <Flex>
+              <Flex key={habitSummary.label}>
                 {habitSummary.trackedToday ? (
                   <CheckCircle sx={{ height: '1.5rem' }} />
                 ) : (
@@ -140,6 +139,20 @@ function Goals({ data }) {
             ))}
           </Flex>
         </Flex>
+
+        {habitsSummaries.map((habit) => (
+          <>
+            <Goal
+              name={habit.label}
+              subtitle={habit.description}
+              dates={habit.dates}
+              key={habit.key}
+              completed={habit.completed}
+              failed={habit.failed}
+              dayOfYear={dayOfYear}
+            />
+          </>
+        ))}
       </div>
     </Layout>
   );

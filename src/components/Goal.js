@@ -1,50 +1,68 @@
-import * as React from "react";
-import CalendarHeatmap from "react-calendar-heatmap";
-import ReactTooltip from "react-tooltip";
-import { getYear } from "date-fns";
+import * as React from 'react';
+import ReactTooltip from 'react-tooltip';
+import { useThemeUI } from 'theme-ui';
+import { ResponsiveCalendar } from '@nivo/calendar';
+import { getYear } from 'date-fns';
 
-const Goal = ({ name, subtitle, dates }) => {
+import StatCard from './StatCard';
+import { Flex } from 'theme-ui';
+
+const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
   React.useEffect(() => {
     ReactTooltip.rebuild();
   }, []);
 
+  const context = useThemeUI();
+  const { theme } = context;
+
+  console.log(theme);
   return (
-    <React.Fragment>
-      <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
-      <p className="mb-4 text-blueGray-600">{subtitle}</p>
-      <div className="max-w-3xl bg-white rounded-lg shadow-sm sm:pt-6 pt-3 sm:pr-8 pr-4 sm:pl-4 pl-2">
-        <p className="ml-2 mb-2 font-semibold text-sm text-blueGray-500">
-          Days Tracked
-        </p>
-        <div className="overflow-scroll">
-          <CalendarHeatmap
-            showWeekdayLabels
-            horizontal={true}
-            weekdayLabels={["S", "M", "T", "W", "Th", "F", "S"]}
-            startDate={new Date(`${getYear(new Date()) - 1}-12-31`)}
-            endDate={new Date(`${getYear(new Date())}-12-31`)}
-            values={dates}
-            className="width-64"
-            gutterSize={1.5}
-            showOutOfRangeDays={true}
-            classForValue={(value) => {
-              if (!value) {
-                return "color-empty";
-              }
-              return `color-scale-${value.count}`;
-            }}
-            tooltipDataAttrs={(value) => {
-              if (!value || !value.date) {
-                return null;
-              }
-              return {
-                "data-tip": `${value.date}`,
-              };
-            }}
-          />
-        </div>
+    <>
+      <h2>{name}</h2>
+      <p>{subtitle}</p>
+      <p>Days Tracked</p>
+      <div style={{ height: '130px' }}>
+        <ResponsiveCalendar
+          data={dates.map(({ date, count }) => {
+            return { day: date, value: count };
+          })}
+          from={new Date(new Date().getFullYear(), 0, 1)}
+          to={new Date(new Date().getFullYear(), 11, 31)}
+          emptyColor="#eeeeee"
+          colors={['#44a340']}
+          margin={{ left: 20 }}
+          yearSpacing={40}
+          monthBorderColor="#ffffff"
+          dayBorderWidth={2}
+          dayBorderColor="#ffffff"
+          theme={{
+            textColor: theme.colors.text,
+          }}
+          legends={[
+            {
+              anchor: 'bottom-right',
+              direction: 'row',
+              translateY: 36,
+              itemCount: 4,
+              itemWidth: 42,
+              itemHeight: 36,
+              itemsSpacing: 14,
+              itemDirection: 'right-to-left',
+            },
+          ]}
+        />
       </div>
-    </React.Fragment>
+      <Flex sx={{ justifyContent: 'space-between' }}>
+        <StatCard title="Done Days" number={completed} />
+        <StatCard title="Failed Days" number={failed} invert={failed !== 0} />
+        <StatCard
+          title="Success %"
+          number={Math.round((completed / dayOfYear) * 100)}
+          addendum="%"
+          invert={Math.round((completed / dayOfYear) * 100) < 80}
+        />
+      </Flex>
+    </>
   );
 };
 
