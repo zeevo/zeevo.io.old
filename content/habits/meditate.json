@@ -1,7 +1,7 @@
 {
   "key": "meditate",
   "label": "Meditate",
-  "description": "Every day",
+  "description": "Practice meditation everyday",
   "days": [
     {
       "date": "2021-01-01",

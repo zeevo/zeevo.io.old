@@ -1,21 +1,16 @@
-import * as React from 'react';
-import ReactTooltip from 'react-tooltip';
-import { useThemeUI } from 'theme-ui';
+/** @jsx jsx */
+/* eslint-disable-next-line */
+import React from 'react';
+import { jsx, useThemeUI, Flex } from 'theme-ui';
 import { ResponsiveCalendar } from '@nivo/calendar';
-import { getYear } from 'date-fns';
+import { Chip } from '@nivo/tooltip';
 
 import StatCard from './StatCard';
-import { Flex } from 'theme-ui';
 
 const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
-  React.useEffect(() => {
-    ReactTooltip.rebuild();
-  }, []);
-
   const context = useThemeUI();
   const { theme } = context;
 
-  console.log(theme);
   return (
     <>
       <h2>{name}</h2>
@@ -24,7 +19,7 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
       <div style={{ height: '130px' }}>
         <ResponsiveCalendar
           data={dates.map(({ date, count }) => {
-            return { day: date, value: count };
+            return { day: date, value: count, message: 'test medsadadsadsadasssage' };
           })}
           from={new Date(new Date().getFullYear(), 0, 1)}
           to={new Date(new Date().getFullYear(), 11, 31)}
@@ -50,6 +45,36 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
               itemDirection: 'right-to-left',
             },
           ]}
+          tooltip={(values) => (
+            <div
+              sx={{
+                background: 'white',
+                color: 'inherit',
+                fontSize: 'inherit',
+                borderRadius: '2px',
+                boxShadow: '0 1px 2px rgba(0, 0, 0, 0.25)',
+                padding: '5px 9px',
+              }}
+            >
+              <div
+                sx={{
+                  whiteSpace: 'pre',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                {<Chip color={values.color} style={{ marginRight: 7 }} />}
+                {values.value !== undefined ? (
+                  <span sx={{ maxWidth: '50px' }}>
+                    {values.day}: <strong>{`${values.value}`}</strong>
+                    {values.data.message ? <> - {values.data.message}</> : null}
+                  </span>
+                ) : (
+                  values.id
+                )}
+              </div>
+            </div>
+          )}
         />
       </div>
       <Flex sx={{ justifyContent: 'space-between' }}>

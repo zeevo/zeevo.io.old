@@ -94,6 +94,8 @@ function Goals({ data }) {
 
   const dayOfYear = getDayOfYear(new Date());
 
+  const todaysOverview = "Today's Overview";
+
   return (
     <Layout>
       <Helmet>
@@ -109,7 +111,7 @@ function Goals({ data }) {
       </Helmet>
       <div>
         <h1 className="page__title">{pageTitle}</h1>
-        <h2 sx={{ marginBottom: '2rem' }}>Today's Overview</h2>
+        <h2 sx={{ marginBottom: '2rem' }}>{todaysOverview}</h2>
         <Flex>
           <Flex
             sx={{
@@ -128,13 +130,15 @@ function Goals({ data }) {
             }}
           >
             {habitsSummaries.map((habitSummary) => (
-              <Flex key={habitSummary.label}>
+              <Flex sx={{ alignItems: 'center' }} key={habitSummary.label}>
                 {habitSummary.trackedToday ? (
-                  <CheckCircle sx={{ height: '1.5rem' }} />
+                  <CheckCircle sx={{ height: '1.5rem', color: '#44a340' }} />
                 ) : (
                   <MinusCircle sx={{ height: '1.5rem' }} />
                 )}
-                {habitSummary.label} {!habitSummary.trackedToday && 'not'} reported
+                <span>
+                  {habitSummary.label} {!habitSummary.trackedToday && 'not'} reported
+                </span>
               </Flex>
             ))}
           </Flex>

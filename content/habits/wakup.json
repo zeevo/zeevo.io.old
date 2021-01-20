@@ -1,7 +1,7 @@
 {
   "key": "wakeup",
   "label": "Wake up",
-  "description": "Every day",
+  "description": "Wake up before 8AM everyday",
   "days": [
     {
       "date": "2021-01-01",
@@ -73,6 +73,10 @@
     },
     {
       "date": "2021-01-18",
+      "status": "Done"
+    },
+    {
+      "date": "2021-01-19",
       "status": "Done"
     }
   ]

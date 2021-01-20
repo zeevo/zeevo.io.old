@@ -29,6 +29,7 @@
   "dependencies": {
     "@nivo/calendar": "^0.67.0",
     "@nivo/core": "^0.67.0",
+    "@nivo/tooltip": "^0.67.0",
     "date-fns": "^2.16.1",
     "gatsby": "^2.27.4",
     "gatsby-link": "^2.6.1",
