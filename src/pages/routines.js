@@ -52,16 +52,12 @@ const calculate = (days) => {
 
       if (day.status === `Done`) {
         completed += 1;
-        colorDensity = 3;
-      } else if (day.status.Status === `Pass`) {
-        colorDensity = 2;
-      } else if (day.status.Status === `Failed`) {
-        failed += 1;
         colorDensity = 1;
-      } else if (day.status.Status === `Not Started`) {
+      } else if (day.status === `Passed`) {
+        colorDensity = 2;
+      } else {
+        failed += 1;
         colorDensity = 0;
-      } else if (day.status.Status === null) {
-        return {};
       }
       return { date: day.date, count: colorDensity };
     });

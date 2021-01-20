@@ -11,6 +11,7 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
   const context = useThemeUI();
   const { theme } = context;
 
+  console.log(dates);
   return (
     <>
       <h2>{name}</h2>
@@ -18,13 +19,13 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
       <p>Days Tracked</p>
       <div style={{ height: '130px' }}>
         <ResponsiveCalendar
-          data={dates.map(({ date, count }) => {
-            return { day: date, value: count, message: 'test medsadadsadsadasssage' };
+          data={dates.map(({ date, count, message }) => {
+            return { day: date, value: count, message };
           })}
           from={new Date(new Date().getFullYear(), 0, 1)}
           to={new Date(new Date().getFullYear(), 11, 31)}
           emptyColor="#eeeeee"
-          colors={['#44a340']}
+          colors={['#FF3232', '#44a340', '#696969']}
           margin={{ left: 20 }}
           yearSpacing={40}
           monthBorderColor="#ffffff"
