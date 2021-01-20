@@ -19,7 +19,7 @@ export default {
   },
   colors: {
     text: '#000',
-    background: '#FAFAF9',
+    background: '#EEEEEE',
     primary: '#07c',
     secondary: '#30c',
     muted: '#f6f6f6',
