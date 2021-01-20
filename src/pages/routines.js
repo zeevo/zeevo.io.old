@@ -1,12 +1,11 @@
 /** @jsx jsx */
+/* eslint-disable-next-line */
 import React from 'react';
-import { jsx, Flex, useThemeUI } from 'theme-ui';
+import { jsx, Flex } from 'theme-ui';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import ReactTooltip from 'react-tooltip';
 import { getDayOfYear, getYear, sub, format, isWithinInterval } from 'date-fns';
 import Layout from '../components/Layout';
-import StatCard from '../components/StatCard';
 import Goal from '../components/Goal';
 import banner from '../assets/images/banner.jpeg';
 
@@ -80,15 +79,15 @@ const calculate = (days) => {
 function Goals({ data }) {
   const { title, url } = data.site.siteMetadata;
 
-  const pageTitle = 'Habit Tracker';
+  const pageTitle = 'Routine Tracker';
   const description = 'Tracking goals to be better.';
 
-  const habits = data.allHabitsJson.edges.map(({ node }) => node);
+  const routines = data.allRoutinesJson.edges.map(({ node }) => node);
 
-  const habitsSummaries = habits.map((habit) => {
+  const routinesSummaries = routines.map((routine) => {
     return {
-      ...habit,
-      ...calculate(habit.days),
+      ...routine,
+      ...calculate(routine.days),
     };
   });
 
@@ -129,30 +128,30 @@ function Goals({ data }) {
               justifyContent: 'center',
             }}
           >
-            {habitsSummaries.map((habitSummary) => (
-              <Flex sx={{ alignItems: 'center' }} key={habitSummary.label}>
-                {habitSummary.trackedToday ? (
+            {routinesSummaries.map((routineSummary) => (
+              <Flex sx={{ alignItems: 'center' }} key={routineSummary.label}>
+                {routineSummary.trackedToday ? (
                   <CheckCircle sx={{ height: '1.5rem', color: '#44a340' }} />
                 ) : (
                   <MinusCircle sx={{ height: '1.5rem' }} />
                 )}
                 <span>
-                  {habitSummary.label} {!habitSummary.trackedToday && 'not'} reported
+                  {routineSummary.label} {!routineSummary.trackedToday && 'not'} reported
                 </span>
               </Flex>
             ))}
           </Flex>
         </Flex>
 
-        {habitsSummaries.map((habit) => (
+        {routinesSummaries.map((routine) => (
           <>
             <Goal
-              name={habit.label}
-              subtitle={habit.description}
-              dates={habit.dates}
-              key={habit.key}
-              completed={habit.completed}
-              failed={habit.failed}
+              name={routine.label}
+              subtitle={routine.description}
+              dates={routine.dates}
+              key={routine.key}
+              completed={routine.completed}
+              failed={routine.failed}
               dayOfYear={dayOfYear}
             />
           </>
@@ -166,7 +165,7 @@ export default Goals;
 
 export const pageQuery = graphql`
   query {
-    allHabitsJson {
+    allRoutinesJson {
       edges {
         node {
           key

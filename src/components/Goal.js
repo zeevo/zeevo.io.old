@@ -65,7 +65,7 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
               >
                 {<Chip color={values.color} style={{ marginRight: 7 }} />}
                 {values.value !== undefined ? (
-                  <span sx={{ maxWidth: '50px' }}>
+                  <span>
                     {values.day}: <strong>{`${values.value}`}</strong>
                     {values.data.message ? <> - {values.data.message}</> : null}
                   </span>
