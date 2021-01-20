@@ -59,7 +59,7 @@ function Layout(props) {
           sx={{
             width: '100%',
             variant: 'layout.header',
-            py: 2,
+            py: 3,
           }}
         >
           {/** NavBar */}
