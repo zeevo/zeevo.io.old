@@ -4,6 +4,7 @@ module.exports = {
   copyright: '© All rights reserved.',
   profilePic: './content/pages/photo.png',
   googleAnalytics: 'UA-104714715-3',
+  subtitle: 'Ramblings, art, and demos.',
   menu: [
     {
       label: 'About',
