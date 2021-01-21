@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
-  "name": "shaneoneill.io",
-  "description": "shaneoneill.io",
+  "name": "zeevo.io",
+  "description": "zeevo.io",
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
@@ -16,7 +16,7 @@
     "prettier": "prettier --check './*.js' 'src/**/*.js'",
     "upgrade-packages": "npx -p npm-check-updates ncu -u"
   },
-  "repository": "git+https://github.com/zeevosec/shaneoneill.io",
+  "repository": "git+https://github.com/zeevosec/zeevo.io",
   "keywords": [
     "gatsby",
     "blog",

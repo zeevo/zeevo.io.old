@@ -54,7 +54,7 @@ function Layout(props) {
           margin: 'auto',
         }}
       >
-        <Helmet defaultTitle="zeevo | shaneoneill.io" />
+        <Helmet defaultTitle="zeevo.io" />
         <header
           sx={{
             width: '100%',

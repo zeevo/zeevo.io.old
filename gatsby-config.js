@@ -172,11 +172,5 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
     },
     'gatsby-plugin-theme-ui',
-    {
-      resolve: 'gatsby-plugin-s3',
-      options: {
-        bucketName: 'shaneoneill.io',
-      },
-    },
   ],
 };

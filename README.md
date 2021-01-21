@@ -1,18 +1,18 @@
-# shaneoneill.io
+# zeevo.io
 
 <div align="center">
-    <a href="https://shaneoneill.io">
-        <img src="https://shaneoneill.io/photo.png" width="175">
+    <a href="https://zeevo.io">
+        <img src="https://zeevo.io/photo.png" width="175">
     </a>
 </div>
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/zeevosec/shaneoneill.io.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)
+[![Build Status](https://travis-ci.org/zeevosec/zeevo.io.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)
 
 </div>
 
-This is my personal site.
+This is my site.
 
 ## TODO
 
