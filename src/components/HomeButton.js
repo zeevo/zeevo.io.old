@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { Link } from 'gatsby';
-import { jsx, Image } from 'theme-ui';
+import { jsx, Image, useThemeUI } from 'theme-ui';
 
 function HomeButton(props) {
+  const { theme } = useThemeUI();
   return (
     <Link to="/" {...props}>
       <Image
@@ -13,8 +14,7 @@ function HomeButton(props) {
           borderRadius: '50%',
           borderColor: 'text',
           '&:hover': {
-            borderColor: 'text',
-            border: '1px solid',
+            border: `1px solid ${theme.colors.primary}`,
           },
           '&:active': {
             borderColor: 'text',
