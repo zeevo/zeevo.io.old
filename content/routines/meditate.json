@@ -8,12 +8,8 @@
       "status": "Done"
     },
     {
-      "date": "2021-01-02",
-      "status": "Fail"
-    },
-    {
       "date": "2021-01-03",
-      "status": "Passed"
+      "status": "Fail"
     }
   ]
 }

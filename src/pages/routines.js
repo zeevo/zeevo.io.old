@@ -62,8 +62,21 @@ const calculate = (days) => {
       return { date: day.date, count: colorDensity };
     });
 
+  const now = new Date();
+  const daysBetween = [];
+  for (let d = new Date(new Date().getFullYear(), 0, 1); d <= now; d.setDate(d.getDate() + 1)) {
+    daysBetween.push({ date: format(new Date(d), 'yyyy-MM-dd'), count: 2 });
+  }
+
+  dates.forEach((date) => {
+    const i = daysBetween.findIndex((d) => d.date === date.date);
+    daysBetween[i] = date;
+  });
+
+  // Need a streak as well
+
   return {
-    dates,
+    dates: daysBetween,
     completed,
     failed,
     trackedToday,

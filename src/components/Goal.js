@@ -7,11 +7,9 @@ import { Chip } from '@nivo/tooltip';
 
 import StatCard from './StatCard';
 
-const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
-  const context = useThemeUI();
-  const { theme } = context;
+const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear /* streak */ }) => {
+  const { theme } = useThemeUI();
 
-  console.log(dates);
   return (
     <>
       <h2>{name}</h2>
@@ -49,7 +47,7 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
           tooltip={(values) => (
             <div
               sx={{
-                background: 'white',
+                background: theme.colors.background,
                 color: 'inherit',
                 fontSize: 'inherit',
                 borderRadius: '2px',
@@ -66,7 +64,7 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear }) => {
               >
                 {<Chip color={values.color} style={{ marginRight: 7 }} />}
                 {values.value !== undefined ? (
-                  <span>
+                  <span sx={{ color: theme.colors.text }}>
                     {values.day}: <strong>{`${values.value}`}</strong>
                     {values.data.message ? <> - {values.data.message}</> : null}
                   </span>
