@@ -24,6 +24,23 @@ function Layout(props) {
 
   const menu = siteMetadata.menu;
 
+  const titleStyles = {
+    fontSize: '18px',
+    fontWeight: 700,
+    color: theme.colors.text,
+    my: 0,
+    lineHeight: 1.65,
+    '&:hover': {
+      color: 'primary',
+    },
+  };
+
+  const titleCard = isHomePage ? (
+    <h1 sx={{ ...titleStyles }}>Zeevo.io</h1>
+  ) : (
+    <h4 sx={titleStyles}>Zeevo.io</h4>
+  );
+
   return (
     <div
       sx={{
@@ -65,47 +82,14 @@ function Layout(props) {
             }}
           >
             <HomeButton />
-            <Link to="/">
-              {isHomePage ? (
-                <h1
-                  sx={{
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    color: theme.colors.text,
-                    my: 0,
-                    lineHeight: 1.65,
-                    '&:hover': {
-                      color: 'primary',
-                    },
-                  }}
-                >
-                  Zeevo.io
-                </h1>
-              ) : (
-                <h4
-                  sx={{
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    color: theme.colors.text,
-                    margin: 0,
-                    lineHeight: 1.65,
-                    '&:hover': {
-                      color: 'primary',
-                    },
-                  }}
-                >
-                  Zeevo.io
-                </h4>
-              )}
-            </Link>
-
+            <Link to="/">{titleCard}</Link>
             {menu.map((item) => (
               <CurtainLink key={`${item.label}${item.path}`} label={item.label} href={item.path} />
             ))}
             <ColorModeToggle />
           </nav>
 
-          {/** NavBar Menu */}
+          {/** Mobile menu */}
           <nav
             sx={{
               display: 'flex',
@@ -119,7 +103,6 @@ function Layout(props) {
             <Flex sx={{ flex: 1 }}>
               <HomeButton />
             </Flex>
-            <Flex sx={{ flex: 1 }}>{isHomePage ? <h1>zeevo.io</h1> : <h4>zeevo.io</h4>}</Flex>
             <Flex sx={{ flex: 1, justifyContent: 'center' }}>
               <ColorModeToggle />
             </Flex>

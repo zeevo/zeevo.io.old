@@ -1,6 +1,6 @@
 module.exports = {
   url: 'https://zeevo.io',
-  title: 'zeevo.io',
+  title: 'Zeevo.io',
   copyright: '© All rights reserved.',
   profilePic: './content/pages/photo.png',
   googleAnalytics: 'UA-104714715-3',

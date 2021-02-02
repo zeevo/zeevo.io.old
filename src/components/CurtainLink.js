@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { NavLink, jsx } from 'theme-ui';
+import { NavLink, jsx, useThemeUI } from 'theme-ui';
 import { Link } from 'gatsby';
 
 const isExternal = (path) => path.startsWith('http');
 
 function CurtainLink({ label, href }) {
+  const { theme } = useThemeUI();
   if (isExternal(href)) {
     return (
       <NavLink
@@ -29,6 +30,7 @@ function CurtainLink({ label, href }) {
           color: 'primary',
         },
       }}
+      activeStyle={{ color: theme.colors.primary }}
     >
       {label}
     </Link>
