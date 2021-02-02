@@ -10,6 +10,7 @@ module.exports = {
     profilePic: './content/pages/photo.jpg',
     menu: siteConfig.menu,
     author: siteConfig.author,
+    projects: siteConfig.projects,
   },
   plugins: [
     {

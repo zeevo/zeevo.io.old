@@ -7,10 +7,10 @@ function HomeButton(props) {
     <Link to="/" {...props}>
       <Image
         sx={{
-          width: '2rem',
-          height: '2rem',
+          width: '3rem',
+          height: '3rem',
           border: '1px solid',
-          borderRadius: '1rem',
+          borderRadius: '50%',
           borderColor: 'text',
           '&:hover': {
             borderColor: 'text',

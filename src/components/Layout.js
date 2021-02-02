@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Helmet from 'react-helmet';
 import { jsx, Flex, useThemeUI } from 'theme-ui';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 import ColorModeToggle from './ColorModeToggle';
 import Curtain from './Curtain';
@@ -10,28 +10,19 @@ import CurtainLink from './CurtainLink';
 import MenuButton from './MenuButton';
 import HomeButton from './HomeButton';
 
+import useSiteMetadata from '../hooks/use-site-metadata';
+
 import '../assets/scss/init.scss';
 import '../assets/fonts/fontello-771c82e0/css/fontello.css';
 
 function Layout(props) {
-  const { colorMode } = useThemeUI();
+  const { isHomePage } = props;
+  const { theme, colorMode } = useThemeUI();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          copyright
-          menu {
-            label
-            path
-          }
-        }
-      }
-    }
-  `);
+  const siteMetadata = useSiteMetadata();
 
-  const menu = site.siteMetadata.menu;
+  const menu = siteMetadata.menu;
 
   return (
     <div
@@ -50,7 +41,7 @@ function Layout(props) {
           display: 'flex',
           flexDirection: 'column',
           minHeight: '100vh',
-          maxWidth: '42rem',
+          maxWidth: '40rem',
           margin: 'auto',
         }}
       >
@@ -74,6 +65,40 @@ function Layout(props) {
             }}
           >
             <HomeButton />
+            <Link to="/">
+              {isHomePage ? (
+                <h1
+                  sx={{
+                    fontSize: '18px',
+                    fontWeight: 700,
+                    color: theme.colors.text,
+                    my: 0,
+                    lineHeight: 1.65,
+                    '&:hover': {
+                      color: 'primary',
+                    },
+                  }}
+                >
+                  Zeevo.io
+                </h1>
+              ) : (
+                <h4
+                  sx={{
+                    fontSize: '18px',
+                    fontWeight: 700,
+                    color: theme.colors.text,
+                    margin: 0,
+                    lineHeight: 1.65,
+                    '&:hover': {
+                      color: 'primary',
+                    },
+                  }}
+                >
+                  Zeevo.io
+                </h4>
+              )}
+            </Link>
+
             {menu.map((item) => (
               <CurtainLink key={`${item.label}${item.path}`} label={item.label} href={item.path} />
             ))}
@@ -94,6 +119,7 @@ function Layout(props) {
             <Flex sx={{ flex: 1 }}>
               <HomeButton />
             </Flex>
+            <Flex sx={{ flex: 1 }}>{isHomePage ? <h1>zeevo.io</h1> : <h4>zeevo.io</h4>}</Flex>
             <Flex sx={{ flex: 1, justifyContent: 'center' }}>
               <ColorModeToggle />
             </Flex>
@@ -122,7 +148,7 @@ function Layout(props) {
             width: '100%',
           }}
         >
-          <footer>{site.siteMetadata.copyright}</footer>
+          <footer>{siteMetadata.copyright}</footer>
         </footer>
       </div>
     </div>

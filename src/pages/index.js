@@ -11,7 +11,7 @@ class Index extends React.Component {
     const posts = this.props.data.allMarkdownRemark.edges;
 
     return (
-      <Layout>
+      <Layout isHomePage>
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={subtitle} />

@@ -22,9 +22,32 @@ module.exports = {
       label: '@zeevosec',
       path: 'https://twitter.com/zeevosec',
     },
+  ],
+  projects: [
     {
-      label: 'Instagram',
-      path: 'https://instagram.com/zeevosec',
+      label: 'Mobilizing Million Hearts',
+      href: 'https://github.com/onc-healthit/mobilizing-million-hearts',
+    },
+    {
+      label: 'Sycra.net',
+      href: 'http://sycra.net/',
+    },
+    {
+      label: 'react-fhirclient',
+      href: 'https://github.com/zeevosec/react-fhirclient',
+    },
+    {
+      label: 'Neuromancer Discord Bot',
+      href:
+        'https://discordapp.com/oauth2/authorize?client_id=393278638809808896&scope=bot&permissions=37219392',
+    },
+    {
+      label: 'Gatsby Wordpress Starter',
+      href: 'https://github.com/zeevosec/gatsby-starter-wordpress-blog',
+    },
+    {
+      label: 'Gatsby Starter Vega',
+      href: 'https://github.com/zeevosec/gatsby-starter-vega',
     },
   ],
   author: {
