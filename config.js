@@ -1,5 +1,5 @@
 module.exports = {
-  url: 'https://www.zeevo.io',
+  url: 'https://zeevo.io',
   title: 'zeevo.io',
   copyright: '© All rights reserved.',
   profilePic: './content/pages/photo.png',
