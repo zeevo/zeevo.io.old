@@ -65,6 +65,6 @@ And now we just run it as a module not a singleton program.
 python -m myapp
 ```
 
-`__main__.py` will auto-magically be executed. This is a perfect place to put a command line interface and handle program arguments!
+`__main__.py` will automatically be executed. This is a perfect place to put a command line interface and handle program arguments!
 
-Good luck and happy hacking!
+Thanks for reading!

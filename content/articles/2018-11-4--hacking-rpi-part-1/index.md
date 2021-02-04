@@ -76,4 +76,4 @@ dv-pi start # Start vulnerable applications
 dv-pi stop # Stop vulnerable applications
 ```
 
-Next time I will show you a beginner’s attack for your new target. Happy hacking!
+Next time I will show you a beginner’s attack for your new target.

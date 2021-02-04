@@ -69,4 +69,4 @@ I like to keep my settings pretty lean, but there are also a few essential flags
 }
 ```
 
-Thanks for reading! And happy hacking!
+Thanks for reading!

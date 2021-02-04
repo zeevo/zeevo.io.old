@@ -44,4 +44,4 @@ We can improve the readability and organization of our mocks using the lambda ke
 
 We want to capture our API responses under test. So we used unittest. However, sometimes our API is dependent on other systems, causing a dependence and a potential to fail intermittently. To solve this issue, we use patch. Patch allows us to usurp the underlying functions, and implement our own test functions. Then, we used the lambda keyword to define our mocks inline for better readability.
 
-Thanks for reading and Happy Hacking!
+Thanks for reading!

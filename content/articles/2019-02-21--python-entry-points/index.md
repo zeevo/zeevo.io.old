@@ -81,7 +81,7 @@ setup(
 )
 ```
 
-console\_scripts, and animals are our entry points (or registries) in the above setup.py. console\_scripts is especially unique because once we install this module, the callable is available to use in our terminal. i.e.:
+console_scripts, and animals are our entry points (or registries) in the above setup.py. console_scripts is especially unique because once we install this module, the callable is available to use in our terminal. i.e.:
 
 ```sh
 $ pip install -e .
@@ -112,7 +112,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Console scripts allows us to is to tap into the `__main__.py`‘s main function by way of the line pkg_resources.iter\_entry\_points(‘animals’). Any object that is registered under ‘animals’ will be here. We load them all into the program. We then use our command line arguments to select the one the user wants, and then call it, and have it talk.
+Console scripts allows us to is to tap into the `__main__.py`‘s main function by way of the line pkg_resources.iter_entry_points(‘animals’). Any object that is registered under ‘animals’ will be here. We load them all into the program. We then use our command line arguments to select the one the user wants, and then call it, and have it talk.
 
 ```python
 animal = animals[input_animal]()
@@ -168,4 +168,4 @@ animals --kind cow
 Moo!
 Woo! We are successfully leveraging the animals engine, but with our Cow class. It’s being loaded dynamically at runtime and the author of animals does not need to make any changes to the engine. It’s a plugin.
 
-Good luck and happy hacking!
+Thanks for reading!
