@@ -73,8 +73,20 @@ const calculate = (days) => {
     daysBetween[i] = date;
   });
 
-  // Need a streak as well
+  let streak = 0;
 
+  const sortedDates = days.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  for (const day of sortedDates) {
+    console.log(day);
+    if (day.status === 'Passed') {
+      streak += 1;
+    } else {
+      break;
+    }
+  }
+
+  // Need a streak as well
   return {
     dates: daysBetween,
     completed,
@@ -82,6 +94,7 @@ const calculate = (days) => {
     trackedToday,
     trackedYesterday,
     trackedThisWeek,
+    streak,
   };
 };
 
@@ -162,6 +175,7 @@ function Goals({ data }) {
               completed={routine.completed}
               failed={routine.failed}
               dayOfYear={dayOfYear}
+              streak={routine.streak}
             />
           </>
         ))}

@@ -7,7 +7,7 @@ import { Chip } from '@nivo/tooltip';
 
 import StatCard from './StatCard';
 
-const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear /* streak */ }) => {
+const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear, streak }) => {
   const { theme } = useThemeUI();
 
   return (
@@ -85,6 +85,7 @@ const Goal = ({ name, subtitle, dates, completed, failed, dayOfYear /* streak */
           addendum="%"
           invert={Math.round((completed / dayOfYear) * 100) < 80}
         />
+        <StatCard title="Streak" number={streak} />
       </Flex>
     </>
   );

@@ -3,13 +3,8 @@
   "label": "Meditate",
   "description": "Practice meditation everyday",
   "days": [
-    {
-      "date": "2021-01-01",
-      "status": "Done"
-    },
-    {
-      "date": "2021-01-03",
-      "status": "Fail"
-    }
+    { "date": "2021-01-01", "status": "Done" },
+    { "date": "2021-01-03", "status": "Fail" },
+    { "date": "2021-02-04", "status": "Passed" }
   ]
 }
