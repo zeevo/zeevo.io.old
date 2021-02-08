@@ -13,7 +13,7 @@ class PageTemplate extends React.Component {
     const description = pageDescription !== null ? pageDescription : subtitle;
 
     return (
-      <Layout>
+      <Layout pageName={pageTitle}>
         <div>
           <Helmet>
             <html lang="en" />

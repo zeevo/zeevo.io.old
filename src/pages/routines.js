@@ -53,7 +53,7 @@ const calculate = (days) => {
       if (day.status === `Done`) {
         completed += 1;
         colorDensity = 1;
-      } else if (day.status === `Passed`) {
+      } else if (day.status === `Omit`) {
         colorDensity = 2;
       } else {
         failed += 1;
@@ -79,7 +79,7 @@ const calculate = (days) => {
 
   for (const day of sortedDates) {
     console.log(day);
-    if (day.status === 'Passed') {
+    if (day.status === 'Done') {
       streak += 1;
     } else {
       break;

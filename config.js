@@ -1,7 +1,7 @@
 module.exports = {
   url: 'https://zeevo.io',
   title: 'Zeevo.io',
-  copyright: '© All rights reserved.',
+  copyright: '© 2021 zeevo',
   profilePic: './content/pages/photo.png',
   googleAnalytics: 'UA-104714715-3',
   subtitle: 'Ramblings, art, and demos.',

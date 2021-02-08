@@ -16,7 +16,8 @@ import '../assets/scss/init.scss';
 import '../assets/fonts/fontello-771c82e0/css/fontello.css';
 
 function Layout(props) {
-  const { isHomePage } = props;
+  const { isHomePage, pageName } = props;
+
   const { theme, colorMode } = useThemeUI();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -129,9 +130,12 @@ function Layout(props) {
         <footer
           sx={{
             width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
-          <footer>{siteMetadata.copyright}</footer>
+          <small>{siteMetadata.copyright}</small>
+          {pageName === 'About me' ? <Link to="/routines">Routines</Link> : null}
         </footer>
       </div>
     </div>
