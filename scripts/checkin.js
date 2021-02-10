@@ -15,14 +15,19 @@ function formatDate() {
 
 const options = yargs
   .usage('Usage: -n <name>')
-  .option('r', { alias: 'routine', describe: 'routine', type: 'string', demandOption: true })
-  .option('s', { alias: 'status', describe: 'status', type: 'string', demandOption: true })
+  .option('h', { alias: 'habit', describe: 'habit', type: 'string', demandOption: true })
+  .option('s', {
+    alias: 'status',
+    default: 'Done',
+    describe: 'status',
+    type: 'string',
+  })
   .option('m', { alias: 'message', describe: 'Your name', type: 'string', demandOption: false })
   .option('d', { alias: 'date', describe: 'Your name', type: 'string', demandOption: false }).argv;
 
-const routineFile = `../content/routines/${options.routine}.json`;
+const routineFile = `../content/habits/${options.habit}.json`;
 /* eslint-disable-next-line */
-const routine = require(routineFile);
+const habit = require(routineFile);
 
 const entry = {
   date: options.d,
@@ -37,6 +42,6 @@ if (options.m) {
   entry.message = options.m;
 }
 
-routine.days.push(entry);
+habit.days.push(entry);
 
-fs.writeFileSync(`${__dirname}/../content/routines/${options.r}.json`, JSON.stringify(routine));
+fs.writeFileSync(`${__dirname}/../content/habits/${options.h}.json`, JSON.stringify(habit));

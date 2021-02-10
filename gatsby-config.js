@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-json',
       options: {
-        path: `${__dirname}/content/goals`,
+        path: `${__dirname}/content/habits`,
       },
     },
     {

@@ -101,15 +101,15 @@ const calculate = (days) => {
 function Goals({ data }) {
   const { title, url } = data.site.siteMetadata;
 
-  const pageTitle = 'Routine Tracker';
+  const pageTitle = 'Habit Tracker';
   const description = 'Tracking goals to be better.';
 
-  const routines = data.allRoutinesJson.edges.map(({ node }) => node);
+  const routines = data.allHabitsJson.edges.map(({ node }) => node);
 
-  const routinesSummaries = routines.map((routine) => {
+  const routinesSummaries = routines.map((habit) => {
     return {
-      ...routine,
-      ...calculate(routine.days),
+      ...habit,
+      ...calculate(habit.days),
     };
   });
 
@@ -165,17 +165,17 @@ function Goals({ data }) {
           </Flex>
         </Flex>
 
-        {routinesSummaries.map((routine) => (
+        {routinesSummaries.map((habit) => (
           <>
             <Goal
-              name={routine.label}
-              subtitle={routine.description}
-              dates={routine.dates}
-              key={routine.key}
-              completed={routine.completed}
-              failed={routine.failed}
+              name={habit.label}
+              subtitle={habit.description}
+              dates={habit.dates}
+              key={habit.key}
+              completed={habit.completed}
+              failed={habit.failed}
               dayOfYear={dayOfYear}
-              streak={routine.streak}
+              streak={habit.streak}
             />
           </>
         ))}
@@ -188,7 +188,7 @@ export default Goals;
 
 export const pageQuery = graphql`
   query {
-    allRoutinesJson {
+    allHabitsJson {
       edges {
         node {
           key

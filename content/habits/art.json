@@ -1,21 +1,21 @@
 {
-  "key": "meditate",
-  "label": "Meditate",
-  "description": "Practice meditation everyday",
+  "key": "art",
+  "label": "Art practice",
+  "description": "Practice art for 1 hr minimum",
   "days": [
     { "date": "2021-01-01", "status": "Omit" },
     { "date": "2021-01-02", "status": "Omit" },
-    { "date": "2021-01-03", "status": "Omit" },
+    { "date": "2021-01-03", "status": "Done" },
     { "date": "2021-01-04", "status": "Omit" },
     { "date": "2021-01-05", "status": "Omit" },
     { "date": "2021-01-06", "status": "Omit" },
-    { "date": "2021-01-07", "status": "Omit" },
+    { "date": "2021-01-07", "status": "Done" },
     { "date": "2021-01-08", "status": "Omit" },
     { "date": "2021-01-09", "status": "Omit" },
     { "date": "2021-01-10", "status": "Omit" },
-    { "date": "2021-01-11", "status": "Omit" },
+    { "date": "2021-01-11", "status": "Done" },
     { "date": "2021-01-12", "status": "Omit" },
-    { "date": "2021-01-13", "status": "Omit" },
+    { "date": "2021-01-13", "status": "Done" },
     { "date": "2021-01-14", "status": "Omit" },
     { "date": "2021-01-15", "status": "Omit" },
     { "date": "2021-01-16", "status": "Omit" },
@@ -39,6 +39,8 @@
     { "date": "2021-02-04", "status": "Omit" },
     { "date": "2021-02-05", "status": "Omit" },
     { "date": "2021-02-06", "status": "Omit" },
-    { "date": "2021-02-07", "status": "Omit" }
+    { "date": "2021-02-07", "status": "Omit" },
+    { "date": "2021-02-08", "status": "Omit" },
+    { "date": "2021-02-10", "status": "Done" }
   ]
 }
