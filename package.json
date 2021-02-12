@@ -1,22 +1,7 @@
 {
-  "version": "3.0.0",
   "name": "zeevo.io",
+  "version": "3.0.0",
   "description": "zeevo.io",
-  "main": "n/a",
-  "scripts": {
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "rm -rf public .cache",
-    "lint": "./node_modules/.bin/eslint --cache --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write './*.js' 'src/**/*.js'",
-    "deploy-s3": "gatsby-plugin-s3 deploy -y",
-    "deploy": "npm run build && npm run deploy-s3",
-    "prettier": "prettier --check './*.js' 'src/**/*.js'",
-    "upgrade-packages": "npx -p npm-check-updates ncu -u"
-  },
-  "repository": "git+https://github.com/zeevosec/zeevo.io",
   "keywords": [
     "gatsby",
     "blog",
@@ -24,8 +9,24 @@
     "theme",
     "starter"
   ],
-  "author": "Shane O'Neill",
+  "repository": "git+https://github.com/zeevosec/zeevo.io",
   "license": "MIT",
+  "author": "Shane O'Neill",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "checkin": "node scripts/checkin.js",
+    "clean": "rm -rf public .cache",
+    "deploy": "npm run build && npm run deploy-s3",
+    "deploy-s3": "gatsby-plugin-s3 deploy -y",
+    "develop": "gatsby develop",
+    "format": "prettier --write './*.js' 'src/**/*.js'",
+    "lint": "./node_modules/.bin/eslint --cache --ext .js,.jsx --ignore-pattern public .",
+    "prettier": "prettier --check './*.js' 'src/**/*.js'",
+    "serve": "gatsby serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upgrade-packages": "npx -p npm-check-updates ncu -u"
+  },
   "dependencies": {
     "@nivo/calendar": "^0.67.0",
     "@nivo/core": "^0.67.0",
