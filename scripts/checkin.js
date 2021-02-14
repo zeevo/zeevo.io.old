@@ -1,3 +1,4 @@
+const { exec } = require('child_process');
 const fs = require('fs');
 const yargs = require('yargs');
 
@@ -45,3 +46,11 @@ if (options.m) {
 habit.days.push(entry);
 
 fs.writeFileSync(`${__dirname}/../content/habits/${options.h}.json`, JSON.stringify(habit));
+
+exec('yarn format', (err, stdout) => {
+  console.log('here');
+  console.log('here');
+  console.log('here');
+  console.log('here');
+  console.log(stdout);
+});

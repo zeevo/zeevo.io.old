@@ -135,7 +135,7 @@ function Layout(props) {
           }}
         >
           <small>{siteMetadata.copyright}</small>
-          {pageName === 'About me' ? <Link to="/routines">Habits</Link> : null}
+          {pageName === 'About me' ? <Link to="/habits">Habits</Link> : null}
         </footer>
       </div>
     </div>

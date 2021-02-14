@@ -42,6 +42,8 @@
     { "date": "2021-02-07", "status": "Omit" },
     { "date": "2021-02-08", "status": "Omit" },
     { "date": "2021-02-09", "status": "Done" },
-    { "date": "2021-02-10", "status": "Done" }
+    { "date": "2021-02-10", "status": "Done" },
+    { "date": "2021-02-11", "status": "Done" },
+    { "date": "2021-02-13", "status": "Done" }
   ]
 }

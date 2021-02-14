@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 const ClientOnly = ({ children, ...props }) => {
   const [hasMounted, setHasMounted] = React.useState(false);
