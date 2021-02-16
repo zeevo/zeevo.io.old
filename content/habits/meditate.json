@@ -43,6 +43,8 @@
     { "date": "2021-02-08", "status": "Omit" },
     { "date": "2021-02-11", "status": "Done", "message": "10:00PM" },
     { "date": "2021-02-12", "status": "Done" },
-    { "date": "2021-02-13", "status": "Done" }
+    { "date": "2021-02-13", "status": "Done" },
+    { "date": "2021-02-14", "status": "Done" },
+    { "date": "2021-02-15", "status": "Done" }
   ]
 }
