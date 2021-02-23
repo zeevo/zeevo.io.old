@@ -9,7 +9,7 @@
     "theme",
     "starter"
   ],
-  "repository": "git+https://github.com/zeevosec/zeevo.io",
+  "repository": "git+https://github.com/zeevo/zeevo.io",
   "license": "MIT",
   "author": "Shane O'Neill",
   "main": "n/a",

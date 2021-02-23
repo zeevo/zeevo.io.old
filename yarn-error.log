@@ -45,7 +45,7 @@ npm manifest:
       "deploy": "npm run build && npm run deploy-s3",
       "prettier": "prettier --check '{,!(node_modules|assets)/**/}*.js*'"
     },
-    "repository": "git+https://github.com/zeevosec/shaneoneill.io",
+    "repository": "git+https://github.com/zeevo/shaneoneill.io",
     "keywords": [
       "gatsby",
       "blog",

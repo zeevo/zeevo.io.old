@@ -103,4 +103,4 @@ export default App;
 
 ## In the Future
 
-Supporting any FHIR client would be beneficial to the community. If you have a FHIR client that you want supported, raise an [Issue](https://github.com/zeevosec/react-fhirclient/issues) describing it.
+Supporting any FHIR client would be beneficial to the community. If you have a FHIR client that you want supported, raise an [Issue](https://github.com/zeevo/react-fhirclient/issues) describing it.

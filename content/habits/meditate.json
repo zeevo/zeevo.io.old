@@ -47,6 +47,8 @@
     { "date": "2021-02-14", "status": "Done", "message": "night" },
     { "date": "2021-02-15", "status": "Done", "message": "night" },
     { "date": "2021-02-16", "status": "Done", "message": "night" },
-    { "date": "2021-02-17", "status": "Done", "message": "night" }
+    { "date": "2021-02-17", "status": "Done", "message": "night" },
+    { "date": "2021-02-18", "status": "Done", "message": "night" },
+    { "date": "2021-02-19", "status": "Done", "message": "morning" }
   ]
 }

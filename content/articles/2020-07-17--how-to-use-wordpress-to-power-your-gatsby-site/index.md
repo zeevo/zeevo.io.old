@@ -133,7 +133,7 @@ You can install my headless theme with the following:
 
 ```
 cd ~/apps/wordpress/htdocs/wp-content/themes
-git clone https://github.com/zeevosec/wordpress-headless
+git clone https://github.com/zeevo/wordpress-headless
 
 # IMPORTANT: Change the href in this theme to reflect where your Gatsby app lives.
 
