@@ -50,9 +50,17 @@
     { "date": "2021-02-15", "status": "Done" },
     { "date": "2021-02-16", "status": "Done" },
     { "date": "2021-02-17", "status": "Done", "message": "short session :(" },
-    { "date": "2021-02-18", "status": "Done", "messaged": "produced a \"finished\" drawing" },
+    { "date": "2021-02-18", "status": "Done", "message": "produced a \"finished\" drawing" },
     { "date": "2021-02-19", "status": "Done" },
     { "date": "2021-02-20", "status": "Done" },
-    { "date": "2021-02-21", "status": "Done" }
+    { "date": "2021-02-21", "status": "Done" },
+    { "date": "2021-02-22", "status": "Done" },
+    { "date": "2021-02-23", "status": "Done" },
+    { "date": "2021-02-24", "status": "Done" },
+    { "date": "2021-02-25", "status": "Done", "message": "Just watched Art videos" },
+    { "date": "2021-02-26", "status": "Done" },
+    { "date": "2021-02-27", "status": "Done" },
+    { "date": "2021-02-28", "status": "Done" },
+    { "date": "2021-03-1", "status": "Done" }
   ]
 }
