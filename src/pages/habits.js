@@ -75,11 +75,13 @@ const calculate = (days) => {
 
   let streak = 0;
 
-  const sortedDates = days.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedDates = daysBetween.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  for (const day of sortedDates) {
-    console.log(day);
-    if (day.status === 'Done') {
+  console.log(sortedDates);
+
+  const done = 1;
+  for (const day of sortedDates.slice(1, sortedDates.length)) {
+    if (day.count === done) {
       streak += 1;
     } else {
       break;
