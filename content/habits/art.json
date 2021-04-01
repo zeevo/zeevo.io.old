@@ -82,6 +82,12 @@
     { "date": "2021-03-22", "status": "Done" },
     { "date": "2021-03-23", "status": "Done" },
     { "date": "2021-03-24", "status": "Done" },
-    { "date": "2021-03-25", "status": "Done" }
+    { "date": "2021-03-25", "status": "Done" },
+    { "date": "2021-03-26", "status": "Done" },
+    { "date": "2021-03-27", "status": "Done" },
+    { "date": "2021-03-28", "status": "Done" },
+    { "date": "2021-03-29", "status": "Done" },
+    { "date": "2021-03-30", "status": "Done" },
+    { "date": "2021-03-31", "status": "Done" }
   ]
 }
