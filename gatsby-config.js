@@ -148,7 +148,6 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -161,17 +160,17 @@ module.exports = {
         icon: 'static/photo.png',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: { trackingId: siteConfig.googleAnalytics },
     },
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-sass',
-    },
+    'gatsby-plugin-sass',
     'gatsby-plugin-theme-ui',
   ],
 };

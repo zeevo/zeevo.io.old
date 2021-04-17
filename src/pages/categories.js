@@ -58,8 +58,20 @@ export const pageQuery = graphql`
         }
         author {
           name
-          twitter
-          github
+          socials {
+            twitter {
+              name
+              url
+            }
+            github {
+              name
+              url
+            }
+            discord {
+              name
+              url
+            }
+          }
           rss
         }
       }

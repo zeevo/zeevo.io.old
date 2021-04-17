@@ -52,8 +52,24 @@ module.exports = {
   ],
   author: {
     name: "Shane O'Neill",
-    twitter: 'https://twitter.com/zeevosec',
-    github: 'https://github.com/zeevo',
     rss: '/rss.xml',
+    socials: {
+      twitter: {
+        name: 'zeevosec',
+        url: 'https://twitter.com/zeevosec',
+      },
+      github: {
+        name: 'zeevo',
+        url: 'https://github.com/zeevo',
+      },
+      instagram: {
+        name: 'zeevosec',
+        url: 'https://instagram.com/zeevosec',
+      },
+      discord: {
+        name: 'zeevo#0572',
+        url: 'https://discord.com/',
+      },
+    },
   },
 };
