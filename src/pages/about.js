@@ -17,12 +17,12 @@ function About() {
     <Layout>
       <Helmet>
         <html lang="en" />
-        <title>{`${''} - ${title}`}</title>
+        <title>{`${pageTitle} - ${title}`}</title>
         <meta name="description" content={description} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@zeevosec" />
-        <meta name="twitter:creator" content="@zeevosec" />
-        <meta name="twitter:title" content={`${'pageTitle'} - ${title}`} />
+        <meta name="twitter:site" content={twitter.name} />
+        <meta name="twitter:creator" content={twitter.name} />
+        <meta name="twitter:title" content={`${pageTitle} - ${title}`} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={url + banner} />
       </Helmet>
