@@ -11,7 +11,7 @@ function About() {
   const { socials } = author;
   const { twitter, discord, instagram } = socials;
   const pageTitle = 'About me';
-  const description = 'Tracking goals to be better.';
+  const description = 'About me. Contact me. Build cool stuff.';
 
   return (
     <Layout>
