@@ -9,7 +9,7 @@ function Author({ author, date }) {
   return (
     <div className="author">
       <div className="avatar">
-        <a href={author.twitter}>
+        <a href={author.socials.twitter.url}>
           <img
             src="/photo.png"
             sx={{
@@ -30,7 +30,7 @@ function Author({ author, date }) {
         <div>
           <a
             className="author-link"
-            href={author.twitter}
+            href={author.socials.twitter.url}
             sx={{ color: 'primary', fontWeight: 'heading' }}
           >
             {author.name}

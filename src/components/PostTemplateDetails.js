@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
+import moment from 'moment';
 import React from 'react';
 import { Link } from 'gatsby';
 import './style/posttemplatedetails.scss';
@@ -15,8 +16,8 @@ class PostTemplateDetails extends React.Component {
     return (
       <div>
         <div>
-          <h1 sx={{ mt: 0 }}>{post.frontmatter.title}</h1>
-          <Author author={author} date={post.frontmatter.date} />
+          <h1 sx={{ mt: 0, mb: 0 }}>{post.frontmatter.title}</h1>
+          <p sx={{ mt: 0 }}>Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}</p>
           <div
             sx={{
               '& a': {
