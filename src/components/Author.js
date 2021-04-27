@@ -37,9 +37,7 @@ function Author({ author, date }) {
           </a>
         </div>
         {date ? (
-          <div sx={{ fontWeight: 'heading' }}>
-            Published on {moment(date).format('MMMM DD, YYYY')}
-          </div>
+          <div sx={{ fontWeight: 'heading' }}>{moment(date).format('MMMM DD, YYYY')}</div>
         ) : null}
       </div>
     </div>
