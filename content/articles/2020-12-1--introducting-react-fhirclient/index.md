@@ -67,7 +67,7 @@ function App() {
 export default App;
 ```
 
-### 4. Make FHIR Requests in `onEffect`
+### 4. Make FHIR Requests in `useEffect`
 
 ```js
 import { useState, useEffect } from 'react';
