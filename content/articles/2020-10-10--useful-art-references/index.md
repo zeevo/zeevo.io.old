@@ -5,6 +5,8 @@ layout: post
 draft: false
 path: '/2020/12/useful-art-reference'
 category: 'Art'
+tags:
+  - 'Art'
 description: 'Useful Art references for study and practice'
 ---
 
