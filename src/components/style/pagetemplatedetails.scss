@@ -10,6 +10,11 @@
     @include margin-top(0);
     @include margin-bottom(1.45);
   }
+  &__subtitle {
+    @include margin-top(0);
+    @include margin-bottom(1.45);
+    font-size: $typographic-base-font-size * 2.5;
+  }
   &__body {
     font-size: $typographic-base-font-size;
     @include line-height(1);

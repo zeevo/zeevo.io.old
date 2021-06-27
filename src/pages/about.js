@@ -26,8 +26,10 @@ function About() {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={url + banner} />
       </Helmet>
-      <h1 className="page__title">{pageTitle}</h1>
-      <h2>I like to build things with computer code.</h2>
+      <h1 className="page__title" style={{ display: 'none' }}>
+        {pageTitle}
+      </h1>
+      <h2 className="page__subtitle">I like to build things with computer code.</h2>
       <p>&quot;How do I interact with you?&quot;</p>
       <ul>
         <li>

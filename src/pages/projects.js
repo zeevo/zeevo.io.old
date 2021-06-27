@@ -30,7 +30,7 @@ function Projects() {
           <meta name="twitter:image" content={url + banner} />
         </Helmet>
         <div>
-          <h1 className="page__title">{pageTitle}</h1>
+          {/* <h1 className="page__title">{pageTitle}</h1> */}
           <ul
             sx={{
               listStyle: 'none',
