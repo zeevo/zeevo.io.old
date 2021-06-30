@@ -18,14 +18,14 @@ export default {
     heading: 1.125,
   },
   colors: {
-    text: '#000',
+    text: '#333',
     background: '#EEEEEE',
     primary: '#07c',
     secondary: '#30c',
     muted: '#f6f6f6',
     modes: {
       dark: {
-        text: '#fff',
+        text: '#f2f2f2',
         background: '#000',
         primary: '#0cf',
       },
