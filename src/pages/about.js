@@ -29,7 +29,7 @@ function About() {
       <h1 className="page__title" style={{ display: 'none' }}>
         {pageTitle}
       </h1>
-      <h2 className="page__subtitle">I like to build things with computer code.</h2>
+      <h2 className="page__subtitle">I build things with computer code.</h2>
       <p>&quot;How do I interact with you?&quot;</p>
       <ul>
         <li>

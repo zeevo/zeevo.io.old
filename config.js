@@ -51,7 +51,7 @@ module.exports = {
     },
   ],
   author: {
-    name: "Shane O'Neill",
+    name: 'Shane',
     rss: '/rss.xml',
     socials: {
       twitter: {

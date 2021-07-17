@@ -5,11 +5,9 @@ import moment from 'moment';
 import React from 'react';
 import { Link } from 'gatsby';
 import './style/posttemplatedetails.scss';
-import Author from './Author';
 
 class PostTemplateDetails extends React.Component {
   render() {
-    const { author } = this.props.data.site.siteMetadata;
     const post = this.props.data.markdownRemark;
     const tags = post.fields.tagSlugs;
 
@@ -47,7 +45,6 @@ class PostTemplateDetails extends React.Component {
               ))}
           </ul>
         </div>
-        <Author author={author} date={post.frontmatter.date} />
         <Link
           to="/"
           sx={{
