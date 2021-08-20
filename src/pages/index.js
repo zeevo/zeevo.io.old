@@ -1,6 +1,7 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Feed from '../components/Feed';
 
@@ -26,6 +27,33 @@ function Index(props) {
         <meta name="twitter:image" content={url + banner} />
         <html lang="en" />
       </Helmet>
+      <h1
+        className="page__subtitle"
+        sx={{
+          lineHeight: '1.25',
+        }}
+      >
+        I build things with computer code.{' '}
+        <Link
+          to="/contact"
+          sx={{
+            color: 'text',
+            textDecoration: 'underline',
+            '&:hover': {
+              color: 'primary',
+            },
+          }}
+        >
+          Need something built?
+        </Link>
+      </h1>
+      <h2
+        sx={{
+          marginBottom: '1.25rem',
+        }}
+      >
+        Recent Posts
+      </h2>
       <Feed posts={posts} author={author} subtitle={subtitle} />
     </Layout>
   );

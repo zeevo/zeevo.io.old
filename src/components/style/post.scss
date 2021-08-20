@@ -2,7 +2,7 @@
 @import '../../assets/scss/mixins';
 
 .post {
-  @include margin-bottom(1.25);
+  @include margin-bottom(0.5);
   &:last-child {
     @include margin-bottom(0.5);
   }

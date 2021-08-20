@@ -14,13 +14,13 @@ class Post extends React.Component {
 
     return (
       <div className="post">
-        <h2 className="post__title">
+        <h2 className="post__title" sx={{ lineHeight: 1 }}>
           <Link
             className="post__title-link"
             to={slug}
             sx={{
               color: 'text',
-              fontWeight: 'heading',
+              // fontWeight: 'heading',
               '&:hover': {
                 color: 'primary',
               },

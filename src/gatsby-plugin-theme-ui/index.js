@@ -1,5 +1,5 @@
 export default {
-  useColorSchemeMediaQuery: true,
+  initialColorModeName: 'dark',
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body:
@@ -27,7 +27,7 @@ export default {
       dark: {
         text: '#f2f2f2',
         background: '#151515',
-        primary: '#0cf',
+        primary: '#4CC9F0',
       },
       cyber: {
         text: '#00ff2b',

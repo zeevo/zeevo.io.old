@@ -7,12 +7,12 @@ module.exports = {
   subtitle: 'Ramblings, art, and demos.',
   menu: [
     {
-      label: 'About',
-      path: '/about/',
+      label: 'Contact',
+      path: '/contact',
     },
     {
       label: 'Projects',
-      path: '/projects/',
+      path: '/projects',
     },
     {
       label: 'Github',

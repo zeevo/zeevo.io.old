@@ -6,12 +6,12 @@ import ExternalLink from '../components/ExternalLink';
 import banner from '../assets/images/banner.jpeg';
 import useSiteMetadata from '../hooks/use-site-metadata';
 
-function About() {
+function Contact() {
   const { title, url, author } = useSiteMetadata();
   const { socials } = author;
   const { twitter, discord, instagram } = socials;
-  const pageTitle = 'About me';
-  const description = 'About me. Contact me. Build cool stuff.';
+  const pageTitle = 'Contact me';
+  const description = "Contact me. Let's build cool stuff.";
 
   return (
     <Layout>
@@ -29,8 +29,7 @@ function About() {
       <h1 className="page__title" style={{ display: 'none' }}>
         {pageTitle}
       </h1>
-      <h2 className="page__subtitle">I build things with computer code.</h2>
-      <p>&quot;How do I interact with you?&quot;</p>
+      <h2 className="page__subtitle">Let&apos;s get in touch.</h2>
       <ul>
         <li>
           Tweet at me <ExternalLink href={twitter.url}>{twitter.name}.</ExternalLink>
@@ -91,4 +90,4 @@ function About() {
   );
 }
 
-export default About;
+export default Contact;
