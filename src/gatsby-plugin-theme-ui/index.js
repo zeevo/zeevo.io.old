@@ -1,5 +1,4 @@
 export default {
-  initialColorModeName: 'dark',
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body:
@@ -18,16 +17,16 @@ export default {
     heading: 1.125,
   },
   colors: {
-    text: '#333',
-    background: '#EEEEEE',
-    primary: '#07c',
+    text: '#f2f2f2',
+    background: '#151515',
+    primary: '#4CC9F0',
     secondary: '#30c',
     muted: '#f6f6f6',
     modes: {
-      dark: {
-        text: '#f2f2f2',
-        background: '#151515',
-        primary: '#4CC9F0',
+      light: {
+        text: '#333',
+        background: '#EEEEEE',
+        primary: '#07c',
       },
       cyber: {
         text: '#00ff2b',

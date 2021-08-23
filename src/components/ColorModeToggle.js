@@ -10,7 +10,7 @@ function ColorModeToggle() {
 
   return (
     <IconButton
-      aria-label="Toggle dark mode"
+      aria-label="Toggle mode"
       onClick={() => {
         const nextModeIndex = modeChoices.indexOf(colorMode) + 1;
         setColorMode(modeChoices[nextModeIndex % modeChoices.length]);
