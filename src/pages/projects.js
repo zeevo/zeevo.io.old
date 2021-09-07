@@ -53,8 +53,8 @@ function Projects() {
                     fontWeight: 'bold',
                     color: 'text',
                     '&:hover': {
-                      backgroundColor: 'primary',
-                      color: 'muted',
+                      borderColor: 'primary',
+                      color: 'primary',
                     },
                     cursor: 'pointer',
                   }}
