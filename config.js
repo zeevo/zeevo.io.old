@@ -29,6 +29,10 @@ module.exports = {
       href: 'https://github.com/onc-healthit/mobilizing-million-hearts',
     },
     {
+      label: 'The Dead Game Game',
+      href: 'https://the-dead-game-game.vercel.app/',
+    },
+    {
       label: 'Sycra.net',
       href: 'http://sycra.net/',
     },
