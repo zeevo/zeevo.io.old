@@ -1,28 +1,28 @@
-/* eslint-disable */
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui';
 import { Popover, Transition } from '@headlessui/react';
-import { Fragment, useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { usePopper } from 'react-popper';
 
 export default function ProjectLink({ project }) {
   const { theme } = useThemeUI();
-  let [referenceElement, setReferenceElement] = useState();
-  let [popperElement, setPopperElement] = useState();
-  let { styles, attributes } = usePopper(referenceElement, popperElement, {
+  const [referenceElement, setReferenceElement] = useState();
+  const [popperElement, setPopperElement] = useState();
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
     placement: 'right',
   });
 
   // Open the menu after a delay of timeoutDuration
   const onHover = (open, action) => {
     if (action === 'onMouseEnter') {
-      referenceElement?.click();
+      if (referenceElement) {
+        referenceElement.click();
+      }
     } else if (action === 'onMouseLeave') {
-      referenceElement?.click();
+      if (referenceElement) {
+        referenceElement.click();
+      }
     }
-    // if the modal is currently closed, we need to open it
-    // OR
-    // if the modal is currently open, we need to close it
   };
 
   const handleClickOutside = (event) => {
