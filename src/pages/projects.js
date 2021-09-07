@@ -1,15 +1,14 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui';
 import Helmet from 'react-helmet';
-import Layout from '../components/Layout';
+import { jsx } from 'theme-ui';
 import banner from '../assets/images/banner.jpeg';
-
+import Layout from '../components/Layout';
+import ProjectLink from '../components/ProjectLink';
 import '../components/style/pagetemplatedetails.scss';
 import useSiteMetadata from '../hooks/use-site-metadata';
 
 function Projects() {
   const siteMetadata = useSiteMetadata();
-  const { theme } = useThemeUI();
   const { title, subtitle, url, projects } = siteMetadata;
 
   const pageTitle = 'Projects';
@@ -30,7 +29,6 @@ function Projects() {
           <meta name="twitter:image" content={url + banner} />
         </Helmet>
         <div>
-          {/* <h1 className="page__title">{pageTitle}</h1> */}
           <ul
             sx={{
               listStyle: 'none',
@@ -39,28 +37,8 @@ function Projects() {
             }}
           >
             {projects.map((project) => (
-              <li>
-                <a
-                  href={project.href}
-                  sx={{
-                    border: `2px solid ${theme.colors.text}`,
-                    paddingLeft: '1rem',
-                    height: '2.1875rem',
-                    lineHeight: '2.1875rem',
-                    width: '100%',
-                    display: 'inline-block',
-                    textDecoration: 'none',
-                    fontWeight: 'bold',
-                    color: 'text',
-                    '&:hover': {
-                      borderColor: 'primary',
-                      color: 'primary',
-                    },
-                    cursor: 'pointer',
-                  }}
-                >
-                  {project.label}
-                </a>
+              <li key={project.href}>
+                <ProjectLink project={project} />
               </li>
             ))}
           </ul>
