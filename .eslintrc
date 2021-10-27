@@ -5,6 +5,9 @@
   "globals": {
     "graphql": true
   },
+  "env": {
+    "browser": true
+  },
   "rules": {
     "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
     "comma-dangle": ["error", "always-multiline"],
@@ -14,6 +17,8 @@
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
     "react/jsx-filename-extension": "off",
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",

@@ -40,6 +40,7 @@ const useSiteMetadata = () => {
             projects {
               label
               href
+              description
             }
           }
         }

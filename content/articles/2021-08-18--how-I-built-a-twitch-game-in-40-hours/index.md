@@ -12,7 +12,7 @@ description: ''
 
 ![TDGG](./TDGG.png)
 
-## How I Build Sites Nowadays
+## How I Build Sites
 
 ### NextJS
 
@@ -21,9 +21,11 @@ quickly get a prototype working in just a couple hours.
 
 ### GraphQL
 
+### Prisma
+
 ### React Context
 
-Instead of Redux, I typically reach for React Context instead. It has less boilerplate,
+Instead of Redux, I typically reach for React Context instead. It has less boilerplate, easier to understand, is included with React, and has a familiar API. The following code exists in some form in nearly all of my projects.
 
 ```js
 import { createContext, useContext, useReducer } from 'react';
@@ -55,4 +57,25 @@ function useGlobalState(): any {
 export default GlobalStateProvider;
 
 export { useGlobalState };
+```
+
+We can then wrap our NextJS App in the `GlobalStateProvider:
+
+```js
+import type { AppProps } from 'next/app';
+import GlobalStateProvider from '../client/context/state';
+import Layout from '../client/components/Layout';
+import '../styles/globals.css';
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <GlobalStateProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </GlobalStateProvider>
+  );
+}
+
+export default App;
 ```

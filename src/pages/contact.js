@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Label, Input, Box, Button, Textarea } from 'theme-ui';
+import { jsx, Label, Input, Box, Button, Textarea, useThemeUI } from 'theme-ui';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import ExternalLink from '../components/ExternalLink';
@@ -7,6 +7,7 @@ import banner from '../assets/images/banner.jpeg';
 import useSiteMetadata from '../hooks/use-site-metadata';
 
 function Contact() {
+  const { colorMode } = useThemeUI();
   const { title, url, author } = useSiteMetadata();
   const { socials } = author;
   const { twitter, discord, instagram } = socials;
@@ -76,7 +77,7 @@ function Contact() {
                 color: 'background',
                 backgroundColor: 'primary',
                 '&:hover': {
-                  color: 'background',
+                  color: colorMode === 'light' ? 'background' : 'text',
                   backgroundColor: 'secondary',
                 },
               }}

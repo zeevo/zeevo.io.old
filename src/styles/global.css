@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 .react-calendar-heatmap .color-empty {
@@ -30,4 +34,16 @@
 .react-calendar-heatmap {
   width: 720px;
   font-family: Inter, sans-serif;
+}
+
+div.default pre code {
+  color: #f2f2f2 !important;
+}
+
+div.light pre code {
+  color: #333 !important;
+}
+
+div.cyber pre code {
+  color: #00ff2b !important;
 }
