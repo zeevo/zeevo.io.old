@@ -10,7 +10,6 @@ tags:
 description: ''
 ---
 
-
 There is a lot of confusion on what an NFT is and this article aims to
 educate. The goal is to truly learn what NFTs without the influence of bias or
 the use of confusing analogies.
@@ -120,7 +119,7 @@ than those that do not.
 
 # Egregious offender: Lazy Lions NFT
 
-To illustrate the points made here, we can look at a particularly bad NFT: 
+To illustrate the points made here, we can look at a particularly bad NFT:
 [Lazy Lions.](https://www.lazylionsnft.com/).
 
 At the time of writing this, Lazy Lions has 17.3k of Ethereum traded by volume.
@@ -137,9 +136,45 @@ We can view this entire collection on [OpenSea](https://opensea.io/collection/la
 
 ![Lazy Lions Collection](./lazylions.png)
 
+OpenSea lets anyone viewing NFTs the ability to see the NFT Contract Address and
+NFT ID. We can use these together to view the **NFT Metadata**. For example,
+Lazy Lion #7182 (I selected this at random) has a Contract address of
+**0x8943c7bac1914c9a7aba750bf2b6b09fd21037e0** and ID of **7182**
 
+We can use [Etherscan's Read Contract
+feature](https://etherscan.io/address/0x8943c7bac1914c9a7aba750bf2b6b09fd21037e0#readContract)
+to conveniently query the Contract for **NFT Metadata**. Executing the
+`tokenURI` method with an argument of `7182` will get us the Token's URI, a
+off-chain location that has additional information.
 
+![Lazy Lions Collection](./tokenUri.png)
 
+The method returned a string and we now have an off-chain place to visit: [tokenURI](https://www.lazylionsnft.com/api/7182)
+
+This is a NFT with it's metadata in the form of a \*\*Proprietary API. Visiting this link returns us JSON:
+
+```json
+{
+  "name": "#7182",
+  "tokenId": 7182,
+  "image": "https://gateway.pinata.cloud/ipfs/QmT7n9pymJ8z6rQH9hAD48LBMuxb5PhQAZCmFXLjHpk6bV",
+  "external_url": "https://www.lazylionsnft.com/",
+  "attributes": [
+    { "trait_type": "Background", "value": "Iron" },
+    { "trait_type": "Body", "value": "Standard" },
+    { "trait_type": "Bodygear", "value": "Police Uniform" },
+    { "trait_type": "Earring", "value": "Nothing" },
+    { "trait_type": "Eyes", "value": "Stoner" },
+    { "trait_type": "Headgear", "value": "Halo" },
+    { "trait_type": "Mane", "value": "Top Knot - Fire" },
+    { "trait_type": "Mouth", "value": "Big Smile" }
+  ]
+}
+```
+
+We can see the `image` is the form of an **IPFS Gateway**. This, however, does
+not mean much for the quality of this NFT as this IPFS information if behind a
+proprietary API.
 
 ### Checking NFT Metadata for yourself
 
