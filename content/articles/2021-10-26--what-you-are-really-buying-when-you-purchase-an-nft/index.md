@@ -10,44 +10,48 @@ tags:
 description: ''
 ---
 
-There is a lot of confusion on what an NFT is and this article aims to
-educate. The goal is to truly learn what NFTs without the influence of bias or
-the use of confusing analogies.
+There is a lot of confusion on what an NFT is and this article aims to educate.
+The goal is to truly learn what NFTs are faithfully and without the influence of
+bias or confusing analogies.
 
 Nonfungible Token, or NFT, is a unique unit of data that is not interchangable
 with any other unit of data. It is in constrast to fungible items such as a
-dollar bill or bitcoin where each unit is equivalent to one another and can be
-easily swapped with one another. Typically, we see NFTs implemented on a
-blockchain such as Ethereum. The benefit of storing them on a decentralized
-blockchain is that they will be distributed to many computers and also be
-available for anyone to see at all times. Ethereum's Smart Contract platform
-is one of the most popular methods of implementing NFTs because of it is a
-popular chain with strong developer tooling. Assuming the Smart Contract is
-correctly implemented, once an NFT is established on the blockchain, a sense
-of scarcity, genuineness, and permanence emerges leading to NFT markets where
-people buy, sell, and trade NFTs as commodities.
+dollar bill or Bitcoin where each unit is equivalent to one another and can be
+easily swapped with one another without losing value. Typically, we see NFTs
+implemented on a Blockchain such as Ethereum. The benefit of storing them on a
+decentralized Blockchain is that they will be distributed to many computers and
+also be available for anyone to see at all times. Ethereum's Smart Contract
+platform is one of the most popular methods of implementing NFTs because of it
+is a popular chain with strong developer tooling. Assuming the Smart Contract is
+correctly implemented, once an NFT is established on the Blockchain, a sense of
+scarcity, genuineness, and permanence emerges leading to NFT markets where
+people buy, sell, and trade NFTs as assets.
 
-The methods of interacting with NFTs on a blockchain are simple. **Owning** an NFT
-is simply assigning your public Address as the owner of a unit of data within
-a Smart Contract. **Transfering** an NFT is re-assigning the owner to a new
-Address.
+The methods of interacting with NFTs on a Blockchain are simple. **Owning** an
+NFT is simply assigning your public Address as the owner of a unit of data
+within a Smart Contract. **Transfering** an NFT is re-assigning the owner to a
+new Address. **Selling** would consist of a payment to an address, followed by a
+**Transfer**.
 
 ## What an NFT is not
 
 There is a common misconception that NFTs are _literal_ images distrbuted on the
 Ethereum Blockchain. This is absolutely not the case. The vast majority of NFTs
 minted are high quality PNG or JPEG file formatted pictures that exist off of
-the Blockchain (off-chain). The community has chosen the IPFS system to help in
-the integrity of NFTs. For all intents and purposes, this is a good decision.
-The IPFS (Interplanetary File System), is a distrbuted database of files similar
-to that of Bit Torrent. Files are uploaded permanently and are assigned an
-**IPFS Hash**: A unique ID for each file. IPFS operators help provide integrity
-to files by backing up portions of the entire IPFS. Together, a strong and
-permanent network of file systems can create a database of files that cannot be
-easily deleted or changed. However, there are projects that encode image data
-directly onto the Blockchain usually in the format of low-size pixel map or
-pixel art styles. The only way to determine if your NFT is a quality one is to
-look at your NFT's Smart Contract for how it is implemented.
+the Blockchain (this is commonly referenced as being **off-chain**). The
+community has chosen the [IPFS system](https://en.wikipedia.org/wiki/InterPlanetary_File_System) 
+to help in the integrity of NFTs. For all intents and purposes, this is a good
+decision. The IPFS (Interplanetary File System), is a distrbuted database of
+files similar to that of Bit Torrent. Files are uploaded permanently and are
+assigned an **IPFS Hash**: A unique ID for each file. IPFS operators help
+provide integrity to files by backing up portions of the entire IPFS. Together,
+a strong and permanent network of file systems creates a database of files
+that cannot be easily deleted or changed. 
+
+However, there does exist projects that encode image data directly onto the
+Blockchain usually in the format of low-size pixel map or pixel art styles. The
+only way to determine if your NFT is a quality one is to look at your NFT's
+Smart Contract for how it is implemented.
 
 ## What an NFT is
 
@@ -61,7 +65,7 @@ An NFT is **a Smart Contract that stores data on a Blockchain**. The
 **Metadata** must contain NFT **ID**s, **Ownership information**, and **NFT Metadata**.
 
 Essentially, NFTs are unique IDs that have owners, as well as small bits of
-additional Metadata on each ID that describe each particular NFT. Metadata is
+additional Metadata assigned to each ID that describes it. Metadata is
 particularly important to understand as this is what differentiates **Good**
 NFTs from **Bad** NFTs
 
@@ -110,7 +114,8 @@ and should not be interacted with.
 
 ### Age
 
-Older Smart Contracts with more transactions can help being legitimacy to their NFTs.
+Older Smart Contracts with a larger transaction history can help being
+legitimacy to their NFTs.
 
 ### Image Encoded NFTs
 
@@ -120,7 +125,7 @@ than those that do not.
 # Egregious offender: Lazy Lions NFT
 
 To illustrate the points made here, we can look at a particularly bad NFT:
-[Lazy Lions.](https://www.lazylionsnft.com/).
+[Lazy Lions.](https://www.lazylionsnft.com/)
 
 At the time of writing this, Lazy Lions has 17.3k of Ethereum traded by volume.
 That is almost $8,000,000! Lazy Lions is a collection of NFTs representing
@@ -132,7 +137,7 @@ obtained the "Blue" trait, then that member would be exceedingly rare (and thus,
 worth more money). We can view this NFT Smart Contract's Metadata on
 [Etherscan](https://etherscan.io/address/0x8943c7bac1914c9a7aba750bf2b6b09fd21037e0).
 
-We can view this entire collection on [OpenSea](https://opensea.io/collection/lazy-lions)
+We can view this entire collection on [OpenSea](https://opensea.io/collection/lazy-lions).
 
 ![Lazy Lions Collection](./lazylions.png)
 
@@ -151,7 +156,7 @@ off-chain location that has additional information.
 
 The method returned a string and we now have an off-chain place to visit: [tokenURI](https://www.lazylionsnft.com/api/7182)
 
-This is a NFT with it's metadata in the form of a \*\*Proprietary API. Visiting this link returns us JSON:
+This is a NFT with it's Metadata in the form of a **Proprietary API**. Visiting this link returns us JSON:
 
 ```json
 {
@@ -172,9 +177,13 @@ This is a NFT with it's metadata in the form of a \*\*Proprietary API. Visiting 
 }
 ```
 
-We can see the `image` is the form of an **IPFS Gateway**. This, however, does
-not mean much for the quality of this NFT as this IPFS information if behind a
-proprietary API.
+_We can see the `image` is the form of an **IPFS Gateway**. This, however, does not mean much for the quality of this NFT as this IPFS information is already behind a proprietary API._
+
+Attaching NFT Metadata as an off-chain link such as `lazylionsnft.com/api/7182`
+gives the owners of `lazylionsnft.com` the ability to change NFT Metadata
+whenever they desire! NFTs like this have essentially none of the benfits of
+being on the Ethereum Blockchain and are nothing more than links to someone
+else's website.
 
 ### Checking NFT Metadata for yourself
 
@@ -191,29 +200,21 @@ const abi = require('./abi.json');
 
 // Use an Infura Ethereum node. Better yet, use your own localhost.
 const web3 = new Web3(
-  new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/<INFURA_API_KEY'),
+  new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/<INFURA_API_KEY>'),
 );
 
 // Contract address
-const contract = new web3.eth.Contract(abi, '0xaddress1234');
+const contract = new web3.eth.Contract(abi, '0x8943c7bac1914c9a7aba750bf2b6b09fd21037e0');
 
+// Query the tokenURI method of the Contract
 contract.methods
-  .tokenURI(101031)
+  .tokenURI(7182)
   .call()
   .then((res) => {
     console.log(res);
   });
 ```
 
-- Running Geth
+# Conclusion
 
-  - I choose to run it in docker like this
-
-- Getting ABI
-
-  - Why do we need this?
-    - Smart Contracts are compiled bytecode = hard (impossible) to know what they do without an ABI
-    - Authors might not want you to interact with their contract
-
-- Querying with Web3
-  - geth attach
+## NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not.
