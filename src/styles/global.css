@@ -47,3 +47,19 @@ div.light pre code {
 div.cyber pre code {
   color: #00ff2b !important;
 }
+
+th {
+  text-align: left;
+  border-bottom-style: solid;
+}
+
+td {
+  text-align: left;
+  border-bottom-style: solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+td:first-child {
+  padding-right: 1rem
+}

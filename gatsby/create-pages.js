@@ -34,13 +34,7 @@ const createPages = ({ graphql, actions }) => {
         reject(result.errors);
       } else {
         _.each(result.data.allMarkdownRemark.edges, (edge) => {
-          if (_.get(edge, 'node.frontmatter.layout') === 'page') {
-            createPage({
-              path: edge.node.fields.slug,
-              component: slash(pageTemplate),
-              context: { slug: edge.node.fields.slug },
-            });
-          } else if (_.get(edge, 'node.frontmatter.layout') === 'post') {
+          if (_.get(edge, 'node.frontmatter.layout') === 'post') {
             createPage({
               path: edge.node.fields.slug,
               component: slash(postTemplate),
