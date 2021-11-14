@@ -1,13 +1,15 @@
 ---
 title: What is an NFT?
-date: '2021-08-24T00:00:00Z'
+date: '2021-11-14T00:00:00Z'
 layout: post
 draft: false
-path: '/2021/08/24/what-is-an-NFT'
+path: '/2021/11/14/what-is-an-NFT'
 category: 'Crypto'
 tags:
   - 'Crypto'
-description: ''
+description: 'There is a lot of confusion on what an NFT is and this article aims to educate.
+The goal is to truly learn what NFTs are faithfully and without the influence of
+bias or confusing analogies'
 ---
 
 There is a lot of confusion on what an NFT is and this article aims to educate.
