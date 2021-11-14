@@ -14,7 +14,7 @@ export default function PostTemplateDetails(props) {
     <div>
       <div>
         <h1 sx={{ mt: 0, mb: 0 }}>{post.frontmatter.title}</h1>
-        <p sx={{ mt: 0 }}>Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}</p>
+        <p sx={{ mt: 0, opacity: "60%" }}>Zeevo - Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}</p>
         <div
           className={colorMode}
           sx={{

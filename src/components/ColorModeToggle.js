@@ -5,8 +5,9 @@ function ColorModeToggle() {
   const [colorMode, setColorMode] = useColorMode();
   const context = useThemeUI();
   const { theme } = context;
-  const { modes } = theme.colors;
-  const modeChoices = [...Object.keys(modes), 'default'];
+  const { rawColors } = theme;
+  const { modes } = rawColors;
+  const modeChoices = [...Object.keys(modes)];
 
   return (
     <IconButton
