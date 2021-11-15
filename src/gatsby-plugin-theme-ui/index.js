@@ -1,3 +1,5 @@
+import prism from '@theme-ui/prism/presets/theme-ui';
+
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
@@ -20,24 +22,29 @@ export default {
     text: '#f2f2f2',
     background: '#151515',
     primary: '#4CC9F0',
-    secondary: '#30c',
+    secondary: '#cc4c33',
     muted: '#f6f6f6',
     modes: {
       light: {
         text: '#333',
         background: '#EEEEEE',
         primary: '#07c',
+        secondary: '#30c',
       },
       cyber: {
         text: '#00ff2b',
         background: '#000',
         primary: '#FF00FF',
+        secondary: '#30c',
       },
     },
   },
-  style: {
-    root: {
-      fontWeight: '400',
+  styles: {
+    code: {
+      ...prism,
+    },
+    a: {
+      color: 'primary',
     },
   },
 };

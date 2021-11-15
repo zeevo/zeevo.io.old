@@ -131,12 +131,14 @@ To illustrate the points made here, we can look at a particularly bad NFT:
 
 At the time of writing this, Lazy Lions has 17.3k of Ethereum traded by volume.
 That is almost $8,000,000! Lazy Lions is a collection of NFTs representing
-profile pictures of Lions. They claim each NFT is unique and was created
-programmatically from a selection of different traits and colors. The idea here
-is that "rare" NFTs will be organically created due to the random selection of
-traits. For example, if during the creation of the collection, only one NFT
-obtained the "Blue" trait, then that member would be exceedingly rare (and thus,
-worth more money). We can view this NFT Smart Contract's Metadata on
+profile pictures of Lions. They claim that each NFT is unique and that each was
+created programmatically from a selection of different traits and colors. The
+idea here is that "rare" NFTs will be organically created due to the random
+selection of traits. For example, if during the creation of the collection, only
+one NFT obtained the "Blue" trait, then that member would be exceedingly rare
+(and thus, worth more money). However, their algorithm for programatically
+generating NFTs is closed-source so it is impossible to know just how organic
+the Lions really are. We can view this NFT Smart Contract's Metadata on
 [Etherscan](https://etherscan.io/address/0x8943c7bac1914c9a7aba750bf2b6b09fd21037e0).
 
 We can view this entire collection on [OpenSea](https://opensea.io/collection/lazy-lions).
@@ -185,7 +187,9 @@ Attaching NFT Metadata as an off-chain link such as `lazylionsnft.com/api/7182`
 gives the owners of `lazylionsnft.com` the ability to change NFT Metadata
 whenever they desire! NFTs like this have essentially none of the benfits of
 being on the Ethereum Blockchain and are nothing more than links to someone
-else's website.
+else's website. There  is no sense of permanence, no data integrity, and no
+guarantee that Lazy Lions NFT won't just be a collection of defunct links years
+from now.
 
 ### Checking NFT Metadata for yourself
 

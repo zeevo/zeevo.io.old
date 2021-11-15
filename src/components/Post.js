@@ -8,8 +8,7 @@ import './style/post.scss';
 
 class Post extends React.Component {
   render() {
-    const { title, date, category } = this.props.data.node.frontmatter;
-    const { slug, categorySlug } = this.props.data.node.fields;
+    const { title, date, category, path } = this.props.data.node.frontmatter;
     const { timeToRead } = this.props.data.node;
 
     return (
@@ -17,7 +16,7 @@ class Post extends React.Component {
         <h2 className="post__title" sx={{ lineHeight: 1 }}>
           <Link
             className="post__title-link"
-            to={slug}
+            to={path}
             sx={{
               color: 'text',
               // fontWeight: 'heading',
@@ -34,8 +33,8 @@ class Post extends React.Component {
             {moment(date).format('MMMM YYYY')} | {timeToRead} Minute read
           </time>
           <span className="post__meta-divider" />
-          <span className="post__meta-category" key={categorySlug}>
-            <Link to={categorySlug} className="post__meta-category-link" sx={{ color: 'primary' }}>
+          <span className="post__meta-category" key={category}>
+            <Link to={`/categories/${category}`} className="post__meta-category-link" sx={{ color: 'primary' }}>
               {category}
             </Link>
           </span>

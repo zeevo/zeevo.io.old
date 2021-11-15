@@ -3,28 +3,24 @@ import { jsx, useThemeUI } from 'theme-ui';
 
 import moment from 'moment';
 import { Link } from 'gatsby';
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import './style/posttemplatedetails.scss';
+
 
 export default function PostTemplateDetails(props) {
   const { colorMode } = useThemeUI();
-  const post = props.data.markdownRemark;
-  const tags = post.fields.tagSlugs;
+  const theme = useThemeUI();
+  console.log(theme);
+  const post = props.data.mdx;
+  const tags = post.tags;
 
   return (
     <div>
       <div>
         <h1 sx={{ mt: 0, mb: 0 }}>{post.frontmatter.title}</h1>
         <p sx={{ mt: 0, opacity: "60%" }}>Zeevo - Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}</p>
-        <div
-          className={colorMode}
-          sx={{
-            '& a': {
-              color: 'primary',
-            },
-          }}
-          /* eslint-disable-next-line react/no-danger */
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <MDXRenderer>{post.body}</MDXRenderer>
       </div>
       <div>
         <ul className="post-single__tags-list">
@@ -33,7 +29,7 @@ export default function PostTemplateDetails(props) {
             tags.map((tag, i) => (
               <li className="post-single__tags-list-item" key={tag}>
                 <Link
-                  to={tag}
+                  to={`/tags/${tag}`}
                   className="post-single__tags-list-item-link"
                   sx={{
                     color: 'primary',

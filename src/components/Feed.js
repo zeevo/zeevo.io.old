@@ -18,7 +18,7 @@ class Feed extends Component {
   }
 
   render() {
-    return this.state.filtered.map((post) => <Post data={post} key={post.node.fields.slug} />);
+    return this.state.filtered.map((post) => <Post data={post} key={post.node.path} />);
   }
 }
 

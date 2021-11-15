@@ -8,7 +8,7 @@ import banner from '../assets/images/banner.jpeg';
 class PostTemplate extends React.Component {
   render() {
     const { title, subtitle, url } = this.props.data.site.siteMetadata;
-    const post = this.props.data.markdownRemark;
+    const post = this.props.data.mdx;
     const { title: postTitle, description: postDescription } = post.frontmatter;
     const description = postDescription !== null ? postDescription : subtitle;
 
@@ -36,7 +36,7 @@ class PostTemplate extends React.Component {
 export default PostTemplate;
 
 export const pageQuery = graphql`
-  query PostBySlug($slug: String!) {
+  query PostBySlug($id: String!) {
     site {
       siteMetadata {
         url
@@ -59,16 +59,13 @@ export const pageQuery = graphql`
         url
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(id: { eq: $id }) {
       id
-      html
-      fields {
-        tagSlugs
-        slug
-      }
+      body
       frontmatter {
         title
         tags
+        category
         date
         description
       }

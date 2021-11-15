@@ -12,7 +12,7 @@ import banner from '../assets/images/banner.jpeg';
 function Index(props) {
   const siteMetadata = useSiteMetadata();
   const { title, subtitle, url, author } = siteMetadata;
-  const posts = props.data.allMarkdownRemark.edges;
+  const posts = props.data.allMdx.edges;
 
   return (
     <Layout isHomePage>
@@ -94,7 +94,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 1000
       filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
       sort: { order: DESC, fields: [frontmatter___date] }
@@ -102,15 +102,12 @@ export const pageQuery = graphql`
       edges {
         node {
           timeToRead
-          fields {
-            slug
-            categorySlug
-          }
           frontmatter {
             title
             date
             category
             description
+            path
           }
         }
       }

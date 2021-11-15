@@ -7,22 +7,20 @@ const createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve('./src/templates/post-template.js');
-    const pageTemplate = path.resolve('./src/templates/page-template.js');
     const tagTemplate = path.resolve('./src/templates/tag-template.js');
     const categoryTemplate = path.resolve('./src/templates/category-template.js');
 
     graphql(`
       {
-        allMarkdownRemark(limit: 1000, filter: { frontmatter: { draft: { ne: true } } }) {
+        allMdx(filter: { frontmatter: { draft: { ne: true } } }) {
           edges {
             node {
-              fields {
-                slug
-              }
+              id
               frontmatter {
                 tags
                 layout
                 category
+                path
               }
             }
           }
@@ -33,12 +31,13 @@ const createPages = ({ graphql, actions }) => {
         console.log(result.errors);
         reject(result.errors);
       } else {
-        _.each(result.data.allMarkdownRemark.edges, (edge) => {
+        _.each(result.data.allMdx.edges, (edge) => {
           if (_.get(edge, 'node.frontmatter.layout') === 'post') {
+            console.log(edge.node.frontmatter);
             createPage({
-              path: edge.node.fields.slug,
+              path: edge.node.frontmatter.path,
               component: slash(postTemplate),
-              context: { slug: edge.node.fields.slug },
+              context: { id: edge.node.id },
             });
 
             let tags = [];

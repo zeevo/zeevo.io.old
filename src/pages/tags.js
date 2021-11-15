@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 
 function Tags(props) {
   const { title } = props.data.site.siteMetadata;
-  const tags = props.data.allMarkdownRemark.group;
+  const tags = props.data.allMdx.group;
 
   return (
     <Layout>

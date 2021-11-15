@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 class CategoriesRoute extends React.Component {
   render() {
     const { title } = this.props.data.site.siteMetadata;
-    const categories = this.props.data.allMarkdownRemark.group;
+    const categories = this.props.data.allMdx.group;
 
     return (
       <Layout>

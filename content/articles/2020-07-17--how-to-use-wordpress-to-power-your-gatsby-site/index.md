@@ -166,7 +166,7 @@ somewhat technical, but Jen Kagan from Netlify does a great job summarizing this
 concisely:
 
 > You might think that you could simply configure a CNAME record for the apex
-> domain—point example.com to <automatically-generated-name>.netlify.app—but you
+> domain—point example.com to \<automatically-generated-name\>.netlify.app—but you
 > shouldn’t! This could severely break other things for you. According to the
 > DNS specification, any domain name that has a CNAME record set cannot have any
 > other DNS records associated with it. This means that if you set up a CNAME
