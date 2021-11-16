@@ -23,7 +23,7 @@ easily swapped with one another without losing value. Typically, we see NFTs
 implemented on a Blockchain such as Ethereum. The benefit of storing them on a
 decentralized Blockchain is that they will be distributed to many computers and
 also be available for anyone to see at all times. Ethereum's Smart Contract
-platform is one of the most popular methods of implementing NFTs because of it
+platform is one of the most popular methods of implementing NFTs because it
 is a popular chain with strong developer tooling. Assuming the Smart Contract is
 correctly implemented, once an NFT is established on the Blockchain, a sense of
 scarcity, genuineness, and permanence emerges leading to NFT markets where
