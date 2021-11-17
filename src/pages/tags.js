@@ -34,7 +34,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 2000
       filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
     ) {

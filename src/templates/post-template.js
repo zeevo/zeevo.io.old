@@ -36,7 +36,7 @@ class PostTemplate extends React.Component {
 export default PostTemplate;
 
 export const pageQuery = graphql`
-  query PostBySlug($id: String!) {
+  query PostByPath($id: String!) {
     site {
       siteMetadata {
         url

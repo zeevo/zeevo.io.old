@@ -8,7 +8,7 @@ class TagTemplateDetails extends React.Component {
     const posts = this.props.data.allMdx.edges;
 
     posts.forEach((post) => {
-      items.push(<Post data={post} key={post.node.fields.slug} />);
+      items.push(<Post data={post} key={post.node.path} />);
     });
 
     return (
