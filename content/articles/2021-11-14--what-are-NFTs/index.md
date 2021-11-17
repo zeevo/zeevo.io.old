@@ -24,7 +24,7 @@ implemented on a Blockchain such as Ethereum. The benefit of storing them on a
 decentralized Blockchain is that they will be distributed to many computers and
 also be available for anyone to see at all times. Ethereum's Smart Contract
 platform is one of the most popular methods of implementing NFTs because it
-is a popular chain with strong developer tooling. Assuming the Smart Contract is
+is a strong chain with strong developer tooling. Assuming the Smart Contract is
 correctly implemented, once an NFT is established on the Blockchain, a sense of
 scarcity, genuineness, and permanence emerges leading to NFT markets where
 people buy, sell, and trade NFTs as assets.
@@ -190,6 +190,78 @@ being on the Ethereum Blockchain and are nothing more than links to someone
 else's website. There  is no sense of permanence, no data integrity, and no
 guarantee that Lazy Lions NFT won't just be a collection of defunct links years
 from now.
+
+# Image Encoded NFT: CryptoPunks
+
+![CryptoPunks](./cryptopunks.png)
+
+A lot of the success of CryptoPunks can be attributed to the fact that it is an
+**Image Encoded** NFT. This means that every NFT is solely on the Blockchain: No
+IPFS, no off-chain API, no chance of compromise or change of Metadata.
+
+Let's look at the data that is on-chain regarding a CryptoPunk NFT.
+
+- Smart Contract for CryptoPunk data: [https://etherscan.io/address/0x16f5a35647d6f03d5d3da7b35409d65ba03af3b2](https://etherscan.io/address/0x16f5a35647d6f03d5d3da7b35409d65ba03af3b2)
+
+Some of the methods this Contract offers are:
+
+- `punkAttributes`
+- `punkImage`
+- `punkImageSvg`
+
+--> `punkAttributes(6027)`
+
+```
+Male 3
+Mole
+Shaved Head
+Classic Shades
+```
+
+--> `punkImage`
+
+```
+0x0ff000000ff000000ff000000ff000000ff000000ff000000ff0000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000ff5e4c37ff5e4c37f
+f5e4c37ff5e4c37ff5e4c37ff5e4c37ff5e4c37ff000000ff00000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000ff5e4c37ff5e4c37ff645849ff5e4c37ff5e4
+c37ff5e4c37ff5e4c37ff5e4c37ff5e4c37ff000000ff00000000000000000000000...
+```
+
+--> `punkImageSvg`
+
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 24 24">
+    <rect x="8" y="5" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="9" y="5" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="10" y="5" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="11" y="5" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="12" y="5" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="13" y="5" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="14" y="5" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="7" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+    <rect x="8" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#5e4c37ff" />
+    <rect x="9" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#5e4c37ff" />
+    <rect x="10" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#5e4c37ff" />
+    <rect x="11" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#5e4c37ff" />
+    <rect x="12" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#5e4c37ff" />
+    <rect x="13" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#5e4c37ff" />
+    <rect x="14" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#5e4c37ff" />
+    <rect x="15" y="6" width="1" height="1" shape-rendering="crispEdges" fill="#000000ff" />
+...
+```
+
+As we can this is a map of X, Y coordinates in an SVG format. We can open this as an SVG file with any SVG viewer:
+
+![PunkSvg](./punk.svg)
+
+Just having the NFT ID, we can see NFT attributes and render the image. All of
+this information has come from the Ethereum Blockchain and no off-chain data
+sources.
+
+NFTs like these are some of the most expensive to mint. However, they are the
+most pure in terms of Blockchain philosophies, offer the best security, and
+have guaranteed data permanence.
 
 ### Checking NFT Metadata for yourself
 

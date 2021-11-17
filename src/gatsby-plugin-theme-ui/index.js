@@ -22,20 +22,20 @@ export default {
     text: '#f2f2f2',
     background: '#151515',
     primary: '#4CC9F0',
-    secondary: '#cc4c33',
+    secondary: '#7FFFD4',
     muted: '#f6f6f6',
     modes: {
       light: {
         text: '#333',
         background: '#EEEEEE',
         primary: '#07c',
-        secondary: '#30c',
+        secondary: '#405d27',
       },
       cyber: {
         text: '#00ff2b',
         background: '#000',
         primary: '#FF00FF',
-        secondary: '#30c',
+        secondary: '#00ff2b',
       },
     },
   },
