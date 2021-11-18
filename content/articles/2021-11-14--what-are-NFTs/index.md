@@ -158,7 +158,7 @@ off-chain location that has additional information.
 
 ![Lazy Lions Collection](./tokenUri.png)
 
-The method returned a string and we now have an off-chain place to visit: [tokenURI](https://www.lazylionsnft.com/api/7182)
+The method returned a string and we now have an off-chain place to visit: [https://www.lazylionsnft.com/api/7182](https://www.lazylionsnft.com/api/7182)
 
 This is a NFT with it's Metadata in the form of a **Proprietary API**. Visiting this link returns us JSON:
 
