@@ -12,7 +12,7 @@ export default function PostTemplateDetails(props) {
   const { colorMode } = useThemeUI();
   const theme = useThemeUI();
   const post = props.data.mdx;
-  const tags = post.tags;
+  const tags = post.frontmatter.tags;
 
   return (
     <div>
@@ -34,7 +34,7 @@ export default function PostTemplateDetails(props) {
                     color: 'primary',
                   }}
                 >
-                  {post.frontmatter.tags[i]}
+                  {tag}
                 </Link>
               </li>
             ))}
