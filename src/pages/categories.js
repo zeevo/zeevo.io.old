@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import React from 'react';
+import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
-import { Link, graphql } from 'gatsby';
+import React from 'react';
 import Helmet from 'react-helmet';
+import { jsx } from 'theme-ui';
 import Layout from '../components/Layout';
 
 class CategoriesRoute extends React.Component {

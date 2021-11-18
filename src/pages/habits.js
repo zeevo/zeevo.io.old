@@ -1,15 +1,14 @@
 /** @jsx jsx */
 /* eslint-disable-next-line */
-import React from 'react';
-import { jsx, Flex } from 'theme-ui';
+import { format, getDayOfYear, getYear, isWithinInterval, sub } from 'date-fns';
 import { graphql } from 'gatsby';
+import React from 'react';
 import Helmet from 'react-helmet';
-import { getDayOfYear, getYear, sub, format, isWithinInterval } from 'date-fns';
-import Layout from '../components/Layout';
-import Goal from '../components/Goal';
+import { Flex, jsx } from 'theme-ui';
 import banner from '../assets/images/banner.jpeg';
-
 import CheckCircle from '../components/CheckCircle';
+import Goal from '../components/Goal';
+import Layout from '../components/Layout';
 import MinusCircle from '../components/MinusCircle';
 
 const calculate = (days) => {

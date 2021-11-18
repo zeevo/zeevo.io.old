@@ -10,7 +10,7 @@ import CurtainLink from './CurtainLink';
 import MenuButton from './MenuButton';
 import HomeButton from './HomeButton';
 
-import useSiteMetadata from '../hooks/use-site-metadata';
+import { useSiteMetadata } from '../hooks';
 
 import '../assets/scss/init.scss';
 import '../assets/fonts/fontello-771c82e0/css/fontello.css';

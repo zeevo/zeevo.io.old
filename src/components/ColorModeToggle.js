@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useColorMode, useThemeUI, IconButton } from 'theme-ui';
+import { IconButton, jsx, useColorMode, useThemeUI } from 'theme-ui';
 
 function ColorModeToggle() {
   const [colorMode, setColorMode] = useColorMode();

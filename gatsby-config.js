@@ -41,8 +41,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMdx } }) =>
-            allMdx.edges.map((edge) => {
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark.edges.map((edge) => {
                 return {
                   ...edge.node.frontmatter,
                   description: edge.node.frontmatter.description,
@@ -53,27 +53,27 @@ module.exports = {
                 };
               }),
             query: `
-              {
-                allMdx(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
-                ) {
-                  edges {
-                    node {
-                      html
-                      frontmatter {
-                        title
-                        date
-                        layout
-                        draft
-                        description
-                        path
-                      }
+            {
+              allMarkdownRemark(
+                limit: 1000
+                sort: {order: DESC, fields: [frontmatter___date]}
+                filter: {frontmatter: {draft: {ne: true}}}
+              ) {
+                edges {
+                  node {
+                    html
+                    frontmatter {
+                      title
+                      date
+                      layout
+                      draft
+                      description
+                      path
                     }
                   }
                 }
               }
+            }            
             `,
             output: '/rss.xml',
             title: siteConfig.title,

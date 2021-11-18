@@ -1,1 +1,3 @@
-export { default as useSiteMetadata } from './use-site-metadata';
+import useSiteMetadata from './use-site-metadata';
+
+export { useSiteMetadata };

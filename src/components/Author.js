@@ -1,8 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-
 import moment from 'moment';
-
+import { jsx } from 'theme-ui';
 import './style/author.scss';
 
 function Author({ author, date }) {
