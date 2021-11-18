@@ -2,7 +2,7 @@
 title: Modern Artists You Should Know
 date: '2021-06-24T17:43:28Z'
 layout: post
-draft: false
+draft: true
 path: '/2021/05/24/artists-you-should-know'
 category: 'Art'
 tags:
