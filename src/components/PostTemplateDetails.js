@@ -11,7 +11,6 @@ import './style/posttemplatedetails.scss';
 export default function PostTemplateDetails(props) {
   const { colorMode } = useThemeUI();
   const theme = useThemeUI();
-  console.log(theme);
   const post = props.data.mdx;
   const tags = post.tags;
 

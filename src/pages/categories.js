@@ -1,5 +1,7 @@
-import kebabCase from 'lodash/kebabCase';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import React from 'react';
+import kebabCase from 'lodash/kebabCase';
 import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
@@ -13,27 +15,27 @@ class CategoriesRoute extends React.Component {
       <Layout>
         <div>
           <Helmet title={`All Categories - ${title}`} />
-          <div className="content">
-            <div className="content__inner">
-              <div className="page">
-                <h1 className="page__title">Categories</h1>
-                <div className="page__body">
-                  <div className="categories">
-                    <ul className="categories__list">
-                      {categories.map((category) => (
-                        <li key={category.fieldValue} className="categories__list-item">
-                          <Link
-                            to={`/categories/${kebabCase(category.fieldValue)}/`}
-                            className="categories__list-item-link"
-                          >
-                            {category.fieldValue} ({category.totalCount})
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <h1 className="page__title">Categories</h1>
+          <div className="page__body">
+            <div className="categories">
+              <ul className="categories__list" sx={{ listStyle: 'none' }}>
+                {categories.map((category) => (
+                  <li key={category.fieldValue} className="categories__list-item">
+                    <Link
+                      to={`/categories/${kebabCase(category.fieldValue)}/`}
+                      sx={{
+                        color: 'text',
+                        // fontWeight: 'heading',
+                        '&:hover': {
+                          color: 'primary',
+                        },
+                      }}
+                    >
+                      {category.fieldValue} ({category.totalCount})
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -76,10 +78,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMdx(
-      limit: 2000
-      filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
-    ) {
+    allMdx(limit: 2000, filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }) {
       group(field: frontmatter___category) {
         fieldValue
         totalCount

@@ -77,8 +77,6 @@ const calculate = (days) => {
 
   const sortedDates = daysBetween.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  console.log(sortedDates);
-
   const done = 1;
   for (const day of sortedDates.slice(1, sortedDates.length)) {
     if (day.count === done) {

@@ -33,7 +33,6 @@ const createPages = ({ graphql, actions }) => {
       } else {
         _.each(result.data.allMdx.edges, (edge) => {
           if (_.get(edge, 'node.frontmatter.layout') === 'post') {
-            console.log(edge.node.frontmatter);
             createPage({
               path: edge.node.frontmatter.path,
               component: slash(postTemplate),

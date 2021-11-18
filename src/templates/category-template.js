@@ -59,10 +59,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 1000
       filter: {
-        frontmatter: { category: { eq: $category }, layout: { eq: "post" }, draft: { ne: true } }
+        frontmatter: { category: { eq: $category }, draft: { ne: true } }
       }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
@@ -74,6 +74,7 @@ export const pageQuery = graphql`
             date
             category
             description
+            path
           }
         }
       }
