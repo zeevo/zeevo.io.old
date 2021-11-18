@@ -34,7 +34,7 @@ export default function Post(props) {
         <span className="post__meta-divider" />
         <span className="post__meta-category" key={category}>
           <Link
-            to={`/categories/${category}`}
+            to={`/categories/${category.toLowerCase()}`}
             className="post__meta-category-link"
             sx={{ color: 'primary' }}
           >
