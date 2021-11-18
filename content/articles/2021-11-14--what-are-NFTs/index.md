@@ -153,7 +153,7 @@ Lazy Lion #7182 (I selected this at random) has a Contract address of
 We can use [Etherscan's Read Contract
 feature](https://etherscan.io/address/0x8943c7bac1914c9a7aba750bf2b6b09fd21037e0#readContract)
 to conveniently query the Contract for **NFT Metadata**. Executing the
-`tokenURI` method with an argument of `7182` will get us the Token's URI, a
+`tokenURI` method with an argument of `7182` will get us the Token's URI, an
 off-chain location that has additional information.
 
 ![Lazy Lions Collection](./tokenUri.png)
