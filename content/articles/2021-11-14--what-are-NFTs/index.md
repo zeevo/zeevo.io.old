@@ -37,13 +37,13 @@ new Address. **Selling** would consist of a payment to an address, followed by a
 
 ## What an NFT is not
 
-There is a common misconception that NFTs are _literal_ images distrbuted on the
+There is a common misconception that NFTs are _literal_ images distributed on the
 Ethereum Blockchain. This is absolutely not the case. The vast majority of NFTs
 minted are high quality PNG or JPEG file formatted pictures that exist off of
 the Blockchain (this is commonly referenced as being **off-chain**). The
 community has chosen the [IPFS system](https://en.wikipedia.org/wiki/InterPlanetary_File_System) 
 to help in the integrity of NFTs. For all intents and purposes, this is a good
-decision. The IPFS (Interplanetary File System), is a distrbuted database of
+decision. The IPFS (Interplanetary File System), is a distributed database of
 files similar to that of Bit Torrent. Files are uploaded permanently and are
 assigned an **IPFS Hash**: A unique ID for each file. IPFS operators help
 provide integrity to files by backing up portions of the entire IPFS. Together,
