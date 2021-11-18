@@ -3,41 +3,37 @@ import { jsx, useThemeUI } from 'theme-ui';
 
 import moment from 'moment';
 import { Link } from 'gatsby';
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import './style/posttemplatedetails.scss';
 
-
 export default function PostTemplateDetails(props) {
-  const { colorMode } = useThemeUI();
-  const theme = useThemeUI();
   const post = props.data.mdx;
-  const tags = post.frontmatter.tags;
+  const category = post.frontmatter.category;
 
   return (
     <div>
       <div>
         <h1 sx={{ mt: 0, mb: 0 }}>{post.frontmatter.title}</h1>
-        <p sx={{ mt: 0, opacity: "60%" }}>Zeevo - Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}</p>
+        <p sx={{ mt: 0, opacity: '60%' }}>
+          Zeevo - Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}
+        </p>
         <MDXRenderer>{post.body}</MDXRenderer>
       </div>
       <div>
         <ul className="post-single__tags-list">
           Read more:
-          {tags &&
-            tags.map((tag, i) => (
-              <li className="post-single__tags-list-item" key={tag}>
-                <Link
-                  to={`/tags/${tag}`}
-                  className="post-single__tags-list-item-link"
-                  sx={{
-                    color: 'primary',
-                  }}
-                >
-                  {tag}
-                </Link>
-              </li>
-            ))}
+          <li className="post-single__tags-list-item" key={category}>
+            <Link
+              to={`/tags/${category.toLowerCase()}`}
+              className="post-single__tags-list-item-link"
+              sx={{
+                color: 'primary',
+              }}
+            >
+              {category}
+            </Link>
+          </li>
         </ul>
       </div>
       <Link
