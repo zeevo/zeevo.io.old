@@ -121,8 +121,8 @@ legitimacy to their NFTs.
 
 ### Image Encoded NFTs
 
-Smart Contracts that encoded their NFTs directly to the Blockchain are more pure
-than those that do not.
+Smart Contracts that encoded their NFTs directly to the Blockchain are often
+seen as more philosophically pure than those that have off-chain data.
 
 # Egregious offender: Lazy Lions NFT
 
