@@ -20,21 +20,19 @@ export default function PostTemplateDetails(props) {
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
       </div>
-      <div>
-        <ul className="post-single__tags-list">
-          Read more:
-          <li className="post-single__tags-list-item" key={category}>
-            <Link
-              to={`/tags/${category.toLowerCase()}`}
-              className="post-single__tags-list-item-link"
-              sx={{
-                color: 'primary',
-              }}
-            >
-              {category}
-            </Link>
-          </li>
-        </ul>
+      <div className="post-single__tags-list">
+        Read more:
+        <div className="post-single__tags-list-item">
+          <Link
+            to={`/categories/${category.toLowerCase()}`}
+            className="post-single__tags-list-item-link"
+            sx={{
+              color: 'primary',
+            }}
+          >
+            {category}
+          </Link>
+        </div>
       </div>
       <Link
         to="/"
