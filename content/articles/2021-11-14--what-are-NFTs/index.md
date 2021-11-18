@@ -41,14 +41,14 @@ There is a common misconception that NFTs are _literal_ images distributed on th
 Ethereum Blockchain. This is absolutely not the case. The vast majority of NFTs
 minted are high quality PNG or JPEG file formatted pictures that exist off of
 the Blockchain (this is commonly referenced as being **off-chain**). The
-community has chosen the [IPFS system](https://en.wikipedia.org/wiki/InterPlanetary_File_System) 
+community has chosen the [IPFS system](https://en.wikipedia.org/wiki/InterPlanetary_File_System)
 to help in the integrity of NFTs. For all intents and purposes, this is a good
 decision. The IPFS (Interplanetary File System), is a distributed database of
 files similar to that of Bit Torrent. Files are uploaded permanently and are
 assigned an **IPFS Hash**: A unique ID for each file. IPFS operators help
 provide integrity to files by backing up portions of the entire IPFS. Together,
 a strong and permanent network of file systems creates a database of files
-that cannot be easily deleted or changed. 
+that cannot be easily deleted or changed.
 
 However, there does exist projects that encode image data directly onto the
 Blockchain usually in the format of low-size pixel map or pixel art styles. The
@@ -80,7 +80,7 @@ These can take many forms and some offer much more security, longevity, and accu
 | Type                 | Characteristics                                                                                                                                                                                                                                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | IPFS Hashes          | A string of characters indicating where users can go off-chain to find the original NFT image or additional information                                                                                                                                                                                            |
-| IPFS Gateway URLs    | Similar to an IPFS Hash, this is an internet facing link to a public IPFS Gateway. IPFS Gateways are websites that allow users to view IPFS data. There are no guarantees                                                                                                                                          |
+| IPFS Gateway URLs    | Similar to an IPFS Hash, this is an internet facing link to a public IPFS Gateway. IPFS Gateways are websites that allow users to view IPFS data. There are no guarantees that this domain will be around forever, or will remain in honourable hands.                                                             |
 | Proprietary API URLs | Websites that the NFT project owners host to provide additional information about their NFTs or for the original images.                                                                                                                                                                                           |
 | Image encoded        | less common, but potentially the most "accurate" implementation as image data is encoded directly into the Smart Contract itself so that all data is on-chain. These typically take the form of pixelated images as there are limits to the amount of data a Smart Contract can reasonably write to the blockchain |
 
@@ -187,7 +187,7 @@ Attaching NFT Metadata as an off-chain link such as `lazylionsnft.com/api/7182`
 gives the owners of `lazylionsnft.com` the ability to change NFT Metadata
 whenever they desire! NFTs like this have essentially none of the benfits of
 being on the Ethereum Blockchain and are nothing more than links to someone
-else's website. There  is no sense of permanence, no data integrity, and no
+else's website. There is no sense of permanence, no data integrity, and no
 guarantee that Lazy Lions NFT won't just be a collection of defunct links years
 from now.
 
