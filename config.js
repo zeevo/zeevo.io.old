@@ -3,7 +3,7 @@ module.exports = {
   title: 'Zeevo.io',
   copyright: '© 2021 zeevo',
   profilePic: './content/pages/photo.png',
-  googleAnalytics: 'UA-104714715-3',
+  googleAnalytics: 'UA-104714715-2',
   subtitle: 'Ramblings, art, and demos.',
   menu: [
     {
