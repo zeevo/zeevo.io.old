@@ -7,6 +7,7 @@ function HomeButton(props) {
   return (
     <Link to="/" {...props}>
       <Image
+        alt="Home Robot"
         sx={{
           width: '3rem',
           height: '3rem',

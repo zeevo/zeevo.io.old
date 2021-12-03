@@ -3,7 +3,7 @@ import { IconButton, jsx } from 'theme-ui';
 
 function MenuButton(props) {
   return (
-    <IconButton sx={{ cursor: 'pointer' }} {...props}>
+    <IconButton aria-label="Mobile menu" sx={{ cursor: 'pointer' }} {...props}>
       <svg
         width="2em"
         height="2em"
