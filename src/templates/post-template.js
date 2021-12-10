@@ -62,6 +62,7 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      tableOfContents
       frontmatter {
         title
         tags

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui';
+import { jsx } from 'theme-ui';
 
 import moment from 'moment';
 import { Link } from 'gatsby';
@@ -18,7 +18,7 @@ export default function PostTemplateDetails(props) {
         <p sx={{ mt: 0, opacity: '60%' }}>
           Zeevo - Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}
         </p>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <MDXRenderer post={post}>{post.body}</MDXRenderer>
       </div>
       <div className="post-single__tags-list">
         Read more:
