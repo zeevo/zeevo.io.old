@@ -5,31 +5,27 @@ import Layout from '../components/Layout';
 import CategoryTemplateDetails from '../components/CategoryTemplateDetails';
 import banner from '../assets/images/banner.jpeg';
 
-class CategoryTemplate extends React.Component {
-  render() {
-    const { title, url } = this.props.data.site.siteMetadata;
-    const { category } = this.props.pageContext;
+const CategoryTemplate = function CategoryTemplate(props) {
+  const { title, url } = props.data.site.siteMetadata;
+  const { category } = props.pageContext;
 
-    return (
-      <Layout>
-        <Helmet>
-          <html lang="en" />
-          <title>{`${category} - ${title}`}</title>
-          <meta name="description" content={`All posts in category ${category}`} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@zeevosec" />
-          <meta name="twitter:creator" content="@zeevosec" />
-          <meta name="twitter:title" content={`${category} - ${title}`} />
-          <meta name="twitter:description" content={`All posts in category ${category}`} />
-          <meta name="twitter:image" content={url + banner} />
-        </Helmet>
-        <CategoryTemplateDetails {...this.props} />
-      </Layout>
-    );
-  }
-}
-
-export default CategoryTemplate;
+  return (
+    <Layout>
+      <Helmet>
+        <html lang="en" />
+        <title>{`${category} - ${title}`}</title>
+        <meta name="description" content={`All posts in category ${category}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@zeevosec" />
+        <meta name="twitter:creator" content="@zeevosec" />
+        <meta name="twitter:title" content={`${category} - ${title}`} />
+        <meta name="twitter:description" content={`All posts in category ${category}`} />
+        <meta name="twitter:image" content={url + banner} />
+      </Helmet>
+      <CategoryTemplateDetails {...props} />
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
@@ -61,9 +57,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       limit: 1000
-      filter: {
-        frontmatter: { category: { eq: $category }, draft: { ne: true } }
-      }
+      filter: { frontmatter: { category: { eq: $category }, draft: { ne: true } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
@@ -81,3 +75,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default CategoryTemplate;

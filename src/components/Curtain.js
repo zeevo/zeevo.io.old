@@ -2,7 +2,7 @@
 import { slide as Menu } from 'react-burger-menu';
 import { useThemeUI, jsx } from 'theme-ui';
 
-function Curtain({ children, isOpen, onClose }) {
+const Curtain = function({ children, isOpen, onClose }) {
   const { theme } = useThemeUI();
 
   const styles = {

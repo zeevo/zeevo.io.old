@@ -3,7 +3,7 @@ import moment from 'moment';
 import { jsx } from 'theme-ui';
 import './style/author.scss';
 
-function Author({ author, date }) {
+const Author = function Author({ author, date }) {
   return (
     <div className="author">
       <div className="avatar">
@@ -40,6 +40,6 @@ function Author({ author, date }) {
       </div>
     </div>
   );
-}
+};
 
 export default Author;

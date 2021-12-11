@@ -1,14 +1,13 @@
 /** @jsx jsx */
 import Helmet from 'react-helmet';
 import { jsx } from 'theme-ui';
-import React from 'react';
 import banner from '../assets/images/banner.jpeg';
 import Layout from '../components/Layout';
 import ProjectLink from '../components/ProjectLink';
 import '../components/style/pagetemplatedetails.scss';
 import { useSiteMetadata } from '../hooks';
 
-function Projects() {
+const Projects = function Projects() {
   const siteMetadata = useSiteMetadata();
   const { title, subtitle, url, projects } = siteMetadata;
 
@@ -47,6 +46,6 @@ function Projects() {
       </div>
     </Layout>
   );
-}
+};
 
 export default Projects;

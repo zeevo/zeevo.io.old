@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import kebabCase from 'lodash/kebabCase';
 import Layout from '../components/Layout';
 
-function Tags(props) {
+const Tags = function(props) {
   const { title } = props.data.site.siteMetadata;
   const tags = props.data.allMdx.group;
 

@@ -6,7 +6,7 @@ import './style/menu.scss';
 
 const isExternal = (path) => path.startsWith('http');
 
-const Menu = (props) => {
+const Menu = function(props) {
   const { data } = props;
 
   const menuBlock = (
@@ -56,6 +56,6 @@ const Menu = (props) => {
   );
 
   return <nav className="menu">{menuBlock}</nav>;
-};
+}
 
 export default Menu;

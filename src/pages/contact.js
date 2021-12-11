@@ -6,7 +6,7 @@ import ExternalLink from '../components/ExternalLink';
 import banner from '../assets/images/banner.jpeg';
 import useSiteMetadata from '../hooks/use-site-metadata';
 
-function Contact() {
+const Contact = function Contact() {
   const { colorMode } = useThemeUI();
   const { title, url, author } = useSiteMetadata();
   const { socials } = author;
@@ -40,10 +40,9 @@ function Contact() {
           for pictures of food and lizards.
         </li>
         <li>
-          <a>
-            I am also around on <ExternalLink href={discord.url}>Discord</ExternalLink> at{' '}
-            {discord.name}.
-          </a>
+          <ExternalLink href={discord.url}>
+            I am also around on Discord at {discord.name}.
+          </ExternalLink>
         </li>
         <li>
           <p sx={{ fontWeight: 'bold' }}>Hire me directly if you need a website built:</p>
@@ -89,6 +88,6 @@ function Contact() {
       </ul>
     </Layout>
   );
-}
+};
 
 export default Contact;

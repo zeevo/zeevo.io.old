@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-import React from 'react';
 import { Link } from 'gatsby';
 import moment from 'moment';
 import './style/post.scss';
 
-export default function Post(props) {
+const Post = function Post(props) {
   const { title, date, category, path } = props.data.node.frontmatter;
   const { timeToRead } = props.data.node;
 
@@ -44,4 +43,6 @@ export default function Post(props) {
       </div>
     </div>
   );
-}
+};
+
+export default Post;

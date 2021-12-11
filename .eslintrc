@@ -1,7 +1,5 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["import", "react"],
+  "extends": ["airbnb", "prettier"],
   "globals": {
     "graphql": true
   },
@@ -9,23 +7,24 @@
     "browser": true
   },
   "rules": {
-    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
-    "comma-dangle": ["error", "always-multiline"],
-    "function-paren-newline": "off",
-    "no-console": "off",
-    "prefer-destructuring": "off",
+    // "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
+    // "comma-dangle": ["error", "always-multiline"],
+    // "function-paren-newline": "off",
+    // "no-console": "off",
+    "no-console": "warn",
+    "prefer-destructuring": "warn",
+    "react/destructuring-assignment": "warn",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
-    "jsx-a11y/anchor-is-valid": "off",
-    "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/no-static-element-interactions": "off",
+    // "jsx-a11y/anchor-is-valid": "off",
+    // "jsx-a11y/click-events-have-key-events": "off",
+    // "jsx-a11y/no-static-element-interactions": "off",
     "react/jsx-filename-extension": "off",
-    "react/prefer-stateless-function": "off",
-    "react/prop-types": "off",
-    "react/destructuring-assignment": "off",
-    "react/jsx-props-no-spreading": "off",
-    "arrow-parens": "off",
-    "import/prefer-default-export": "off",
-    "no-restricted-syntax": "off"
+    // "react/prefer-stateless-function": "off",
+    "react/prop-types": "off", // I'll get to TypeScript eventually
+    "react/jsx-props-no-spreading": "warn"
+    // "arrow-parens": "off",
+    // "import/prefer-default-export": "off",
+    // "no-restricted-syntax": "off"
   }
 }

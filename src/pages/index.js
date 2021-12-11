@@ -9,7 +9,7 @@ import { useSiteMetadata } from '../hooks';
 
 import banner from '../assets/images/banner.jpeg';
 
-function Index(props) {
+const Index = function Index(props) {
   const siteMetadata = useSiteMetadata();
   const { title, subtitle, url, author } = siteMetadata;
   const posts = props.data.allMdx.edges;
@@ -57,7 +57,7 @@ function Index(props) {
       <Feed posts={posts} author={author} subtitle={subtitle} />
     </Layout>
   );
-}
+};
 
 export default Index;
 

@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-const StatCard = ({ title, invert = false, addendum, number }) => (
-  <div>
+const StatCard = function({ title, invert = false, addendum, number }) {
+  return <div>
     <h3 sx={{ marginTop: '1rem' }}>{title}</h3>
     <div>
       {invert && (
@@ -19,6 +19,6 @@ const StatCard = ({ title, invert = false, addendum, number }) => (
       )}
     </div>
   </div>
-);
+}
 
 export default StatCard;

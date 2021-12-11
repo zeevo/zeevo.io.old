@@ -1,22 +1,20 @@
 import React from 'react';
 import Post from './Post';
 
-class CategoryTemplateDetails extends React.Component {
-  render() {
-    const items = [];
-    const { category } = this.props.pageContext;
-    const posts = this.props.data.allMdx.edges;
-    posts.forEach((post) => {
-      items.push(<Post data={post} key={post.node.path} />);
-    });
+const CategoryTemplateDetails = function CategoryTemplateDetails({ pageContext, data }) {
+  const items = [];
+  const { category } = pageContext;
+  const posts = data.allMdx.edges;
+  posts.forEach((post) => {
+    items.push(<Post data={post} key={post.node.path} />);
+  });
 
-    return (
-      <>
-        <h1 className="page__title">{category}</h1>
-        <div>{items}</div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <h1 className="page__title">{category}</h1>
+      <div>{items}</div>
+    </>
+  );
+};
 
 export default CategoryTemplateDetails;

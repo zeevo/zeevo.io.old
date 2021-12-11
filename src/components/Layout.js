@@ -15,7 +15,7 @@ import { useSiteMetadata } from '../hooks';
 import '../assets/scss/init.scss';
 import '../assets/fonts/fontello-771c82e0/css/fontello.css';
 
-function Layout(props) {
+const Layout = function(props) {
   const { isHomePage, pageName } = props;
 
   const { theme, colorMode } = useThemeUI();
@@ -23,7 +23,7 @@ function Layout(props) {
 
   const siteMetadata = useSiteMetadata();
 
-  const menu = siteMetadata.menu;
+  const {menu} = siteMetadata;
 
   const titleStyles = {
     fontSize: '18px',

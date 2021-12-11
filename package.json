@@ -21,7 +21,8 @@
     "deploy-s3": "gatsby-plugin-s3 deploy -y",
     "develop": "gatsby develop",
     "format": "prettier --write './*.js' 'src/**/*.js' 'content'",
-    "lint": "./node_modules/.bin/eslint --cache --ext .js,.jsx --ignore-pattern public .",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint:fix": "./node_modules/.bin/eslint --fix --ext .js,.jsx --ignore-pattern public .",
     "prettier": "prettier --check './*.js' 'src/**/*.js'",
     "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -69,6 +70,13 @@
     "theme-ui": "^0.12.0"
   },
   "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.4.1"
   },
   "bugs": {

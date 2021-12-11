@@ -4,7 +4,7 @@ import { Popover, Transition } from '@headlessui/react';
 import { useState, useEffect } from 'react';
 import { usePopper } from 'react-popper';
 
-export default function ProjectLink({ project }) {
+const ProjectLink = function ProjectLink({ project }) {
   const { theme } = useThemeUI();
   const [referenceElement, setReferenceElement] = useState();
   const [popperElement, setPopperElement] = useState();
@@ -95,4 +95,6 @@ export default function ProjectLink({ project }) {
       )}
     </Popover>
   );
-}
+};
+
+export default ProjectLink;

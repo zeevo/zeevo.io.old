@@ -2,7 +2,7 @@
 import { Link } from 'gatsby';
 import { jsx, Image, useThemeUI } from 'theme-ui';
 
-function HomeButton(props) {
+const HomeButton = function(props) {
   const { theme } = useThemeUI();
   return (
     <Link to="/" {...props}>

@@ -5,12 +5,11 @@ import TableOfContents from './src/components/TableOfContents';
 
 import './src/styles/global.css';
 
-const wrapPageElement = ({ element, props }) => {
-  return (
-    <MDXProvider components={{ TableOfContents }} {...props}>
-      {element}
-    </MDXProvider>
-  );
-};
+const wrapPageElement = ({ element, props }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <MDXProvider components={{ TableOfContents }} {...props}>
+    {element}
+  </MDXProvider>
+);
 
 export { wrapPageElement };

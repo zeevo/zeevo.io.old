@@ -1,27 +1,25 @@
 import React from 'react';
 import Post from './Post';
 
-class TagTemplateDetails extends React.Component {
-  render() {
-    const items = [];
-    const tagTitle = this.props.pageContext.tag;
-    const posts = this.props.data.allMdx.edges;
+const TagTemplateDetails = function TagTemplateDetails(props) {
+  const items = [];
+  const tagTitle = props.pageContext.tag;
+  const posts = props.data.allMdx.edges;
 
-    posts.forEach((post) => {
-      items.push(<Post data={post} key={post.node.path} />);
-    });
+  posts.forEach((post) => {
+    items.push(<Post data={post} key={post.node.path} />);
+  });
 
-    return (
-      <>
-        <h1 className="page__title">
-          All Posts tagged as &quot;
-          {tagTitle}
-          &quot;
-        </h1>
-        <div className="page__body">{items}</div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <h1 className="page__title">
+        All Posts tagged as &quot;
+        {tagTitle}
+        &quot;
+      </h1>
+      <div className="page__body">{items}</div>
+    </>
+  );
+};
 
 export default TagTemplateDetails;

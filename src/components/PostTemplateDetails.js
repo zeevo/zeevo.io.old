@@ -7,9 +7,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import './style/posttemplatedetails.scss';
 
-export default function PostTemplateDetails(props) {
+const PostTemplateDetails = function (props) {
   const post = props.data.mdx;
-  const category = post.frontmatter.category;
+  const { category } = post.frontmatter;
 
   return (
     <div>
@@ -57,4 +57,6 @@ export default function PostTemplateDetails(props) {
       </Link>
     </div>
   );
-}
+};
+
+export default PostTemplateDetails;

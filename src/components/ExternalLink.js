@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-function ExternalLink({ children, ...rest }) {
+const ExternalLink = function({ children, ...rest }) {
   return (
     <a sx={{ color: 'primary' }} {...rest}>
       {children}

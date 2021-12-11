@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const isExternal = (path) => path.startsWith('http');
 
-function CurtainLink({ label, href }) {
+const CurtainLink = function({ label, href }) {
   const { theme } = useThemeUI();
   if (isExternal(href)) {
     return (

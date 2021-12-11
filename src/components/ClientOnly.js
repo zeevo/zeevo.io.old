@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const ClientOnly = ({ children, ...props }) => {
+const ClientOnly = function({ children, ...props }) {
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
     setHasMounted(true);
@@ -11,6 +11,6 @@ const ClientOnly = ({ children, ...props }) => {
   }
 
   return <div {...props}>{children}</div>;
-};
+}
 
 export default ClientOnly;

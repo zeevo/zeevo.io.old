@@ -5,35 +5,31 @@ import Layout from '../components/Layout';
 import PostTemplateDetails from '../components/PostTemplateDetails';
 import banner from '../assets/images/banner.jpeg';
 
-class PostTemplate extends React.Component {
-  render() {
-    const { title, subtitle, url } = this.props.data.site.siteMetadata;
-    const post = this.props.data.mdx;
-    const { title: postTitle, description: postDescription } = post.frontmatter;
-    const description = postDescription !== null ? postDescription : subtitle;
+const PostTemplate = function PostTemplate(props) {
+  const { title, subtitle, url } = props.data.site.siteMetadata;
+  const post = props.data.mdx;
+  const { title: postTitle, description: postDescription } = post.frontmatter;
+  const description = postDescription !== null ? postDescription : subtitle;
 
-    return (
-      <Layout>
-        <div>
-          <Helmet>
-            <html lang="en" />
-            <title>{`${postTitle} - ${title}`}</title>
-            <meta name="description" content={description} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@zeevosec" />
-            <meta name="twitter:creator" content="@zeevosec" />
-            <meta name="twitter:title" content={postTitle} />
-            <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={url + banner} />
-          </Helmet>
-          <PostTemplateDetails {...this.props} />
-        </div>
-      </Layout>
-    );
-  }
-}
-
-export default PostTemplate;
+  return (
+    <Layout>
+      <div>
+        <Helmet>
+          <html lang="en" />
+          <title>{`${postTitle} - ${title}`}</title>
+          <meta name="description" content={description} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@zeevosec" />
+          <meta name="twitter:creator" content="@zeevosec" />
+          <meta name="twitter:title" content={postTitle} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content={url + banner} />
+        </Helmet>
+        <PostTemplateDetails {...props} />
+      </div>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query PostByPath($id: String!) {
@@ -73,3 +69,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default PostTemplate;

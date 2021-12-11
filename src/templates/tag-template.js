@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import TagTemplateDetails from '../components/TagTemplateDetails';
 import banner from '../assets/images/banner.jpeg';
 
-const TagTemplate = (props) => {
+const TagTemplate = function TagTemplate(props) {
   const { title, url } = props.data.site.siteMetadata;
   const { tag } = props.pageContext;
 
@@ -25,8 +25,6 @@ const TagTemplate = (props) => {
     </Layout>
   );
 };
-
-export default TagTemplate;
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
@@ -74,3 +72,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default TagTemplate;
