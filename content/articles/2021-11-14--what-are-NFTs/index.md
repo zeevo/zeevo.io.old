@@ -77,12 +77,12 @@ NFTs from **Bad** NFTs
 
 These can take many forms and some offer much more security, longevity, and accuracy than others.
 
-| Type                 | Characteristics                                                                                                                                                                                                                                                                                                    |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| IPFS Hashes          | A string of characters indicating where users can go off-chain to find the original NFT image or additional information                                                                                                                                                                                            |
-| IPFS Gateway URLs    | Similar to an IPFS Hash, this is an internet facing link to a public IPFS Gateway. IPFS Gateways are websites that allow users to view IPFS data. There are no guarantees that this domain will be around forever, or will remain in honourable hands.                                                             |
-| Proprietary API URLs | Websites that the NFT project owners host to provide additional information about their NFTs or for the original images.                                                                                                                                                                                           |
-| Image encoded        | less common, but potentially the most "accurate" implementation as image data is encoded directly into the Smart Contract itself so that all data is on-chain. These typically take the form of pixelated images as there are limits to the amount of data a Smart Contract can reasonably write to the blockchain |
+| Type                 | Characteristics                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IPFS Hashes          | A string of characters indicating where users can go off-chain to find the original NFT image or additional information                                                                                                                                                                                                                                                                   |
+| IPFS Gateway URLs    | Similar to an IPFS Hash, this is an internet facing link to a public IPFS Gateway. IPFS Gateways are websites that allow users to view IPFS data. There are no guarantees that this domain will be around forever, or will remain in honourable hands.                                                                                                                                    |
+| Proprietary API URLs | Websites that the NFT project owners host to provide additional information about their NFTs or for the original images.                                                                                                                                                                                                                                                                  |
+| Image encoded        | less common, but potentially the most "accurate" implementation as image data is encoded directly into the Smart Contract itself so that all data is on-chain. These typically take the form of pixelated images as there are limits to the amount of data a Smart Contract can reasonably write to the blockchain. These are not the norm, but quite rare compared to the previous types |
 
 In terms of which NFT Metadata is "better" can be a matter of the goal of the
 NFT project. If the NFT project is interested in minting high quality images,
@@ -123,6 +123,20 @@ legitimacy to their NFTs.
 
 Smart Contracts that encoded their NFTs directly to the Blockchain are often
 seen as more philosophically pure than those that have off-chain data.
+
+## The problem with NFTs
+
+### NFTs are not images.
+
+With the exception of low-quality pixel maps, NFTs are simply _instructions to
+get to an image_. They are treasure maps-- Not treasure.
+
+### NFTs hosted on URLs can be changed
+
+Nothing prevents the owner of a URL to direct requests to anything they want.
+They own the domain, they own the links, they own the pictures they want to
+serve. There are fundamental data limitations to what you can store on the
+blockchain. An NFT backed by an internet URL is not safe.
 
 # Egregious offender: Lazy Lions NFT
 
@@ -295,4 +309,4 @@ contract.methods
 
 # Conclusion
 
-## NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not.
+## NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not. NFTs are being sold like they are treasure, when they really are a self destructing treasure map.
