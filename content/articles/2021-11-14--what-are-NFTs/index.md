@@ -97,7 +97,7 @@ guarantee that the website containing your NFT information with always be live
 serving your NFT Metadata. And of course, a good name and description along with
 the afformationed data is desirable.
 
-# What makes an NFT valuable?
+## What makes an NFT valuable?
 
 It can be hard to understand what makes NFTs seemingly sell for such high
 prices. I will offer a few theories on what can make an NFT valuable to me.
@@ -124,7 +124,7 @@ legitimacy to their NFTs.
 Smart Contracts that encoded their NFTs directly to the Blockchain are often
 seen as more philosophically pure than those that have off-chain data.
 
-## The problem with NFTs
+## The Problem With NFTs
 
 ### NFTs are not images.
 
