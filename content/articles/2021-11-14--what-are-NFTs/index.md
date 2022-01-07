@@ -51,9 +51,11 @@ a strong and permanent network of file systems creates a database of files
 that cannot be easily deleted or changed.
 
 However, there does exist projects that encode image data directly onto the
-Blockchain usually in the format of low-size pixel map or pixel art styles. The
-only way to determine if your NFT is a quality one is to look at your NFT's
-Smart Contract for how it is implemented.
+Blockchain usually in the format of low-size pixel map or pixel art styles. They
+have to be in this style because Blockchain space is so expensive. Storing just
+a few megabytes can be several hundred dollars. "On-chain NFTs" are the
+exception, not the norm. The only way to determine if your NFT is a quality one
+is to look at your NFT's Smart Contract for how it is implemented.
 
 ## What an NFT is
 
