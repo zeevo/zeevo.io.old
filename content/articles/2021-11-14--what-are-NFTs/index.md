@@ -12,6 +12,8 @@ The goal is to truly learn what NFTs are faithfully and without the influence of
 bias or confusing analogies'
 ---
 
+<TableOfContents tableOfContents={props.post.tableOfContents} />
+
 There is a lot of confusion on what an NFT is and this article aims to educate.
 The goal is to truly learn what NFTs are faithfully and without the influence of
 bias or confusing analogies.
@@ -174,7 +176,7 @@ They own the domain, they own the links, they own the pictures they want to
 serve. There are fundamental data limitations to what you can store on the
 blockchain. An NFT backed by an internet URL is not safe.
 
-# Egregious offender: Lazy Lions NFT
+## Egregious offender: Lazy Lions NFT
 
 To illustrate the points made here, we can look at a particularly bad NFT:
 [Lazy Lions.](https://www.lazylionsnft.com/)
@@ -241,7 +243,7 @@ else's website. There is no sense of permanence, no data integrity, and no
 guarantee that Lazy Lions NFT won't just be a collection of defunct links years
 from now.
 
-# Image Encoded NFT: CryptoPunks
+## Image Encoded NFT: CryptoPunks
 
 ![CryptoPunks](./cryptopunks.png)
 
@@ -343,6 +345,6 @@ contract.methods
   });
 ```
 
-# Conclusion
+## Conclusion
 
-## NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not. NFTs are being sold like they are treasure, when they are just the treasure map.
+### NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not. NFTs are being sold like they are treasure, when they are just the treasure map.
