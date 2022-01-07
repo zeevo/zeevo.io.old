@@ -118,7 +118,7 @@ or deletions. A key component of IPFS is that anyone can upload anything to it.
 There are absolutely dangerous files on IPFS that no one would want to exist--
 Many even illegal. Some examples of malicious files that the IPFS network helps
 propagate: Bad Porn, Copyrighted Content, Personal Identifiable Information
-(PII) or Dox data. The way IPFS gets around this is that Nodes on replicate
+(PII) or Dox data. The way IPFS gets around this is that Nodes only replicate
 content that it "visits" (i.e. requests from other Nodes). This design is
 comparable to how people "torrent" movies off The Pirate Bay. If you never
 request anything bad then you will never accidentally download anything bad.
