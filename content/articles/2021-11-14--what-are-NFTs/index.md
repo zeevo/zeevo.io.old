@@ -345,4 +345,4 @@ contract.methods
 
 # Conclusion
 
-## NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not. NFTs are being sold like they are treasure, when they really are a self destructing treasure map.
+## NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not. NFTs are being sold like they are treasure, when they are just the treasure map.
