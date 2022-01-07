@@ -58,7 +58,7 @@ Smart Contract for how it is implemented.
 ## What an NFT is
 
 Not all NFTs are created equally. Some are higher quality than others, and many
-NFT Contracts were created with permanent vulnerabilities and fundemental
+NFT Contracts were created with permanent vulnerabilities and fundamental
 misunderstandings on how the internet works. There are popular projects that
 continue to trade high volumes that are low quality and this can only be
 attributed to a lack of knowledge by participants of the underlying code.
@@ -95,9 +95,43 @@ gateways, can be considered unbacked by decentralized infrastructure (whether
 IPFS or Blockchains), and thus should not be valued at all. There is no
 guarantee that the website containing your NFT information with always be live
 serving your NFT Metadata. And of course, a good name and description along with
-the afformationed data is desirable.
+the aforementioned data is desirable.
 
-# What makes an NFT valuable?
+## We Need To Talk About IPFS
+
+What is it? Let's start with Wikipedia:
+
+> The InterPlanetary File System (IPFS) is a protocol and peer-to-peer network for
+> storing and sharing data in a distributed file system. IPFS uses
+> content-addressing to uniquely identify each file in a global namespace
+> connecting all computing devices.
+
+Essentially, IPFS is a database of files. It is an ever growing, decentralized
+database exclusively for files. Think text files, pictures, videos-- Really
+anything. IPFS Nodes run by volunteers hold portions of this database on their
+own computers. No one likely holds the entire database completely as that would
+be far too large. However, with many nodes, it is possible to construct a
+database that behaves like a single machine, but is resistant to modifications
+or deletions. A key component of IPFS is that anyone can upload anything to it.
+There are absolutely dangerous files on IPFS that no one would want to exist--
+Many even illegal. Some examples of malicious files that the IPFS network helps
+propagate: Bad Porn, Copyrighted Content, Personal Identifiable Information
+(PII) or Dox data. The way IPFS gets around this is that Nodes on replicate
+content that it "visits" (i.e. requests from other Nodes). This design is
+comparable to how people "torrent" movies off The Pirate Bay. If you never
+request anything bad then you will never accidentally download anything bad.
+
+Problem solved right?
+
+**Not quite**. This only creates another problem. Because Nodes do not propagate
+every file to every other computer, if you want to guarantee a picture is on
+IPFS, then you have to run a Node yourself that fulfills requests for your
+pictures. Otherwise, no other Nodes will know that it exists. This is levels of
+magnitude less decentralized and less permanent than a Blockchain. I certainly
+would not attribute hundreds of thousands of dollars (The price of some
+IPFS-backed NFTs) on this system.
+
+## What Makes an NFT Valuable?
 
 It can be hard to understand what makes NFTs seemingly sell for such high
 prices. I will offer a few theories on what can make an NFT valuable to me.
