@@ -237,7 +237,7 @@ _We can see the `image` is the form of an **IPFS Gateway**. This, however, does 
 
 Attaching NFT Metadata as an off-chain link such as `lazylionsnft.com/api/7182`
 gives the owners of `lazylionsnft.com` the ability to change NFT Metadata
-whenever they desire! NFTs like this have essentially none of the benfits of
+whenever they desire! NFTs like this have essentially none of the benefits of
 being on the Ethereum Blockchain and are nothing more than links to someone
 else's website. There is no sense of permanence, no data integrity, and no
 guarantee that Lazy Lions NFT won't just be a collection of defunct links years
