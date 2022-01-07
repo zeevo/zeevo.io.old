@@ -18,8 +18,8 @@ There is a lot of confusion on what an NFT is and this article aims to educate.
 The goal is to truly learn what NFTs are faithfully and without the influence of
 bias or confusing analogies.
 
-Nonfungible Token, or NFT, is a unique unit of data that is not interchangable
-with any other unit of data. It is in constrast to fungible items such as a
+Nonfungible Token, or NFT, is a unique unit of data that is not interchangeable
+with any other unit of data. It is in contrast to fungible items such as a
 dollar bill or Bitcoin where each unit is equivalent to one another and can be
 easily swapped with one another without losing value. Typically, we see NFTs
 implemented on a Blockchain such as Ethereum. The benefit of storing them on a
