@@ -22,9 +22,11 @@
     "react/jsx-filename-extension": "off",
     // "react/prefer-stateless-function": "off",
     "react/prop-types": "off", // I'll get to TypeScript eventually
-    "react/jsx-props-no-spreading": "warn"
+    "react/jsx-props-no-spreading": "warn",
     // "arrow-parens": "off",
     // "import/prefer-default-export": "off",
     // "no-restricted-syntax": "off"
+    "react/jsx-pascal-case": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

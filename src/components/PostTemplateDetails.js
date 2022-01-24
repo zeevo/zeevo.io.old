@@ -6,6 +6,7 @@ import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import './style/posttemplatedetails.scss';
+import BorderedBox from './BorderedBox';
 
 const PostTemplateDetails = function (props) {
   const post = props.data.mdx;
@@ -14,10 +15,12 @@ const PostTemplateDetails = function (props) {
   return (
     <div>
       <div>
-        <h1 sx={{ mt: 0, mb: 0 }}>{post.frontmatter.title}</h1>
-        <p sx={{ mt: 0, opacity: '60%' }}>
-          Zeevo - Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}
-        </p>
+        <BorderedBox>
+          <h1 sx={{ mt: 0, mb: 0 }}>{post.frontmatter.title}</h1>
+          <p sx={{ mt: 0, mb: 0, opacity: '60%' }}>
+            Zeevo - Published on {moment(post.frontmatter.date).format('MMMM DD, YYYY')}
+          </p>
+        </BorderedBox>
         <MDXRenderer post={post}>{post.body}</MDXRenderer>
       </div>
       <div className="post-single__tags-list">

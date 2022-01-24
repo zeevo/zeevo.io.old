@@ -4,19 +4,17 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Feed from '../components/Feed';
-import BorderedBox from '../components/BorderedBox';
-import PageHeader from '../components/PageHeader';
-import Link from '../components/Link';
 
 import { useSiteMetadata } from '../hooks';
 
 import banner from '../assets/images/banner.jpeg';
-import Projects from '../components/Projects';
+import PageHeader from '../components/PageHeader';
+import BorderedBox from '../components/BorderedBox';
 
-const Index = function Index({ data }) {
+const Index = function Index(props) {
   const siteMetadata = useSiteMetadata();
-  const { title, subtitle, url, author, projects } = siteMetadata;
-  const posts = data.allMdx.edges;
+  const { title, subtitle, url, author } = siteMetadata;
+  const posts = props.data.allMdx.edges;
 
   return (
     <Layout isHomePage>
@@ -31,44 +29,9 @@ const Index = function Index({ data }) {
         <meta name="twitter:image" content={url + banner} />
         <html lang="en" />
       </Helmet>
-      <PageHeader>
-        I build things with computer code.{' '}
-        <Link
-          to="/contact"
-          sx={{
-            color: 'text',
-            textDecoration: 'underline',
-            '&:hover': {
-              color: 'primary',
-            },
-          }}
-        >
-          Need something built?
-        </Link>
-      </PageHeader>
-      <BorderedBox st={{ marginTop: 3 }}>
-        <h2
-          sx={{
-            marginTop: 0,
-            marginBottom: 3,
-          }}
-        >
-          Recent Posts
-        </h2>
+      <PageHeader>Posts</PageHeader>
+      <BorderedBox st={{ marginTop: 3, marginBottom: 3 }}>
         <Feed posts={posts} author={author} subtitle={subtitle} />
-        <Link to="/posts">All Posts</Link>
-      </BorderedBox>
-
-      <BorderedBox st={{ marginTop: 3 }}>
-        <h2
-          sx={{
-            marginTop: 0,
-            marginBottom: 3,
-          }}
-        >
-          Projects
-        </h2>
-        <Projects projects={projects} reduced />
       </BorderedBox>
     </Layout>
   );
@@ -77,9 +40,40 @@ const Index = function Index({ data }) {
 export default Index;
 
 export const pageQuery = graphql`
-  query {
+  query IndexQuery {
+    site {
+      siteMetadata {
+        url
+        title
+        subtitle
+        copyright
+        profilePic
+        menu {
+          label
+          path
+        }
+        author {
+          name
+          socials {
+            twitter {
+              name
+              url
+            }
+            github {
+              name
+              url
+            }
+            discord {
+              name
+              url
+            }
+          }
+          rss
+        }
+      }
+    }
     allMdx(
-      limit: 3
+      limit: 1000
       filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

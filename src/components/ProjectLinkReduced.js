@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, Themed, useThemeUI } from 'theme-ui';
+import { jsx, Themed } from 'theme-ui';
 import React, { useState } from 'react';
 import { usePopper } from 'react-popper';
 
-const ProjectLink = function ProjectLink({ project, borderBottom = false }) {
+const ProjectLink = function ProjectLink({ project }) {
   const [hovered, setHovered] = useState(false);
   const [referenceElement, setReferenceElement] = useState(null);
   const [popperElement, setPopperElement] = useState(null);
@@ -21,40 +21,14 @@ const ProjectLink = function ProjectLink({ project, borderBottom = false }) {
 
   return (
     <>
-      <div
+      <Themed.a
         ref={setReferenceElement}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        sx={{}}
+        href={project.href}
       >
-        <a
-          sx={{
-            borderWidth: '1px',
-            borderColor: 'text',
-            borderStyle: 'solid',
-            borderTopWidth: 1,
-            borderLeftWidth: 1,
-            borderRightWidth: 1,
-            borderBottomWidth: borderBottom ? 1 : 0,
-            width: '100%',
-            height: '100%',
-            display: 'inline-block',
-            textDecoration: 'none',
-            lineHeight: 2,
-            padding: 1,
-            fontWeight: 'bold',
-            color: 'text',
-            '&:hover': {
-              color: 'background',
-              backgroundColor: 'primary',
-            },
-            cursor: 'pointer',
-          }}
-          href={project.href}
-        >
-          {project.label}
-        </a>
-      </div>
+        {project.label}
+      </Themed.a>
 
       {hovered && (
         <div

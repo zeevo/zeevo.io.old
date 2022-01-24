@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-
-import { Link } from 'gatsby';
 import moment from 'moment';
+import { jsx } from 'theme-ui';
+import Link from './Link';
 import './style/post.scss';
 
 const Post = function Post(props) {
@@ -11,7 +10,7 @@ const Post = function Post(props) {
 
   return (
     <div className="post">
-      <h2 className="post__title" sx={{ lineHeight: 1 }}>
+      <h3 className="post__title" sx={{ lineHeight: 1 }}>
         <Link
           className="post__title-link"
           to={path}
@@ -25,7 +24,7 @@ const Post = function Post(props) {
         >
           {title}
         </Link>
-      </h2>
+      </h3>
       <div className="post__meta">
         <time className="post__meta-time" dateTime={moment(date).format('MMMM D, YYYY')}>
           {moment(date).format('MMMM YYYY')} | {timeToRead} Minute read

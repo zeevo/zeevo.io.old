@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Helmet from 'react-helmet';
 import { jsx, Flex, useThemeUI } from 'theme-ui';
-import { Link } from 'gatsby';
 
 import ColorModeToggle from './ColorModeToggle';
 import Curtain from './Curtain';
@@ -13,40 +12,20 @@ import HomeButton from './HomeButton';
 import { useSiteMetadata } from '../hooks';
 
 import '../assets/scss/init.scss';
-import '../assets/fonts/fontello-771c82e0/css/fontello.css';
+import BorderedBox from './BorderedBox';
 
-const Layout = function(props) {
-  const { isHomePage, pageName } = props;
-
-  const { theme, colorMode } = useThemeUI();
+const Layout = function (props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const siteMetadata = useSiteMetadata();
 
-  const {menu} = siteMetadata;
-
-  const titleStyles = {
-    fontSize: '18px',
-    fontWeight: 700,
-    color: theme.colors.text,
-    my: 0,
-    lineHeight: 1.65,
-    '&:hover': {
-      color: 'primary',
-    },
-  };
-
-  const titleCard = isHomePage ? (
-    <h1 sx={{ ...titleStyles }}>Zeevo.io</h1>
-  ) : (
-    <h4 sx={titleStyles}>Zeevo.io</h4>
-  );
+  const { menu } = siteMetadata;
 
   return (
     <div
       sx={{
         mx: 3,
-        ...(colorMode === 'cyber' && { fontFamily: "'Roboto Mono', monospace !important" }),
+        mb: 3,
       }}
     >
       <Curtain onClose={() => setMobileMenuOpen(false)} isOpen={mobileMenuOpen}>
@@ -83,7 +62,7 @@ const Layout = function(props) {
             }}
           >
             <HomeButton />
-            <Link to="/">{titleCard}</Link>
+            <CurtainLink label="Zeevo.io" href="/" />
             {menu.map((item) => (
               <CurtainLink key={`${item.label}${item.path}`} label={item.label} href={item.path} />
             ))}
@@ -121,25 +100,25 @@ const Layout = function(props) {
           <div
             sx={{
               mx: 'auto',
-              py: 3,
             }}
           >
             {props.children}
           </div>
         </main>
-        <footer
-          sx={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
-          <small>{siteMetadata.copyright}</small>
-          {pageName === 'About me' ? <Link to="/habits">Habits</Link> : null}
-        </footer>
+        <BorderedBox st={{ mb: 2, p: 1 }}>
+          <footer
+            sx={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <small>{siteMetadata.copyright}</small>
+          </footer>
+        </BorderedBox>
       </div>
     </div>
   );
-}
+};
 
 export default Layout;

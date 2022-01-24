@@ -1,10 +1,12 @@
 /** @jsx jsx */
-import { jsx, Label, Input, Box, Button, Textarea, useThemeUI } from 'theme-ui';
+import { jsx, Label, Input, Box, Button, Textarea, useThemeUI, Themed } from 'theme-ui';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import ExternalLink from '../components/ExternalLink';
+import BorderedBox from '../components/BorderedBox';
 import banner from '../assets/images/banner.jpeg';
 import useSiteMetadata from '../hooks/use-site-metadata';
+import PageHeader from '../components/PageHeader';
 
 const Contact = function Contact() {
   const { colorMode } = useThemeUI();
@@ -27,24 +29,26 @@ const Contact = function Contact() {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={url + banner} />
       </Helmet>
-      <h1 className="page__title" style={{ display: 'none' }}>
-        {pageTitle}
-      </h1>
-      <h2 className="page__subtitle">Let&apos;s get in touch.</h2>
-      <ul>
-        <li>
-          Tweet at me <ExternalLink href={twitter.url}>{twitter.name}.</ExternalLink>
-        </li>
-        <li>
-          Follow me on Instagram <ExternalLink href={instagram.url}>{instagram.name}</ExternalLink>{' '}
-          for pictures of food and lizards.
-        </li>
-        <li>
-          <ExternalLink href={discord.url}>
-            I am also around on Discord at {discord.name}.
-          </ExternalLink>
-        </li>
-        <li>
+
+      <PageHeader>Let&apos;s get in touch.</PageHeader>
+
+      <BorderedBox st={{ marginTop: 3 }}>
+        <Themed.ul>
+          <Themed.li>
+            Tweet at me <ExternalLink href={twitter.url}>{twitter.name}.</ExternalLink>
+          </Themed.li>
+          <Themed.li>
+            Follow me on Instagram{' '}
+            <ExternalLink href={instagram.url}>{instagram.name}</ExternalLink> for pictures of food
+            and lizards.
+          </Themed.li>
+          <Themed.li>
+            <ExternalLink href={discord.url}>
+              I am also around on Discord at {discord.name}.
+            </ExternalLink>
+          </Themed.li>
+        </Themed.ul>
+        <div>
           <p sx={{ fontWeight: 'bold' }}>Hire me directly if you need a website built:</p>
 
           <Box
@@ -69,23 +73,17 @@ const Contact = function Contact() {
             />
             <Button
               type="submit"
+              variant="primary"
               sx={{
                 width: '100%',
                 cursor: 'pointer',
-                borderColor: 'background',
-                color: 'background',
-                backgroundColor: 'primary',
-                '&:hover': {
-                  color: colorMode === 'light' ? 'background' : 'text',
-                  backgroundColor: 'secondary',
-                },
               }}
             >
               Submit
             </Button>
           </Box>
-        </li>
-      </ul>
+        </div>
+      </BorderedBox>
     </Layout>
   );
 };

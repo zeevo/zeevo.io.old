@@ -2,8 +2,10 @@
 import Helmet from 'react-helmet';
 import { jsx } from 'theme-ui';
 import banner from '../assets/images/banner.jpeg';
+import BorderedBox from '../components/BorderedBox';
 import Layout from '../components/Layout';
-import ProjectLink from '../components/ProjectLink';
+import PageHeader from '../components/PageHeader';
+import ProjectsList from '../components/Projects';
 import '../components/style/pagetemplatedetails.scss';
 import { useSiteMetadata } from '../hooks';
 
@@ -28,21 +30,8 @@ const Projects = function Projects() {
           <meta name="twitter:description" content={subtitle} />
           <meta name="twitter:image" content={url + banner} />
         </Helmet>
-        <div>
-          <ul
-            sx={{
-              listStyle: 'none',
-              paddingLeft: 0,
-              flexDirection: 'column',
-            }}
-          >
-            {projects.map((project) => (
-              <li key={project.href}>
-                <ProjectLink project={project} />
-              </li>
-            ))}
-          </ul>
-        </div>
+        <PageHeader>Projects</PageHeader>
+        <ProjectsList projects={projects} />
       </div>
     </Layout>
   );
