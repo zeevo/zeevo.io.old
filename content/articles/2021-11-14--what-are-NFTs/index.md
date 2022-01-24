@@ -12,12 +12,14 @@ The goal is to truly learn what NFTs are faithfully and without the influence of
 bias or confusing analogies'
 ---
 
+<TableOfContents tableOfContents={props.post.tableOfContents} />
+
 There is a lot of confusion on what an NFT is and this article aims to educate.
 The goal is to truly learn what NFTs are faithfully and without the influence of
 bias or confusing analogies.
 
-Nonfungible Token, or NFT, is a unique unit of data that is not interchangable
-with any other unit of data. It is in constrast to fungible items such as a
+Nonfungible Token, or NFT, is a unique unit of data that is not interchangeable
+with any other unit of data. It is in contrast to fungible items such as a
 dollar bill or Bitcoin where each unit is equivalent to one another and can be
 easily swapped with one another without losing value. Typically, we see NFTs
 implemented on a Blockchain such as Ethereum. The benefit of storing them on a
@@ -51,14 +53,16 @@ a strong and permanent network of file systems creates a database of files
 that cannot be easily deleted or changed.
 
 However, there does exist projects that encode image data directly onto the
-Blockchain usually in the format of low-size pixel map or pixel art styles. The
-only way to determine if your NFT is a quality one is to look at your NFT's
-Smart Contract for how it is implemented.
+Blockchain usually in the format of low-size pixel map or pixel art styles. They
+have to be in this style because Blockchain space is so expensive. Storing just
+a few megabytes can be several hundred dollars. "On-chain NFTs" are the
+exception, not the norm. The only way to determine if your NFT is a quality one
+is to look at your NFT's Smart Contract for how it is implemented.
 
 ## What an NFT is
 
 Not all NFTs are created equally. Some are higher quality than others, and many
-NFT Contracts were created with permanent vulnerabilities and fundemental
+NFT Contracts were created with permanent vulnerabilities and fundamental
 misunderstandings on how the internet works. There are popular projects that
 continue to trade high volumes that are low quality and this can only be
 attributed to a lack of knowledge by participants of the underlying code.
@@ -95,9 +99,43 @@ gateways, can be considered unbacked by decentralized infrastructure (whether
 IPFS or Blockchains), and thus should not be valued at all. There is no
 guarantee that the website containing your NFT information with always be live
 serving your NFT Metadata. And of course, a good name and description along with
-the afformationed data is desirable.
+the aforementioned data is desirable.
 
-# What makes an NFT valuable?
+## We Need To Talk About IPFS
+
+What is it? Let's start with Wikipedia:
+
+> The InterPlanetary File System (IPFS) is a protocol and peer-to-peer network for
+> storing and sharing data in a distributed file system. IPFS uses
+> content-addressing to uniquely identify each file in a global namespace
+> connecting all computing devices.
+
+Essentially, IPFS is a database of files. It is an ever growing, decentralized
+database exclusively for files. Think text files, pictures, videos-- Really
+anything. IPFS Nodes run by volunteers hold portions of this database on their
+own computers. No one likely holds the entire database completely as that would
+be far too large. However, with many nodes, it is possible to construct a
+database that behaves like a single machine, but is resistant to modifications
+or deletions. A key component of IPFS is that anyone can upload anything to it.
+There are absolutely dangerous files on IPFS that no one would want to exist--
+Many even illegal. Some examples of malicious files that the IPFS network helps
+propagate: Bad Porn, Copyrighted Content, Personal Identifiable Information
+(PII) or Dox data. The way IPFS gets around this is that Nodes only replicate
+content that it "visits" (i.e. requests from other Nodes). This design is
+comparable to how people "torrent" movies off The Pirate Bay. If you never
+request anything bad then you will never accidentally download anything bad.
+
+Problem solved right?
+
+**Not quite**. This only creates another problem. Because Nodes do not propagate
+every file to every other computer, if you want to guarantee a picture is on
+IPFS, then you have to run a Node yourself that fulfills requests for your
+pictures. Otherwise, no other Nodes will know that it exists. This is levels of
+magnitude less decentralized and less permanent than a Blockchain. I certainly
+would not attribute hundreds of thousands of dollars (The price of some
+IPFS-backed NFTs) on this system.
+
+## What Makes an NFT Valuable?
 
 It can be hard to understand what makes NFTs seemingly sell for such high
 prices. I will offer a few theories on what can make an NFT valuable to me.
@@ -138,7 +176,7 @@ They own the domain, they own the links, they own the pictures they want to
 serve. There are fundamental data limitations to what you can store on the
 blockchain. An NFT backed by an internet URL is not safe.
 
-# Egregious offender: Lazy Lions NFT
+## Egregious offender: Lazy Lions NFT
 
 To illustrate the points made here, we can look at a particularly bad NFT:
 [Lazy Lions.](https://www.lazylionsnft.com/)
@@ -199,13 +237,13 @@ _We can see the `image` is the form of an **IPFS Gateway**. This, however, does 
 
 Attaching NFT Metadata as an off-chain link such as `lazylionsnft.com/api/7182`
 gives the owners of `lazylionsnft.com` the ability to change NFT Metadata
-whenever they desire! NFTs like this have essentially none of the benfits of
+whenever they desire! NFTs like this have essentially none of the benefits of
 being on the Ethereum Blockchain and are nothing more than links to someone
 else's website. There is no sense of permanence, no data integrity, and no
 guarantee that Lazy Lions NFT won't just be a collection of defunct links years
 from now.
 
-# Image Encoded NFT: CryptoPunks
+## Image Encoded NFT: CryptoPunks
 
 ![CryptoPunks](./cryptopunks.png)
 
@@ -307,6 +345,6 @@ contract.methods
   });
 ```
 
-# Conclusion
+## Conclusion
 
-## NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not. NFTs are being sold like they are treasure, when they really are a self destructing treasure map.
+### NFT exchanges like OpenSea and Foundation present their NFTs like they are all the same -- And they are not. NFTs are being sold like they are treasure, when they are just the treasure map.
