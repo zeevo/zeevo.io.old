@@ -46,7 +46,7 @@ const Index = function Index({ data }) {
           Need something built?
         </Link>
       </PageHeader>
-      <BorderedBox st={{ marginTop: 3 }}>
+      <BorderedBox>
         <h2
           sx={{
             marginTop: 0,
@@ -58,7 +58,16 @@ const Index = function Index({ data }) {
         <Feed posts={posts} author={author} subtitle={subtitle} />
         <Link to="/posts">All Posts</Link>
       </BorderedBox>
-
+      <BorderedBox>
+        <h2
+          sx={{
+            marginTop: 0,
+            marginBottom: 0,
+          }}
+        >
+          Follow me on Twitter <Link to={author.socials.twitter.url}>@zeevosec</Link>
+        </h2>
+      </BorderedBox>
       <BorderedBox st={{ marginTop: 3 }}>
         <h2
           sx={{

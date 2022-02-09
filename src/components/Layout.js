@@ -94,7 +94,6 @@ const Layout = function (props) {
         <main
           sx={{
             width: '100%',
-            flex: '1 1 auto',
           }}
         >
           <div
@@ -105,7 +104,7 @@ const Layout = function (props) {
             {props.children}
           </div>
         </main>
-        <BorderedBox st={{ mb: 2, p: 1, mt: 3 }}>
+        <BorderedBox st={{ mb: 1, p: 1, mt: 3 }}>
           <footer
             sx={{
               width: '100%',
