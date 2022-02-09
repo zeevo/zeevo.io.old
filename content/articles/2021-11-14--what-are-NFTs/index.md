@@ -1,9 +1,9 @@
 ---
-title: What is an NFT?
+title: Problems with NFTs
 date: '2021-11-14T00:00:00Z'
 layout: post
 draft: false
-path: '/2021/11/14/what-is-an-NFT'
+path: '/2021/11/14/problems-with-NFTs'
 category: 'Crypto'
 tags:
   - 'Crypto'

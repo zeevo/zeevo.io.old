@@ -30,11 +30,11 @@ module.exports = {
       description:
         'An application used by Medstar doctors to provide more effective care to patients with Cardiovascular problems',
     },
-    {
-      label: 'The Dead Game Game',
-      href: 'https://the-dead-game-game.vercel.app/',
-      description: 'A fun browser game based on Twitch viewership',
-    },
+    // {
+    //   label: 'The Dead Game Game',
+    //   href: 'https://the-dead-game-game.vercel.app/',
+    //   description: 'A fun browser game based on Twitch viewership',
+    // },
     {
       label: 'Sycra.net',
       href: 'http://sycra.net/',
@@ -47,8 +47,7 @@ module.exports = {
     },
     {
       label: 'Neuromancer Discord Bot',
-      href:
-        'https://discordapp.com/oauth2/authorize?client_id=393278638809808896&scope=bot&permissions=37219392',
+      href: 'https://discordapp.com/oauth2/authorize?client_id=393278638809808896&scope=bot&permissions=37219392',
       description: 'A general purpose discord bot that does trivia and games',
     },
     {
