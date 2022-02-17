@@ -43,13 +43,13 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
               allMarkdownRemark.edges.map((edge) => ({
-                  ...edge.node.frontmatter,
-                  description: edge.node.frontmatter.description,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.url + edge.node.path,
-                  guid: site.siteMetadata.url + edge.node.path,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                })),
+                ...edge.node.frontmatter,
+                description: edge.node.frontmatter.description,
+                date: edge.node.frontmatter.date,
+                url: site.siteMetadata.url + edge.node.path,
+                guid: site.siteMetadata.url + edge.node.path,
+                custom_elements: [{ 'content:encoded': edge.node.html }],
+              })),
             query: `
             {
               allMarkdownRemark(
@@ -126,7 +126,7 @@ module.exports = {
         background_color: '#FFF',
         theme_color: '#0E0E0E',
         display: 'standalone',
-        icon: 'static/photo.png',
+        icon: '/photo.png',
       },
     },
     {
