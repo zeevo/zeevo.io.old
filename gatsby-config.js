@@ -126,7 +126,7 @@ module.exports = {
         background_color: '#FFF',
         theme_color: '#0E0E0E',
         display: 'standalone',
-        icon: '/static/photo.png',
+        icon: 'static/photo.png',
       },
     },
     {
